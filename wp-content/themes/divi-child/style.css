@@ -1,0 +1,15 @@
+/* 
+Theme Name:     Divi Child
+ Theme URI:      https://www.elegantthemes.com/gallery/divi/
+ Description:    Divi Child Theme
+ Author:         Elegant Themes
+ Author URI:     https://www.elegantthemes.com
+ Template:       Divi
+ Version:        1.0.0
+*/
+
+/* footer */
+body #main-footer .container #nav_menu-2 ul li a{ color: black; }
+body #main-footer .container #nav_menu-2 ul{display: inline-flex;}
+body #main-footer .container #footer-widgets .footer-widget li:before {display: none;}
+body #main-footer .container #footer-widgets .footer-widget{ display: flex; flex-direction: column; align-items: center; justify-content: center; }
