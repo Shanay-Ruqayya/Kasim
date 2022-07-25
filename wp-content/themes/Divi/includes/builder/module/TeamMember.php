@@ -532,14 +532,16 @@ class ET_Builder_Module_Team_Member extends ET_Builder_Module {
 			'<div%3$s class="%4$s"%10$s%11$s>
 				%9$s
 				%8$s
+				%12$s
+				%13$s
 				%2$s
 				<div class="et_pb_team_member_description">
 					%5$s
 					%6$s
 					%1$s
 					%7$s
-				</div> <!-- .et_pb_team_member_description -->
-			</div> <!-- .et_pb_team_member -->',
+				</div>
+			</div>',
 			$content,
 			et_core_esc_previously( $image ),
 			$this->module_id(),
@@ -550,7 +552,9 @@ class ET_Builder_Module_Team_Member extends ET_Builder_Module {
 			$video_background,
 			$parallax_image_background,
 			et_core_esc_previously( $data_background_layout ), // #10
-			et_core_esc_previously( $muti_view_data_attr )
+			et_core_esc_previously( $muti_view_data_attr ),
+			et_core_esc_previously( $this->background_pattern() ), // #12
+			et_core_esc_previously( $this->background_mask() ) // #13
 		);
 
 		return $output;
@@ -616,4 +620,6 @@ class ET_Builder_Module_Team_Member extends ET_Builder_Module {
 	}
 }
 
-new ET_Builder_Module_Team_Member();
+if ( et_builder_should_load_all_module_data() ) {
+	new ET_Builder_Module_Team_Member();
+}

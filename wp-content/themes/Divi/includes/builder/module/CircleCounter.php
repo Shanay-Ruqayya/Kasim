@@ -47,6 +47,11 @@ class ET_Builder_Module_Circle_Counter extends ET_Builder_Module {
 					),
 				),
 			),
+			'background'      => array(
+				'css' => array(
+					'main' => "{$this->main_css_element} .et_pb_circle_counter_inner",
+				),
+			),
 			'margin_padding'  => array(
 				'css'           => array(
 					'important' => array( 'custom_margin' ),
@@ -216,11 +221,10 @@ class ET_Builder_Module_Circle_Counter extends ET_Builder_Module {
 	 * @return string
 	 */
 	public function render( $attrs, $content, $render_slug ) {
-		wp_enqueue_script( 'easypiechart' );
 
 		$sticky                = et_pb_sticky_options();
 		$multi_view            = et_pb_multi_view_options( $this );
-		$number                = $multi_view->get_value( 'number' );
+		$number                = $multi_view->get_value( 'number', 'desktop', '' );
 		$percent_sign          = $this->props['percent_sign'];
 		$title                 = $multi_view->render_element(
 			array(
@@ -348,15 +352,34 @@ class ET_Builder_Module_Circle_Counter extends ET_Builder_Module {
 			$this->add_classname( 'et_pb_with_title' );
 		}
 
+		// Check Background Image.
+		$is_background_responsive = et_pb_responsive_options()->is_responsive_enabled( $this->props, 'background' );
+		$background_image         = $this->props['background_image'];
+		$counter_inner_classname  = '';
+
+		if ( '' === $background_image && $is_background_responsive ) {
+			$background_image_tablet = et_pb_responsive_options()->get_inheritance_background_value( $this->props, 'background_image', 'tablet' );
+			$background_image_phone  = et_pb_responsive_options()->get_inheritance_background_value( $this->props, 'background_image', 'phone' );
+			$background_image        = '' !== $background_image_tablet ? $background_image_tablet : $background_image_phone;
+		}
+
+		// We need to add et_pb_with_background class for the et_pb_circle_counter_inner element,
+		// when Background Image is used, so that would apply default styles for background image.
+		if ( ! empty( $video_background ) || '' !== $background_image ) {
+			$counter_inner_classname = ' et_pb_with_background';
+		};
+
 		$output = sprintf(
 			'<div%1$s class="%2$s"%11$s>
-				<div class="et_pb_circle_counter_inner" data-number-value="%3$s" data-bar-bg-color="%4$s"%7$s%8$s%12$s%13$s%14$s%15$s%16$s%17$s%18$s%19$s%20$s%21$s%22$s%23$s%24$s%25$s>
+				<div class="et_pb_circle_counter_inner%28$s" data-number-value="%3$s" data-bar-bg-color="%4$s"%7$s%8$s%12$s%13$s%14$s%15$s%16$s%17$s%18$s%19$s%20$s%21$s%22$s%23$s%24$s%25$s>
 				%10$s
 				%9$s
+				%26$s
+				%27$s
 					<div class="percent"%19$s><p><span class="percent-value"></span><span class="percent-sign">%5$s</span></p></div>
 					%6$s
 				</div>
-			</div><!-- .et_pb_circle_counter -->',
+			</div>',
 			$this->module_id(),
 			$this->module_classname( $render_slug ),
 			esc_attr( $number ),
@@ -381,7 +404,10 @@ class ET_Builder_Module_Circle_Counter extends ET_Builder_Module {
 			$bar_bg_color_data_sticky,
 			$circle_color_data_sticky,
 			$circle_color_alpha_data_sticky,
-			$data_sticky_id // #25
+			$data_sticky_id, // #25
+			et_core_esc_previously( $this->background_pattern() ), // #26
+			et_core_esc_previously( $this->background_mask() ), // #27
+			esc_attr( $counter_inner_classname ) // #28
 		);
 
 		return $output;
@@ -430,4 +456,6 @@ class ET_Builder_Module_Circle_Counter extends ET_Builder_Module {
 	}
 }
 
-new ET_Builder_Module_Circle_Counter();
+if ( et_builder_should_load_all_module_data() ) {
+	new ET_Builder_Module_Circle_Counter();
+}

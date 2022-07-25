@@ -107,7 +107,7 @@ class ET_Builder_Module_Fullwidth_Map extends ET_Builder_Module {
 				),
 				'additional_button_type' => 'change_google_api_key',
 				'class'                  => array( 'et_pb_google_api_key', 'et-pb-helper-field' ),
-				'description'            => et_get_safe_localization( sprintf( __( 'The Maps module uses the Google Maps API and requires a valid Google API Key to function. Before using the map module, please make sure you have added your API key inside the Divi Theme Options panel. Learn more about how to create your Google API Key <a href="%1$s" target="_blank">here</a>.', 'et_builder' ), esc_url( 'http://www.elegantthemes.com/gallery/divi/documentation/map/#gmaps-api-key' ) ) ),
+				'description'            => et_get_safe_localization( sprintf( __( 'The Maps module uses the Google Maps API and requires a valid Google API Key to function. Before using the map module, please make sure you have added your API key inside the Divi Theme Options panel. Learn more about how to create your Google API Key <a href="%1$s" target="_blank">here</a>.', 'et_builder' ), esc_url( 'https://www.elegantthemes.com/documentation/divi/map/#gmaps-api-key' ) ) ),
 				'toggle_slug'            => 'map',
 			),
 			'address'                   => array(
@@ -255,11 +255,13 @@ class ET_Builder_Module_Fullwidth_Map extends ET_Builder_Module {
 			'<div%5$s class="%6$s"%11$s>
 				%10$s
 				%9$s
+				%12$s
+				%13$s
 				<div class="et_pb_map" data-center-lat="%1$s" data-center-lng="%2$s" data-zoom="%3$d" data-mouse-wheel="%7$s" data-mobile-dragging="%8$s"></div>
 				%4$s
 			</div>',
-			esc_attr( $address_lat ),
-			esc_attr( $address_lng ),
+			esc_attr( et_()->to_css_decimal( $address_lat ) ),
+			esc_attr( et_()->to_css_decimal( $address_lng ) ),
 			esc_attr( $zoom_level ),
 			$all_pins_content,
 			$this->module_id(),
@@ -268,11 +270,15 @@ class ET_Builder_Module_Fullwidth_Map extends ET_Builder_Module {
 			esc_attr( $mobile_dragging ),
 			$video_background,
 			$parallax_image_background,
-			$grayscale_filter_data
+			$grayscale_filter_data,
+			et_core_esc_previously( $this->background_pattern() ), // #12
+			et_core_esc_previously( $this->background_mask() ) // #13
 		);
 
 		return $output;
 	}
 }
 
-new ET_Builder_Module_Fullwidth_Map();
+if ( et_builder_should_load_all_module_data() ) {
+	new ET_Builder_Module_Fullwidth_Map();
+}

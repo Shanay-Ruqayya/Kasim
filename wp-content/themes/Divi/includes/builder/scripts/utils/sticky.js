@@ -260,6 +260,14 @@ export const getClosestStickyModuleOffsetTop = $target => {
       return;
     }
 
+    // Ignore if $target is sticky module (that sticks to top; stuck to bottom check above has
+    // made sure of it) - otherwise the auto-generate offset will subtract the element's offset
+    // and causing the scroll never reaches $target location.
+    // @see https://github.com/elegantthemes/Divi/issues/23240
+    if ($target.is(get(stickyModule, 'selector'))) {
+      return;
+    }
+
     // Ignore if sticky module's right edge doesn't collide with target's left edge
     if (get(stickyModule, 'offsets.right', 0) < offset.left) {
       return;
@@ -304,4 +312,34 @@ export const getClosestStickyModuleOffsetTop = $target => {
   }
 
   return closestStickyOffsetTop;
+};
+
+/**
+ * Determine if the target is in sticky state.
+ *
+ * @since 4.9.5
+ *
+ * @param {object} $target
+ *
+ * @returns {bool}
+ */
+export const isTargetStickyState = $target => {
+  const stickyModules = get(window.ET_FE, 'stores.sticky.modules', {});
+
+  let isStickyState = false;
+
+  forEach(stickyModules, stickyModule => {
+    const isTarget             = $target.is(get(stickyModule, 'selector'));
+    const {isSticky, isPaused} = stickyModule;
+
+    // If the target is in sticky state and not paused, set isStickyState to true and exit iteration.
+    // Elements can have a sticky limit (ex: section) in which case they can be sticky but paused.
+    if (isTarget && isSticky && !isPaused) {
+      isStickyState = true;
+
+      return false; // Exit iteration.
+    }
+  });
+
+  return isStickyState;
 };

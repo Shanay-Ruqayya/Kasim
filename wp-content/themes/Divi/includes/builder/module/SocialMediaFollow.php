@@ -265,7 +265,6 @@ class ET_Builder_Module_Social_Media_Follow extends ET_Builder_Module {
 		$video_background          = $this->video_background();
 		$parallax_image_background = $this->get_parallax_image_background();
 		$use_icon_font_size        = $this->props['use_icon_font_size'];
-		$icon_font_size_values     = et_pb_responsive_options()->get_property_values( $this->props, 'icon_font_size' );
 
 		// Icon Color.
 		$this->generate_styles(
@@ -341,19 +340,25 @@ class ET_Builder_Module_Social_Media_Follow extends ET_Builder_Module {
 			'<ul%3$s class="%2$s"%6$s%7$s>
 				%5$s
 				%4$s
+				%8$s
+				%9$s
 				%1$s
-			</ul> <!-- .et_pb_counters -->',
+			</ul>',
 			$this->content,
 			$this->module_classname( $render_slug ),
 			$this->module_id(),
 			$video_background,
 			$parallax_image_background, // #5
 			et_core_esc_previously( $data_background_layout ),
-			et_core_esc_previously( $muti_view_data_attr )
+			et_core_esc_previously( $muti_view_data_attr ),
+			et_core_esc_previously( $this->background_pattern() ), // #8
+			et_core_esc_previously( $this->background_mask() ) // #9
 		);
 
 		return $output;
 	}
 }
 
-new ET_Builder_Module_Social_Media_Follow();
+if ( et_builder_should_load_all_module_data() ) {
+	new ET_Builder_Module_Social_Media_Follow();
+}

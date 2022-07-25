@@ -6,12 +6,13 @@ class ET_Builder_Global_Presets_Settings {
 	const CUSTOMIZER_SETTINGS_MIGRATED_FLAG = 'customizer_settings_migrated_flag';
 
 	const GLOBAL_PRESETS_OPTION         = 'builder_global_presets';
+	const GLOBAL_PRESETS_OPTION_TEMP    = 'builder_global_presets_temp';
 	const CUSTOM_DEFAULTS_MIGRATED_FLAG = 'custom_defaults_migrated_flag';
 	const MODULE_PRESET_ATTRIBUTE       = '_module_preset';
 	const MODULE_INITIAL_PRESET_ID      = '_initial';
 
 	/**
-	 * @var array - The list of the product short names we allowing to do a Module Customizer settings migration rollback
+	 * @var array - The list of the product short names we allowing to do a Module Customizer settings migration rollback.
 	 */
 	public static $allowed_products = array(
 		'divi'  => '4.5',
@@ -81,7 +82,18 @@ class ET_Builder_Global_Presets_Settings {
 
 	protected function _register_hooks() {
 		add_action( 'et_after_version_rollback', array( $this, 'after_version_rollback' ), 10, 3 );
-		add_action( 'et_builder_modules_loaded', array( $this, 'migrate_custom_defaults' ), 100 );
+
+		// If migration is needed, ensure that all modules get fully loaded.
+		// phpcs:disable PEAR.Functions.FunctionCallSignature -- Anonymous functions.
+		add_action( 'et_builder_framework_loaded', function() {
+			if ( ! self::are_custom_defaults_migrated() ) {
+				add_filter( 'et_builder_should_load_all_module_data', '__return_true' );
+			}
+		});
+		// phpcs:enable
+
+		add_action( 'et_builder_ready', array( $this, 'migrate_custom_defaults' ), 100 );
+		add_action( 'et_builder_ready', array( $this, 'apply_attribute_migrations' ), 101 );
 	}
 
 	/**
@@ -105,9 +117,9 @@ class ET_Builder_Global_Presets_Settings {
 	 *
 	 * @since 4.5.0
 	 *
-	 * @param $module_slug - The module slug for which additional slugs are looked up
+	 * @param $module_slug - The module slug for which additional slugs are looked up.
 	 *
-	 * @return array       - The list of the additional slugs
+	 * @return array       - The list of the additional slugs.
 	 */
 	public function get_module_additional_slugs( $module_slug ) {
 		if ( ! empty( self::$_module_additional_slugs[ $module_slug ] ) ) {
@@ -126,6 +138,51 @@ class ET_Builder_Global_Presets_Settings {
 	 */
 	public function get_global_presets() {
 		return $this->_settings;
+	}
+
+	/**
+	 * Returns builder Temp Presets settings.
+	 *
+	 * @since 4.17.0
+	 *
+	 * @return object
+	 */
+	public function get_temp_presets() {
+		$global_presets_temp = et_get_option( self::GLOBAL_PRESETS_OPTION_TEMP, array(), '', true );
+
+		return $global_presets_temp;
+	}
+
+	/**
+	 * Remove Temp Presets settings from the database.
+	 *
+	 * @since 4.17.0
+	 *
+	 * @return object
+	 */
+	public function clear_temp_presets() {
+		$all_presets = self::get_global_presets();
+		$temp_preset = self::get_temp_presets();
+
+		if ( empty( $temp_preset ) ) {
+			return;
+		}
+
+		foreach ( $temp_preset as $module => $preset_structure ) {
+			if ( isset( $preset_structure['presets'] ) ) {
+				foreach ( $preset_structure['presets'] as $preset_id => $preset ) {
+					if ( isset( $all_presets->$module->presets->$preset_id ) ) {
+						unset( $all_presets->$module->presets->$preset_id );
+					}
+				}
+			}
+		}
+
+		// Save presets without temp.
+		et_update_option( self::GLOBAL_PRESETS_OPTION, $all_presets );
+
+		// Clean all temp presets.
+		et_update_option( self::GLOBAL_PRESETS_OPTION_TEMP, array() );
 	}
 
 	/**
@@ -202,8 +259,8 @@ class ET_Builder_Global_Presets_Settings {
 	 *
 	 * @since 4.5.0
 	 *
-	 * @param string $module_slug - The module slug
-	 * @param array  $attrs        - The module attributes
+	 * @param string $module_slug The module slug.
+	 * @param array  $attrs       The module attributes.
 	 *
 	 * @return array
 	 */
@@ -216,7 +273,47 @@ class ET_Builder_Global_Presets_Settings {
 			$result = (array) $this->_settings->{$module_slug}->presets->{$real_preset_id}->settings;
 		}
 
+		$result = self::maybe_set_global_colors( $result );
+
 		return $result;
+	}
+
+	/**
+	 * Returns Global Presets settings with global colors injected.
+	 *
+	 * @since 4.10.0
+	 * @since 4.17.2 Perform substring replacement (for compound settings like background gradient stops).
+	 *
+	 * @param array $attrs - The module attributes.
+	 *
+	 * @return array
+	 */
+	public static function maybe_set_global_colors( $attrs ) {
+		if ( empty( $attrs['global_colors_info'] ) ) {
+			return $attrs;
+		}
+
+		$gc_info = json_decode( $attrs['global_colors_info'], true );
+
+		// Gather system-wide Global Colors info (including CSS color values and 'active' status).
+		$all_global_colors_info = et_get_option( 'et_global_colors' );
+
+		foreach ( $gc_info as $color_id => $option_names ) {
+			foreach ( $option_names as $option_name ) {
+				// Get the CSS color value assiciated with this GCID.
+				if ( ! empty( $all_global_colors_info[ $color_id ]['color'] ) ) {
+					$gcid_color_value = $all_global_colors_info[ $color_id ]['color'];
+				} else {
+					// We can't inject the CSS color value if we don't have record of it.
+					continue;
+				}
+
+				// Replace CSS color value with GCID wherever it's found within the settings string.
+				$attrs[ $option_name ] = str_replace( $color_id, $gcid_color_value, $attrs[ $option_name ] );
+			}
+		}
+
+		return $attrs;
 	}
 
 	/**
@@ -307,7 +404,7 @@ class ET_Builder_Global_Presets_Settings {
 	 *
 	 * @since 4.5.0
 	 *
-	 * @param object $custom_defaults - The previous Custom Defaults
+	 * @param object $custom_defaults - The previous Custom Defaults.
 	 *
 	 * @return object
 	 */
@@ -336,8 +433,10 @@ class ET_Builder_Global_Presets_Settings {
 			return;
 		}
 
+		$this->_settings = (array) $this->_settings;
+
 		// Re-run migration to Global Presets if a user has not yet saved any presets.
-		if ( et_is_builder_plugin_active() && ! empty( (array) $this->_settings ) ) {
+		if ( et_is_builder_plugin_active() && ! empty( $this->_settings ) ) {
 			et_update_option( self::CUSTOM_DEFAULTS_MIGRATED_FLAG, true );
 			return;
 		}
@@ -354,6 +453,47 @@ class ET_Builder_Global_Presets_Settings {
 		$this->_settings = $global_presets;
 
 		et_update_option( self::CUSTOM_DEFAULTS_MIGRATED_FLAG, true );
+	}
+
+	/**
+	 * Apply attribute migrations.
+	 *
+	 * @since 4.14.0
+	 */
+	public function apply_attribute_migrations() {
+		foreach ( $this->_settings as $module => $preset_structure ) {
+			foreach ( $preset_structure->presets as $preset_id => $preset ) {
+				self::migrate_settings_as_module_attributes( $preset, $module );
+			}
+		}
+	}
+
+	/**
+	 * Configuring and running migration of global presets via "et_pb_module_shortcode_attributes".
+	 *
+	 * @since 4.14.0
+	 *
+	 * @param object $preset Global preset object.
+	 * @param string $module_slug Module slug.
+	 *
+	 * @return void
+	 */
+	public static function migrate_settings_as_module_attributes( $preset, $module_slug ) {
+		$settings = (array) $preset->settings;
+
+		// Mimic preset settings as module attributes to re-use standard migration mechanism.
+		$settings['_builder_version'] = $preset->version;
+
+		// This flag will be used in migrations (see: ET_Builder_Module_Settings_Migration::_maybe_global_presets_migration ).
+		$maybe_global_presets_migration = true;
+
+		$migrated_settings = apply_filters( 'et_pb_module_shortcode_attributes', $settings, $settings, $module_slug, '0.0.0.0', '', $maybe_global_presets_migration );
+		if ( $settings['_builder_version'] !== $migrated_settings['_builder_version'] ) {
+			$migrated_version = $migrated_settings['_builder_version'];
+			unset( $migrated_settings['_builder_version'] );
+			$preset->version  = $migrated_version;
+			$preset->settings = (object) $migrated_settings;
+		}
 	}
 
 	/**
@@ -377,15 +517,16 @@ class ET_Builder_Global_Presets_Settings {
 
 	/**
 	 * Converts module type (slug).
+	 *
 	 * Used to separate Global Presets settings for modules sharing the same slug but having different meaning
 	 * For example: Regular, Fullwidth and Specialty section types
 	 *
 	 * @since 4.5.0
 	 *
-	 * @param string $type - The module type (slug)
-	 * @param array  $attrs - The module attributes
+	 * @param string $type  The module type (slug).
+	 * @param array  $attrs The module attributes.
 	 *
-	 * @return string      - The converted module type (slug)
+	 * @return string      The converted module type (slug)
 	 */
 	public function maybe_convert_module_type( $type, $attrs ) {
 		if ( isset( self::$_module_types_conversion_map[ $type ] ) ) {
@@ -460,8 +601,11 @@ class ET_Builder_Global_Presets_Settings {
 	}
 
 	/**
-	 * Filters Global Presets setting to avoid non plain values like arrays or objects
+	 * Filters Global Presets setting to avoid non plain values like arrays or objects.
 	 *
+	 * Returns FALSE when the value is an Object or an array.
+	 *
+	 * @since 4.13.0 Included PHPDoc description.
 	 * @since 4.5.0
 	 *
 	 * @param $value - The Global Presets setting value
@@ -475,15 +619,18 @@ class ET_Builder_Global_Presets_Settings {
 	/**
 	 * Performs Global Presets format normalization.
 	 * Usually used to cast format from array to object
+	 * Also used to normalize global colors
 	 *
 	 * @since 4.5.0
+	 * @since 4.17.2 Modified the global color option check to perform a substring match on multipart settings (like gradient stops).
 	 *
-	 * @param $presets - The object representing Global Presets settings
+	 * @param object|array $presets The object representing Global Presets settings.
 	 *
 	 * @return object
 	 */
 	protected function _normalize_global_presets( $presets ) {
-		$result = (object) array();
+		$result      = (object) array();
+		$temp_preset = self::get_temp_presets();
 
 		foreach ( $presets as $module => $preset_structure ) {
 			if ( isset( $preset_structure->presets ) ) {
@@ -496,6 +643,7 @@ class ET_Builder_Global_Presets_Settings {
 					$result->$module->presets->$preset_id->created = $preset->created;
 					$result->$module->presets->$preset_id->updated = $preset->updated;
 					$result->$module->presets->$preset_id->version = $preset->version;
+					$result->$module->presets->$preset_id->is_temp = isset( $temp_preset[ $module ]['presets'][ $preset_id ] );
 
 					if ( isset( $preset->settings ) ) {
 						$result->$module->presets->$preset_id->settings = (object) array();
@@ -508,14 +656,57 @@ class ET_Builder_Global_Presets_Settings {
 							)
 						);
 
-						// Since we still support PHP 5.2 we can't use `array_filter` with array keys
-						// So check if defaults have empty key
+						// Since we still support PHP 5.2 we can't use `array_filter`
+						// with array keys, so use this to skip any empty key that's found.
 						if ( isset( $settings_filtered[''] ) ) {
 							continue;
 						}
 
 						foreach ( $settings_filtered as $setting_name => $value ) {
 							$result->$module->presets->$preset_id->settings->$setting_name = $value;
+						}
+
+						// Look for settings in this module that use global colors.
+						if ( isset( $settings_filtered['global_colors_info'] ) ) {
+							$module_global_colors_info = json_decode( $settings_filtered['global_colors_info'], true );
+						} else {
+							// Nothing more to be done here if this module's `global_colors_info` setting is empty,
+							// so advance the `$preset_structure->presets as $preset_id => $preset` loop.
+							continue;
+						}
+
+						/**
+						 * Presets: Global Color injection.
+						 *
+						 * Find GCID references and replace them with their CSS color values.
+						 */
+
+						// Gather system-wide Global Colors info (including CSS color values and 'active' status).
+						$all_global_colors_info = et_get_option( 'et_global_colors' );
+
+						foreach ( $module_global_colors_info as $gcid => $settings_that_use_this_gcid ) {
+							if ( empty( $settings_that_use_this_gcid ) ) {
+								continue;
+							}
+
+							// Get the CSS color value assiciated with this GCID.
+							if ( ! empty( $all_global_colors_info[ $gcid ]['color'] ) ) {
+								$gcid_color_value = $all_global_colors_info[ $gcid ]['color'];
+							} else {
+								// We can't inject the CSS color value if we don't have record of it.
+								continue;
+							}
+
+							// For matching settings, replace CSS color values with their GCIDs.
+							foreach ( $settings_that_use_this_gcid as $uses_this_gcid ) {
+								$settings_match = $settings_filtered[ $uses_this_gcid ];
+
+								// Replace CSS color value with GCID wherever it's found within the settings string.
+								$injected_gcid = str_replace( $gcid, $gcid_color_value, $settings_match );
+
+								// Pass the GCID-injected string back to the preset setting.
+								$result->$module->presets->$preset_id->settings->$uses_this_gcid = $injected_gcid;
+							}
 						}
 					} else {
 						$result->$module->presets->$preset->settings = (object) array();

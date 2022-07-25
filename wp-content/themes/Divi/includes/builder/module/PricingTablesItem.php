@@ -92,8 +92,8 @@ class ET_Builder_Module_Pricing_Tables_Item extends ET_Builder_Module {
 				'body'               => array(
 					'label'          => et_builder_i18n( 'Body' ),
 					'css'            => array(
-						'main'         => "{$this->main_css_element} .et_pb_pricing li",
-						'limited_main' => "{$this->main_css_element} .et_pb_pricing li, {$this->main_css_element} .et_pb_pricing li span, {$this->main_css_element} .et_pb_pricing li a",
+						'main'         => "{$this->main_css_element} ul.et_pb_pricing li",
+						'limited_main' => "{$this->main_css_element} ul.et_pb_pricing li, {$this->main_css_element} ul.et_pb_pricing li span, {$this->main_css_element} ul.et_pb_pricing li a",
 					),
 					'line_height'    => array(
 						'range_settings' => array(
@@ -140,7 +140,7 @@ class ET_Builder_Module_Pricing_Tables_Item extends ET_Builder_Module {
 				'currency_frequency' => array(
 					'label'           => esc_html__( 'Currency &amp; Frequency', 'et_builder' ),
 					'css'             => array(
-						'main' => "{$this->main_css_element} .et_pb_dollar_sign, {$this->main_css_element} .et_pb_frequency",
+						'main' => "{$this->main_css_element} .et_pb_et_price .et_pb_dollar_sign, {$this->main_css_element} .et_pb_et_price .et_pb_frequency",
 					),
 					'hide_text_align' => true,
 				),
@@ -646,16 +646,18 @@ class ET_Builder_Module_Pricing_Tables_Item extends ET_Builder_Module {
 			'<div class="%1$s">
 				%10$s
 				%9$s
+				%11$s
+				%12$s
 				<div class="et_pb_pricing_heading">
 					%2$s
 					%3$s
-				</div> <!-- .et_pb_pricing_heading -->
+				</div>
 				<div class="et_pb_pricing_content_top">
 					<span class="et_pb_et_price">%6$s%7$s%8$s</span>
-				</div> <!-- .et_pb_pricing_content_top -->
+				</div>
 				<div class="et_pb_pricing_content">
 					%4$s
-				</div> <!-- .et_pb_pricing_content -->
+				</div>
 				%5$s
 			</div>',
 			$this->module_classname( $render_slug ),
@@ -667,7 +669,9 @@ class ET_Builder_Module_Pricing_Tables_Item extends ET_Builder_Module {
 			et_core_esc_previously( $sum ),
 			et_core_esc_previously( $per ),
 			$video_background,
-			$parallax_image_background
+			$parallax_image_background,
+			et_core_esc_previously( $this->background_pattern() ), // #11
+			et_core_esc_previously( $this->background_mask() ) // #12
 		);
 
 		return $output;
@@ -720,4 +724,6 @@ class ET_Builder_Module_Pricing_Tables_Item extends ET_Builder_Module {
 	}
 }
 
-new ET_Builder_Module_Pricing_Tables_Item();
+if ( et_builder_should_load_all_module_data() ) {
+	new ET_Builder_Module_Pricing_Tables_Item();
+}

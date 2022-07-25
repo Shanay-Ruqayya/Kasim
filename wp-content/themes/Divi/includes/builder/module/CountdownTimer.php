@@ -188,7 +188,7 @@ class ET_Builder_Module_Countdown_Timer extends ET_Builder_Module {
 		$date_time            = $this->props['date_time'];
 		$use_background_color = $this->props['use_background_color'];
 		$end_date             = gmdate( 'M d, Y H:i:s', strtotime( $date_time ) );
-		$gmt_offset           = get_option( 'gmt_offset' );
+		$gmt_offset           = strval( get_option( 'gmt_offset' ) );
 		$gmt_divider          = '-' === substr( $gmt_offset, 0, 1 ) ? '-' : '+';
 		$gmt_offset_hour      = str_pad( abs( intval( $gmt_offset ) ), 2, '0', STR_PAD_LEFT );
 		$gmt_offset_minute    = str_pad( ( ( abs( $gmt_offset ) * 100 ) % 100 ) * ( 60 / 100 ), 2, '0', STR_PAD_LEFT );
@@ -213,6 +213,8 @@ class ET_Builder_Module_Countdown_Timer extends ET_Builder_Module {
 			'<div%1$s class="%2$s"%3$s data-end-timestamp="%4$s"%16$s>
 				%15$s
 				%14$s
+				%17$s
+				%18$s
 				<div class="et_pb_countdown_timer_container clearfix">
 					%5$s
 					<div class="days section values" data-short="%13$s" data-full="%6$s">
@@ -251,7 +253,9 @@ class ET_Builder_Module_Countdown_Timer extends ET_Builder_Module {
 			esc_attr__( 'Day', 'et_builder' ),
 			$video_background,
 			$parallax_image_background, // #15
-			et_core_esc_previously( $data_background_layout )
+			et_core_esc_previously( $data_background_layout ),
+			et_core_esc_previously( $this->background_pattern() ), // #17
+			et_core_esc_previously( $this->background_mask() ) // #18
 		);
 
 		return $output;
@@ -294,4 +298,6 @@ class ET_Builder_Module_Countdown_Timer extends ET_Builder_Module {
 	}
 }
 
-new ET_Builder_Module_Countdown_Timer();
+if ( et_builder_should_load_all_module_data() ) {
+	new ET_Builder_Module_Countdown_Timer();
+}

@@ -340,6 +340,20 @@ class ET_Builder_Module_Comments extends ET_Builder_Module {
 				'mobile_options'   => true,
 				'hover'            => 'tabs',
 			),
+			'show_meta'   => array(
+				'label'            => esc_html__( 'Show Meta', 'et_builder' ),
+				'type'             => 'yes_no_button',
+				'option_category'  => 'configuration',
+				'options'          => array(
+					'on'  => esc_html__( 'Yes', 'et_builder' ),
+					'off' => esc_html__( 'No', 'et_builder' ),
+				),
+				'default_on_front' => 'on',
+				'toggle_slug'      => 'elements',
+				'description'      => esc_html__( 'Turn meta on or off.', 'et_builder' ),
+				'mobile_options'   => true,
+				'hover'            => 'tabs',
+			),
 		);
 
 		return $fields;
@@ -466,6 +480,8 @@ class ET_Builder_Module_Comments extends ET_Builder_Module {
 		$show_avatar               = $this->props['show_avatar'];
 		$show_reply                = $this->props['show_reply'];
 		$show_count                = $this->props['show_count'];
+		$show_meta                 = $this->props['show_meta'];
+		$show_rating               = et_()->array_get( $this->props, 'show_rating', '' );
 		$header_level              = $this->props['header_level'];
 		$video_background          = $this->video_background();
 		$parallax_image_background = $this->get_parallax_image_background();
@@ -528,20 +544,35 @@ class ET_Builder_Module_Comments extends ET_Builder_Module {
 			$this->add_classname( 'et_pb_no_comments_count' );
 		}
 
+		if ( 'off' === $show_meta ) {
+			$this->add_classname( 'et_pb_no_comments_meta' );
+		}
+
+		if ( 'off' === $show_rating ) {
+			$this->add_classname( 'et_pb_no_comments_rating' );
+		}
+
 		// Removed automatically added classname
 		$this->remove_classname( $render_slug );
 
 		$multi_view_data_attr = $multi_view->render_attrs(
 			array(
 				'classes' => array(
-					'et_pb_no_avatar'         => array(
+					'et_pb_no_avatar'          => array(
 						'show_avatar' => 'off',
 					),
-					'et_pb_no_reply_button'   => array(
+					'et_pb_no_reply_button'    => array(
 						'show_reply' => 'off',
 					),
-					'et_pb_no_comments_count' => array(
+					'et_pb_no_comments_count'  => array(
 						'show_count' => 'off',
+					),
+					'et_pb_no_comments_meta'   => array(
+						'show_meta' => 'off',
+					),
+					/* WooCommerce Reviews Module uses the following class. */
+					'et_pb_no_comments_rating' => array(
+						'show_rating' => 'off',
 					),
 				),
 			)
@@ -550,6 +581,8 @@ class ET_Builder_Module_Comments extends ET_Builder_Module {
 		$output = sprintf(
 			'<div%3$s class="%2$s"%4$s%7$s%8$s%9$s%10$s>
 				%5$s
+				%11$s
+				%12$s
 				%6$s
 				%1$s
 			</div>',
@@ -562,14 +595,18 @@ class ET_Builder_Module_Comments extends ET_Builder_Module {
 			et_core_esc_previously( $data_background_layout ),
 			'' !== $comments_custom_icon_tablet ? sprintf( ' data-icon-tablet="%1$s"', esc_attr( et_pb_process_font_icon( $comments_custom_icon_tablet ) ) ) : '',
 			'' !== $comments_custom_icon_phone ? sprintf( ' data-icon-phone="%1$s"', esc_attr( et_pb_process_font_icon( $comments_custom_icon_phone ) ) ) : '',
-			$multi_view_data_attr // #10
+			$multi_view_data_attr, // #10
+			et_core_esc_previously( $this->background_pattern() ), // #11
+			et_core_esc_previously( $this->background_mask() ) // #12
 		);
 
 		return $output;
 	}
 }
 
-new ET_Builder_Module_Comments();
+if ( et_builder_should_load_all_module_data() ) {
+	new ET_Builder_Module_Comments();
+}
 
 if ( et_is_woocommerce_plugin_active() && defined( 'ET_BUILDER_DIR' ) ) {
 	// Use separate files for better organization.

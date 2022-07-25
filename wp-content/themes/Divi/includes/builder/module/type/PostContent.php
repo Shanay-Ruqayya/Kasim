@@ -23,7 +23,7 @@ abstract class ET_Builder_Module_Type_PostContent extends ET_Builder_Module {
 					'label'       => et_builder_i18n( 'Link' ),
 					'css'         => array(
 						'main'  => "{$this->main_css_element} a",
-						'color' => "{$this->main_css_element}.et_pb_post_content a",
+						'color' => "{$this->main_css_element}.{$this->slug} a",
 					),
 					'line_height' => array(
 						'default' => '1em',
@@ -38,7 +38,7 @@ abstract class ET_Builder_Module_Type_PostContent extends ET_Builder_Module {
 					'label'       => esc_html__( 'Unordered List', 'et_builder' ),
 					'css'         => array(
 						'main'        => "{$this->main_css_element} ul li",
-						'color'       => "{$this->main_css_element}.et_pb_post_content ul li",
+						'color'       => "{$this->main_css_element}.{$this->slug} ul li",
 						'line_height' => "{$this->main_css_element} ul li",
 						'item_indent' => "{$this->main_css_element} ul",
 					),
@@ -55,7 +55,7 @@ abstract class ET_Builder_Module_Type_PostContent extends ET_Builder_Module {
 					'label'       => esc_html__( 'Ordered List', 'et_builder' ),
 					'css'         => array(
 						'main'        => "{$this->main_css_element} ol",
-						'color'       => "{$this->main_css_element}.et_pb_post_content ol",
+						'color'       => "{$this->main_css_element}.{$this->slug} ol",
 						'line_height' => "{$this->main_css_element} ol li",
 						'item_indent' => "{$this->main_css_element} ol",
 					),
@@ -72,7 +72,7 @@ abstract class ET_Builder_Module_Type_PostContent extends ET_Builder_Module {
 					'label'       => esc_html__( 'Blockquote', 'et_builder' ),
 					'css'         => array(
 						'main'  => "{$this->main_css_element} blockquote",
-						'color' => "{$this->main_css_element}.et_pb_post_content blockquote",
+						'color' => "{$this->main_css_element}.{$this->slug} blockquote",
 					),
 					'line_height' => array(
 						'default' => '1em',
@@ -176,10 +176,14 @@ abstract class ET_Builder_Module_Type_PostContent extends ET_Builder_Module {
 							'border_radii'  => "{$this->main_css_element} img",
 							'border_styles' => "{$this->main_css_element} img",
 						),
+						'important' => 'all',
 					),
 					'label_prefix' => et_builder_i18n( 'Image' ),
 					'tab_slug'     => 'advanced',
 					'toggle_slug'  => 'image',
+				),
+				'css'     => array(
+					'important' => 'all',
 				),
 			),
 			'box_shadow'     => array(
@@ -493,8 +497,10 @@ abstract class ET_Builder_Module_Type_PostContent extends ET_Builder_Module {
 			'<div%3$s class="%2$s"%6$s%7$s%8$s>
 				%5$s
 				%4$s
+				%9$s
+				%10$s
 				%1$s
-			</div> <!-- .et_pb_post_content -->',
+			</div>',
 			et_theme_builder_frontend_render_post_content(),
 			$this->module_classname( $render_slug ),
 			$this->module_id(),
@@ -502,7 +508,9 @@ abstract class ET_Builder_Module_Type_PostContent extends ET_Builder_Module {
 			$parallax_image_background, // #5
 			et_core_esc_previously( $data_background_layout ),
 			et_core_esc_previously( $data_background_layout_hover ),
-			et_core_esc_previously( $data_remove_top_window_classname )
+			et_core_esc_previously( $data_remove_top_window_classname ),
+			et_core_esc_previously( $this->background_pattern() ), // #9
+			et_core_esc_previously( $this->background_mask() ) // #10
 		);
 
 		return $output;

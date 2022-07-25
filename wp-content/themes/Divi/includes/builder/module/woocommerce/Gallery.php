@@ -10,6 +10,12 @@
  * @since   3.29
  */
 
+defined( 'ABSPATH' ) || exit;
+
+if ( ! class_exists( 'ET_Builder_Module_Gallery' ) ) {
+	require_once ET_BUILDER_DIR_RESOLVED_PATH . '/module/Gallery.php';
+}
+
 /**
  * Class representing WooCommerce Gallery component.
  */
@@ -22,9 +28,10 @@ class ET_Builder_Module_Woocommerce_Gallery extends ET_Builder_Module_Gallery {
 	public function init() {
 		parent::init();
 
-		$this->name             = esc_html__( 'Woo Gallery', 'et_builder' );
-		$this->plural           = esc_html__( 'Woo Galleries', 'et_builder' );
+		$this->name             = esc_html__( 'Woo Product Gallery', 'et_builder' );
+		$this->plural           = esc_html__( 'Woo Product Gallery', 'et_builder' );
 		$this->slug             = 'et_pb_wc_gallery';
+		$this->folder_name      = 'et_pb_woo_modules';
 		$this->main_css_element = '%%order_class%%';
 
 		// Intentionally removing inherited options group.
@@ -173,9 +180,42 @@ class ET_Builder_Module_Woocommerce_Gallery extends ET_Builder_Module_Gallery {
 	}
 
 	/**
+	 * Gets Placeholder ID as Gallery IDs when in TB mode.
+	 *
+	 * @see   https://github.com/elegantthemes/Divi/issues/18768
+	 *
+	 * @since 4.10.8
+	 *
+	 * @param array $conditional_tags Conditional Tags.
+	 *
+	 * @return array Array containing placeholder Id when in TB mode. Empty array otherwise.
+	 */
+	public static function get_gallery_ids( $conditional_tags ) {
+		if ( ! is_array( $conditional_tags ) ) {
+			return array();
+		}
+
+		$is_tb = et_()->array_get( $conditional_tags, 'is_tb', false );
+
+		if ( ! $is_tb || ! function_exists( 'wc_placeholder_img_src' ) ) {
+			return array();
+		}
+
+		$placeholder_src = wc_placeholder_img_src( 'full' );
+		$placeholder_id  = attachment_url_to_postid( $placeholder_src );
+
+		if ( 0 === absint( $placeholder_id ) ) {
+			return array();
+		}
+
+		return array( $placeholder_id );
+	}
+
+	/**
 	 * Computed callback's callback method which adjusted arguments passed to original computed
 	 * callback's callback so the result is suitable for Woo Gallery module
 	 *
+	 * @since 4.10.8 Load Placeholder Image when in TB mode.
 	 * @since 3.29
 	 *
 	 * @param array $args             Arguments from Computed Prop AJAX call.
@@ -185,7 +225,7 @@ class ET_Builder_Module_Woocommerce_Gallery extends ET_Builder_Module_Gallery {
 	 * @return array
 	 */
 	public static function get_wc_gallery( $args = array(), $conditional_tags = array(), $current_page = array() ) {
-		if ( 'current' === $args['product'] && 'true' === et_()->array_get( $conditional_tags, 'is_tb', false ) ) {
+		if ( 'current' === $args['product'] && 'true' === et_()->array_get( $conditional_tags, 'is_tb', false ) || is_et_pb_preview() ) {
 			et_theme_builder_wc_set_global_objects( $conditional_tags );
 
 			global $product;
@@ -199,6 +239,11 @@ class ET_Builder_Module_Woocommerce_Gallery extends ET_Builder_Module_Gallery {
 		if ( $product ) {
 			$featured_image_id = intval( $product->get_image_id() );
 			$attachment_ids    = $product->get_gallery_image_ids();
+		}
+
+		// Load placeholder Image when in TB.
+		if ( is_array( $attachment_ids ) && empty( $attachment_ids ) ) {
+			$attachment_ids = self::get_gallery_ids( $conditional_tags );
 		}
 
 		// Modify `gallery_ids` value.

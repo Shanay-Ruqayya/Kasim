@@ -10,6 +10,8 @@
  * @since   3.29
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Class representing WooCommerce Breadcrumb component.
  */
@@ -25,10 +27,11 @@ class ET_Builder_Module_Woocommerce_Breadcrumb extends ET_Builder_Module {
 	 * Initialize.
 	 */
 	public function init() {
-		$this->name             = esc_html__( 'Woo Breadcrumb', 'et_builder' );
+		$this->name             = esc_html__( 'Woo Breadcrumbs', 'et_builder' );
 		$this->plural           = esc_html__( 'Woo Breadcrumbs', 'et_builder' );
 		$this->slug             = 'et_pb_wc_breadcrumb';
 		$this->vb_support       = 'on';
+		$this->folder_name      = 'et_pb_woo_modules';
 		$this->main_css_element = '%%order_class%% .woocommerce-breadcrumb';
 
 		$this->settings_modal_toggles = array(
@@ -96,6 +99,10 @@ class ET_Builder_Module_Woocommerce_Breadcrumb extends ET_Builder_Module {
 				),
 			),
 			'background'     => array(
+				'css'      => array(
+					// Backgrounds need to be applied to module wrapper.
+					'main' => '%%order_class%%.et_pb_wc_breadcrumb',
+				),
 				'settings' => array(
 					'color' => 'alpha',
 				),
@@ -245,7 +252,7 @@ class ET_Builder_Module_Woocommerce_Breadcrumb extends ET_Builder_Module {
 		$layout_post_id     = ET_Builder_Element::get_layout_id();
 		$is_fb              = et_core_is_fb_enabled() && $main_query_post_id === $layout_post_id;
 
-		if ( ! et_fb_is_resolve_post_content_callback_ajax() && ( $is_fb || et_fb_is_builder_ajax() || et_fb_is_computed_callback_ajax() ) ) {
+		if ( ! et_fb_is_resolve_post_content_callback_ajax() && ( $is_fb || et_fb_is_builder_ajax() || et_fb_is_computed_callback_ajax() || is_et_pb_preview() ) ) {
 			$args = wp_parse_args(
 				array(
 					'breadcrumb_home_text' => '%HOME_TEXT%',

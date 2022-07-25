@@ -206,9 +206,9 @@ class ET_Builder_Module_Field_Divider extends ET_Builder_Module_Field_Base {
 							'min'       => 1,
 							'max'       => 20,
 							'step'      => 1,
-							'min_limit' => 0,
+							'min_limit' => 1, // Changed to 1 from 0 since it's basically the same result for both values.
 						),
-						'default'        => '1x',
+						'default'        => '1', // Dont use the fixed_unit in default value ( i.e. 1x, just use 1 ), or else input will return undefined.
 						'fixed_unit'     => 'x',
 						'show_if_not'    => array(
 							"{$placement}_divider_style" => array( 'none', 'clouds', 'clouds2', 'triangle' ),
@@ -448,23 +448,12 @@ class ET_Builder_Module_Field_Divider extends ET_Builder_Module_Field_Base {
 		// z-index - determined by arrangement.
 		$declaration['z-index'] = ( 'on' === $fullwidth || 'above_content' === $arrangement ) ? 10 : 1;
 
-		$flip_styles = array();
-		// flipping the svg x|y
-		if ( in_array( 'horizontal', $flip ) ) {
-			$flip_styles[] = 'rotateY(180deg)';
-		} elseif ( '' !== $breakpoint ) {
-			$flip_styles[] = 'rotateY(0)';
-		}
+		$flip_styles = array(
+			in_array( 'horizontal', $flip, true ) ? '-1' : '1',
+			in_array( 'vertical', $flip, true ) ? '-1' : '1',
+		);
 
-		if ( in_array( 'vertical', $flip ) ) {
-			$flip_styles[] = 'rotateX(180deg)';
-		} elseif ( '' !== $breakpoint ) {
-			$flip_styles[] = 'rotateX(0)';
-		}
-
-		if ( ! empty( $flip_styles ) ) {
-			$declaration['transform'] = implode( ' ', $flip_styles );
-		}
+		$declaration['transform'] = 'scale(' . implode( ', ', $flip_styles ) . ')';
 
 		// finally create our CSS declaration.
 		$css = '';

@@ -214,6 +214,12 @@ class ET_Builder_Block_Editor_Integration {
 			'status'      => get_site_option( 'et_account_status', 'not_active' ),
 		);
 
+		if ( defined( 'ET_CLOUD_PLUGIN_DIR' ) ) {
+			$library_i18n = require ET_CLOUD_PLUGIN_DIR . '/i18n/library.php';
+		} else {
+			$library_i18n = require get_template_directory() . '/cloud/i18n/library.php';
+		}
+
 		// Set helpers needed by our own Gutenberg bundle.
 		$gutenberg = array(
 			'helpers'       => array(
@@ -243,6 +249,7 @@ class ET_Builder_Block_Editor_Integration {
 							'default' => esc_html__( 'Use Default Editor', 'et_builder' ),
 						),
 					),
+					'library'     => $library_i18n,
 				),
 			),
 
@@ -265,11 +272,11 @@ class ET_Builder_Block_Editor_Integration {
 				'et_block_layout_preview'             => wp_create_nonce( 'et_block_layout_preview' ),
 				'et_rest_get_layout_content'          => wp_create_nonce( 'et_rest_get_layout_content' ),
 				'et_rest_process_builder_edit_data'   => wp_create_nonce( 'et_rest_process_builder_edit_data' ),
+				'et_fb_shortcode_to_html_nonce'       => wp_create_nonce( 'et_fb_shortcode_to_html_nonce' ),
 			),
 			'urls'          => array(
-				'adminAjax'   => admin_url( 'admin-ajax.php' ),
-				'diviLibrary' => ET_BUILDER_DIVI_LIBRARY_URL,
-				'home'        => home_url( '/' ),
+				'adminAjax' => admin_url( 'admin-ajax.php' ),
+				'home'      => home_url( '/' ),
 			),
 			/**
 			 * Make DOM selectors list filterable so third party can modified it if needed
@@ -308,6 +315,30 @@ class ET_Builder_Block_Editor_Integration {
 
 		// Set translated strings for the scripts.
 		wp_set_script_translations( 'et-builder-gutenberg', 'et_builder', ET_BUILDER_DIR . 'languages' );
+
+		ET_Cloud_App::load_js( true, true );
+
+		// Block Editor Styles.
+		// Divi Layout Block.
+		wp_register_style( 'et-block-divi-library-editor', ET_BUILDER_URI . '/frontend-builder/assets/css/block-editor/divi-library-editor.css', array(), ET_BUILDER_VERSION );
+		wp_register_style( 'et-block-layout-editor', ET_BUILDER_URI . '/frontend-builder/assets/css/block-editor/layout-editor.css', array( 'et-block-divi-library-editor' ), ET_BUILDER_VERSION );
+
+		register_block_type(
+			'et-block-editor/et-block-layout-editor-stylesheets',
+			array(
+				'editor_style' => 'et-block-layout-editor',
+			)
+		);
+
+		// Divi Placeholder Block.
+		wp_register_style( 'et-block-placeholder-editor', ET_BUILDER_URI . '/frontend-builder/assets/css/block-editor/placeholder-editor.css', array( 'et-core-admin' ), ET_BUILDER_VERSION );
+
+		register_block_type(
+			'et-block-editor/et-block-placeholder-editor-stylesheets',
+			array(
+				'editor_style' => 'et-block-placeholder-editor',
+			)
+		);
 	}
 
 	/**
@@ -675,8 +706,16 @@ class ET_Builder_Block_Editor_Integration {
 	 * @return void
 	 */
 	public function init_hooks() {
+		global $pagenow;
+
+		$edit_page_names = array( 'post.php', 'post-new.php', 'site-editor.php' );
+		$is_editing_page = in_array( $pagenow, $edit_page_names, true );
+
 		if ( is_admin() ) {
-			add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ), 4 );
+			// Load assets on post editing pages only.
+			if ( $is_editing_page ) {
+				add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ), 4 );
+			}
 			add_action( 'admin_print_scripts-edit.php', array( $this, 'add_new_button' ), 10 );
 			add_action( 'admin_init', array( $this, 'add_edit_link_filters' ) );
 
@@ -748,6 +787,13 @@ class ET_Builder_Block_Editor_Integration {
 			'type'          => 'string',
 		);
 		register_meta( 'post', '_et_gb_content_width', $args );
+
+
+
+		if ( $is_editing_page ) {
+			// Load Library and Cloud.
+			et_builder_load_library();
+		}
 	}
 }
 

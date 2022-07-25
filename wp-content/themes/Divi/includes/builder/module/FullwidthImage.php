@@ -309,14 +309,28 @@ class ET_Builder_Module_Fullwidth_Image extends ET_Builder_Module {
 					'icon_sticky' => $hover_icon_sticky,
 				)
 			);
+
+			// Overlay Icon Styles.
+			$this->generate_styles(
+				array(
+					'hover'          => false,
+					'utility_arg'    => 'icon_font_family',
+					'render_slug'    => $render_slug,
+					'base_attr_name' => 'hover_icon',
+					'important'      => true,
+					'selector'       => '%%order_class%% .et_overlay:before',
+					'processor'      => array(
+						'ET_Builder_Module_Helper_Style_Processor',
+						'process_extended_icon',
+					),
+				)
+			);
 		}
 
 		$image_attrs = array(
-			'src'    => '{{src}}',
-			'alt'    => esc_attr( $alt ),
-			'title'  => esc_attr( $title_text ),
-			'height' => 'auto',
-			'width'  => 'auto',
+			'src'   => '{{src}}',
+			'alt'   => esc_attr( $alt ),
+			'title' => esc_attr( $title_text ),
 		);
 
 		$image_attachment_class = et_pb_media_options()->get_image_attachment_class( $this->props, 'src' );
@@ -369,17 +383,23 @@ class ET_Builder_Module_Fullwidth_Image extends ET_Builder_Module {
 			'<div%3$s class="%2$s">
 				%5$s
 				%4$s
+				%6$s
+				%7$s
 				%1$s
 			</div>',
 			$output,
 			$this->module_classname( $render_slug ),
 			$this->module_id(),
 			$video_background,
-			$parallax_image_background
+			$parallax_image_background,
+			et_core_esc_previously( $this->background_pattern() ), // #6
+			et_core_esc_previously( $this->background_mask() ) // #7
 		);
 
 		return $output;
 	}
 }
 
-new ET_Builder_Module_Fullwidth_Image();
+if ( et_builder_should_load_all_module_data() ) {
+	new ET_Builder_Module_Fullwidth_Image();
+}

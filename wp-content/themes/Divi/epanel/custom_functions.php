@@ -300,8 +300,20 @@ if ( ! function_exists( 'et_delete_option' ) ) {
 
 /*this function allows for the auto-creation of post excerpts*/
 if ( ! function_exists( 'truncate_post' ) ) {
-
-	function truncate_post( $amount, $echo = true, $post = '', $strip_shortcodes = false ) {
+	/**
+	 * Truncate post content to generate post excerpt.
+	 *
+	 * @since ?? Add new paramter $is_words_length to cut the text based on words length.
+	 *
+	 * @param integer $amount           Amount of text that should be kept.
+	 * @param boolean $echo             Whether to print the output or not.
+	 * @param object  $post             Post object.
+	 * @param boolean $strip_shortcodes Whether to strip the shortcodes or not.
+	 * @param boolean $is_words_length  Whether to cut the text based on words length or not.
+	 *
+	 * @return string Generated post post excerpt.
+	 */
+	function truncate_post( $amount, $echo = true, $post = '', $strip_shortcodes = false, $is_words_length = false ) {
 		global $shortname;
 
 		if ( empty( $post ) ) global $post;
@@ -373,8 +385,20 @@ if ( ! function_exists( 'truncate_post' ) ) {
 				// $amount = $amount - 3;
 			}
 
-			// trim text to a certain number of characters, also remove spaces from the end of a string ( space counts as a character )
-			$truncate = rtrim( et_wp_trim_words( $truncate, $amount, '' ) );
+			$trim_words = '';
+
+			if ( $is_words_length ) {
+				// Reset `$echo_out` text because it will be added by wp_trim_words() with
+				// default WordPress `excerpt_more` text.
+				$echo_out     = '';
+				$excerpt_more = apply_filters( 'excerpt_more', ' [&hellip;]' );
+				$trim_words   = wp_trim_words( $truncate, $amount, $excerpt_more );
+			} else {
+				$trim_words = et_wp_trim_words( $truncate, $amount, '' );
+			}
+
+			// trim text to a certain number of characters, also remove spaces from the end of a string ( space counts as a character ).
+			$truncate = rtrim( $trim_words );
 
 			// remove the last word to make sure we display all words correctly
 			if ( ! empty( $echo_out ) ) {
@@ -498,7 +522,7 @@ if ( ! function_exists( 'get_thumbnail' ) ) {
 
 		$new_method = true;
 
-		if ( has_post_thumbnail( $post->ID ) ) {
+		if ( has_post_thumbnail( $post->ID ) || 'attachment' === $post->post_type ) {
 			$thumb_array['use_timthumb'] = false;
 
 			$et_fullpath = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
@@ -763,7 +787,7 @@ if ( ! function_exists( 'show_page_menu' ) ) {
 
 		//excluded pages
 		if ( $menupages = et_get_option( $shortname.'_menupages' ) ) {
-			$exclude_pages = implode( ",", $menupages );
+			$exclude_pages = is_array( $menupages ) ? implode( ',', $menupages ) : '';
 		}
 
 		//dropdown for pages
@@ -801,7 +825,7 @@ if ( ! function_exists( 'show_categories_menu' ) ) {
 
 		//excluded categories
 		if ( $menucats = et_get_option( $shortname.'_menucats' ) ) {
-			$exclude_cats = implode( ",", $menucats );
+			$exclude_cats = implode( ',', (array) $menucats );
 		}
 
 		//hide empty categories
@@ -1074,7 +1098,7 @@ if ( ! function_exists( 'elegant_titles_filter' ) ) {
 		#if the title is being displayed on the homepage
 		if ( ( is_home() || is_front_page() ) && ! elegant_is_blog_posts_page() ) {
 			if ( 'on' === et_get_option( $shortname . '_seo_home_title' ) ) {
-				$custom_title = et_get_option( $shortname . '_seo_home_titletext' );
+				$custom_title = strval( et_get_option( $shortname . '_seo_home_titletext' ) );
 			} else {
 				$seo_home_type = et_get_option( $shortname . '_seo_home_type' );
 				$seo_home_separate = et_get_option( $shortname . '_seo_home_separate' );
@@ -1327,12 +1351,12 @@ add_action( 'wp_head', 'add_favicon' );
 function add_favicon(){
 	global $shortname;
 
-	$faviconUrl = et_get_option( $shortname.'_favicon' );
+	$favicon_url = et_get_option( $shortname . '_favicon' );
 
 	// If the `has_site_icon` function doesn't exist (ie we're on < WP 4.3) or if the site icon has not been set,
 	// and when we have a icon URL from theme option
-	if ( ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) && '' !== $faviconUrl ) {
-		echo '<link rel="shortcut icon" href="' . esc_url( $faviconUrl ) . '" />';
+	if ( ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) && ! empty( $favicon_url ) ) {
+		echo '<link rel="shortcut icon" href="' . esc_url( $favicon_url ) . '" />';
 	} elseif ( function_exists( 'has_site_icon' ) && has_site_icon() ) {
 		et_update_option( $shortname . '_favicon', '' );
 	}
@@ -1353,7 +1377,7 @@ function et_create_images_temp_folder(){
 	if ( false !== $et_images_temp_folder ) return;
 
 	$uploads_dir = wp_upload_dir();
-	$destination_dir = ( false === $uploads_dir['error'] ) ? path_join( $uploads_dir['basedir'], 'et_temp' ) : null;
+	$destination_dir = ( false === $uploads_dir['error'] ) ? path_join( $uploads_dir['basedir'], 'et_temp' ) : '';
 
 	if ( ! wp_mkdir_p( $destination_dir ) ) update_option( 'et_images_temp_folder', '' );
 	else {
@@ -1686,6 +1710,57 @@ function et_add_fullwidth_body_class( $classes ){
 	return $classes;
 }
 
+/**
+ * Enqueue legacy shortcodes' CSS.
+ *
+ * @since ??
+ */
+function et_add_legacy_shortcode_css() {
+	wp_enqueue_style(
+		'et-shortcodes-css',
+		ET_SHORTCODES_DIR . '/css/shortcodes-legacy.css',
+		array(),
+		ET_SHORTCODES_VERSION,
+		'all'
+	);
+
+	wp_enqueue_style(
+		'et-shortcodes-responsive-css',
+		ET_SHORTCODES_DIR . '/css/shortcodes_responsive.css',
+		false,
+		ET_SHORTCODES_VERSION,
+		'all'
+	);
+}
+
+/**
+ * Enqueue legacy shortcode JS.
+ *
+ * @return void
+ * @since ??
+ */
+function et_add_legacy_shortcode_js() {
+	global $themename;
+
+	$shortcode_strings_handle = apply_filters( 'et_shortcodes_strings_handle', 'et-shortcodes-js' );
+
+	wp_enqueue_script( 'et-shortcodes-js', ET_SHORTCODES_DIR . '/js/et_shortcodes_frontend.js', array( 'jquery' ), ET_SHORTCODES_VERSION, false );
+
+	wp_localize_script(
+		$shortcode_strings_handle,
+		'et_shortcodes_strings',
+		array(
+			'previous' => esc_html__( 'Previous', $themename ),
+			'next'     => esc_html__( 'Next', $themename ),
+		)
+	);
+}
+
+/**
+ * Enqueue responsive shortcode CSS in legacy themes when the ePanel option is enabled.
+ *
+ * @since ??
+ */
 function et_add_responsive_shortcodes_css() {
 	global $shortname;
 

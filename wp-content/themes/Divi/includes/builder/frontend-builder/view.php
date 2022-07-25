@@ -13,7 +13,9 @@ function et_fb_app_boot( $content ) {
 	$main_query_post      = ET_Post_Stack::get_main_post();
 	$main_query_post_type = $main_query_post ? $main_query_post->post_type : '';
 
-	if ( ET_Builder_Element::is_theme_builder_layout() && ! et_theme_builder_is_layout_post_type( $main_query_post_type ) ) {
+	if ( ET_Builder_Element::is_theme_builder_layout()
+		&& ! et_theme_builder_is_layout_post_type( $main_query_post_type )
+		&& is_singular() ) {
 		// Prevent boot if we are rendering a TB layout and not the real WP Query post.
 		return $content;
 	}
@@ -67,6 +69,15 @@ add_filter( 'wp_nav_menu', 'et_fb_wp_nav_menu' );
 function et_builder_maybe_include_bfb_template( $template ) {
 	if ( et_builder_bfb_enabled() && ! is_admin() ) {
 		return ET_BUILDER_DIR . 'frontend-builder/bfb-template.php';
+	}
+
+	// Load custom page template when editing Cloud Item.
+	if ( isset( $_GET['cloudItem'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification -- This function does not change any state, and is therefore not susceptible to CSRF.
+		if ( current_user_can( 'manage_options' ) || current_user_can( 'editor' ) ) {
+			wp_admin_bar_render();
+		}
+
+		return ET_BUILDER_DIR . 'templates/block-layout-preview.php';
 	}
 
 	return $template;
@@ -137,6 +148,10 @@ function et_fb_add_body_class( $classes ) {
 
 	if ( et_builder_tb_enabled() ) {
 		$classes[] = 'et-tb';
+	}
+
+	if ( isset( $_GET['cloudItem'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification -- This function does not change any state, and is therefore not susceptible to CSRF.
+		$classes[] = 'et-cloud-item-editor';
 	}
 
 	return $classes;

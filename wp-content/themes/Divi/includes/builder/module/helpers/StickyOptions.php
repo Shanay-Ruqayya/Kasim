@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Class ET_Builder_Module_Sticky_Options
  */
-class ET_Builder_Module_Sticky_Options {
+class ET_Builder_Module_Helper_Sticky_Options {
 
 	/**
 	 * Class instance object
@@ -36,7 +36,7 @@ class ET_Builder_Module_Sticky_Options {
 	 */
 	public static function get() {
 		if ( empty( self::$instance ) ) {
-			self::$instance = new ET_Builder_Module_Sticky_Options();
+			self::$instance = new ET_Builder_Module_Helper_Sticky_Options();
 		}
 
 		return self::$instance;
@@ -104,7 +104,11 @@ class ET_Builder_Module_Sticky_Options {
 	public function is_enabled( $setting, $attrs ) {
 		$name = 'background_color' === $setting ? 'background' : $setting;
 
-		return strpos( et_()->array_get( $attrs, $this->get_sticky_enabled_field( $name ) ), 'on' ) === 0;
+		$field = $this->get_sticky_enabled_field( $name );
+
+		$value = ! empty( $attrs[ $field ] ) ? $attrs[ $field ] : '';
+
+		return ! empty( $value ) && strpos( $value, 'on' ) === 0;
 	}
 
 	/**
@@ -284,15 +288,20 @@ class ET_Builder_Module_Sticky_Options {
 	 */
 	public function add_sticky_to_order_class( $selector, $is_sticky = true ) {
 		$selectors = explode( ',', $selector );
-		$selectors = array_map( 'trim', $selectors );
+		$selectors = array_map(
+			function( $selector ) use ( $is_sticky ) {
+				$selector = trim( $selector );
 
-		// If current selector is sticky module, sticky selector is directly attached; if it isn't
-		// it is safe to assume that the sticky selector is one of its parent DOM, hence the space.
-		if ( $is_sticky ) {
-			$selectors = preg_replace( '/(%%order_class%%)/i', '.et_pb_sticky$1', $selectors, 1 );
-		} else {
-			$selectors = preg_replace( '/(%%order_class%%)/i', '.et_pb_sticky $1', $selectors, 1 );
-		}
+				// If current selector is sticky module, sticky selector is directly attached; if it isn't
+				// it is safe to assume that the sticky selector is one of its parent DOM, hence the space.
+				if ( ! $is_sticky ) {
+					$selector = ' ' . $selector;
+				}
+
+				return '.et_pb_sticky' . $selector;
+			},
+			$selectors
+		);
 
 		return implode( ', ', $selectors );
 	}
@@ -313,7 +322,7 @@ class ET_Builder_Module_Sticky_Options {
 
 		foreach ( $fields as $name => $options ) {
 			// Get attribute value of current incompatible field from attributes.
-			$attr = et_()->array_get( $attrs, $name, false );
+			$attr = ! empty( $attrs[ $name ] ) ? $attrs[ $name ] : false;
 
 			// If the value exist on current incompatible field's options, stop loop and return true.
 			if ( in_array( $attr, $options, true ) ) {

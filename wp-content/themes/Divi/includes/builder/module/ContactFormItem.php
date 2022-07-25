@@ -402,7 +402,7 @@ class ET_Builder_Module_Contact_Form_Item extends ET_Builder_Module {
 		$form_field_text_color      = $this->props['form_field_text_color'];
 		$checkbox_checked           = $this->props['checkbox_checked'];
 		$checkbox_options           = $this->props['checkbox_options'];
-		$booleancheckbox_options    = $this->props['booleancheckbox_options'];
+		$booleancheckbox_options    = isset( $this->props['booleancheckbox_options'] ) ? $this->props['booleancheckbox_options'] : false;
 		$radio_options              = $this->props['radio_options'];
 		$select_options             = $this->props['select_options'];
 		$min_length                 = $this->props['min_length'];
@@ -418,6 +418,19 @@ class ET_Builder_Module_Contact_Form_Item extends ET_Builder_Module {
 		$field_text_color_values       = et_pb_responsive_options()->get_property_values( $this->props, 'form_field_text_color' );
 		$field_focus_text_color_hover  = $this->get_hover_value( 'form_field_focus_text_color' );
 		$field_focus_text_color_values = et_pb_responsive_options()->get_property_values( $this->props, 'form_field_focus_text_color' );
+
+		if ( ! empty( $attrs['form_field_text_color'] ) ) {
+			$this->generate_styles(
+				array(
+					'type'           => 'color',
+					'render_slug'    => $render_slug,
+					'base_attr_name' => 'form_field_text_color',
+					'css_property'   => 'color',
+					'selector'       => '%%order_class%% .input + label, %%order_class%% .input + label i:before',
+					'important'      => true,
+				)
+			);
+		}
 
 		// set a field ID.
 		if ( '' === $field_id ) {
@@ -564,26 +577,29 @@ class ET_Builder_Module_Contact_Form_Item extends ET_Builder_Module {
 			$condition_rows          = json_decode( $conditional_logic_rules );
 			$ruleset                 = array();
 
-			foreach ( $condition_rows as $condition_row ) {
-				$condition_value = isset( $condition_row->value ) ? $condition_row->value : '';
-				$condition_value = trim( $condition_value );
+			// Ensure the JSON has been decoded successfully without any errors.
+			if ( JSON_ERROR_NONE === json_last_error() ) {
+				foreach ( $condition_rows as $condition_row ) {
+					$condition_value = isset( $condition_row->value ) ? $condition_row->value : '';
+					$condition_value = trim( $condition_value );
 
-				$ruleset[] = array(
-					$condition_row->field,
-					$condition_row->condition,
-					$condition_value,
-				);
-			}
+					$ruleset[] = array(
+						$condition_row->field,
+						$condition_row->condition,
+						$condition_value,
+					);
+				}
 
-			if ( ! empty( $ruleset ) ) {
-				$json     = json_encode( $ruleset );
-				$relation = $conditional_logic_relation === 'off' ? 'any' : 'all';
+				if ( ! empty( $ruleset ) ) {
+					$json     = wp_json_encode( $ruleset );
+					$relation = 'off' === $conditional_logic_relation ? 'any' : 'all';
 
-				$conditional_logic_attr = sprintf(
-					' data-conditional-logic="%1$s" data-conditional-relation="%2$s"',
-					esc_attr( $json ),
-					$relation
-				);
+					$conditional_logic_attr = sprintf(
+						' data-conditional-logic="%1$s" data-conditional-relation="%2$s"',
+						esc_attr( $json ),
+						$relation
+					);
+				}
 			}
 		}
 
@@ -592,7 +608,7 @@ class ET_Builder_Module_Contact_Form_Item extends ET_Builder_Module {
 			case 'textarea':
 				$input_field = sprintf(
 					'<textarea name="et_pb_contact_%3$s_%2$s" id="et_pb_contact_%3$s_%2$s" class="et_pb_contact_message input" data-required_mark="%6$s" data-field_type="%4$s" data-original_id="%3$s" placeholder="%5$s"%7$s>%1$s</textarea>',
-					( isset( $_POST[ 'et_pb_contact_' . $field_id . '_' . $current_module_num ] ) ? esc_html( sanitize_text_field( $_POST[ 'et_pb_contact_' . $field_id . '_' . $current_module_num ] ) ) : '' ),
+					( isset( $_POST[ 'et_pb_contact_' . $field_id . '_' . $current_module_num ] ) ? esc_html( sanitize_textarea_field( $_POST[ 'et_pb_contact_' . $field_id . '_' . $current_module_num ] ) ) : '' ),
 					esc_attr( $current_module_num ),
 					esc_attr( $field_id ),
 					esc_attr( $field_type ),
@@ -885,6 +901,8 @@ class ET_Builder_Module_Contact_Form_Item extends ET_Builder_Module {
 			'<p class="%5$s"%6$s data-id="%3$s" data-type="%7$s">
 				%9$s
 				%8$s
+				%11$s
+				%12$s
 				<label for="et_pb_contact_%3$s_%2$s" class="et_pb_contact_form_label"%10$s>%1$s</label>
 				%4$s
 			</p>',
@@ -901,7 +919,9 @@ class ET_Builder_Module_Contact_Form_Item extends ET_Builder_Module {
 				array(
 					'content' => '{{field_title}}',
 				)
-			)
+			),
+			et_core_esc_previously( $this->background_pattern() ), // #11
+			et_core_esc_previously( $this->background_mask() ) // #12
 		);
 
 		return $output;
@@ -910,7 +930,7 @@ class ET_Builder_Module_Contact_Form_Item extends ET_Builder_Module {
 	/**
 	 * Checks if module has background.
 	 *
-	 * @since ??
+	 * @since 4.9.3
 	 *
 	 * @return bool
 	 */
@@ -918,8 +938,12 @@ class ET_Builder_Module_Contact_Form_Item extends ET_Builder_Module {
 		return 'on' === self::$_->array_get( $this->props, 'background_enable_color' )
 			|| 'on' === self::$_->array_get( $this->props, 'background_enable_image' )
 			|| 'on' === self::$_->array_get( $this->props, 'background_enable_video_mp4' )
-			|| 'on' === self::$_->array_get( $this->props, 'background_enable_video_webm' );
+			|| 'on' === self::$_->array_get( $this->props, 'background_enable_video_webm' )
+			|| 'on' === self::$_->array_get( $this->props, 'background_enable_pattern_style' )
+			|| 'on' === self::$_->array_get( $this->props, 'background_enable_mask_style' );
 	}
 }
 
-new ET_Builder_Module_Contact_Form_Item();
+if ( et_builder_should_load_all_module_data() ) {
+	new ET_Builder_Module_Contact_Form_Item();
+}
