@@ -8,6 +8,14 @@ Theme Name:     Divi Child
  Version:        1.0.0
 */
 
-html{
-    font-size: 18px;
-}
+
+/* Global Style */
+*{font-family: 'bignoodletitling';font-weight: 400;}
+
+html{ font-size: 18px; }
+
+.container{width: 85%;}
+
+#main-header .container{width: 95%;display: flex; justify-content: flex-end; align-items: center;}
+
+body #page-container{padding-top: 0px!important;}
