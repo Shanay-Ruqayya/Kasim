@@ -1,12 +1,47 @@
+/* Header */
+#main-header{background-color: transparent; box-shadow: none;}
+#main-header.et-fixed-header{ box-shadow: none!important;background-color: rgba(255,255,255, 0.2);}
+#main-header #et-top-navigation{padding: 0px;}
+#main-header #et-top-navigation #top-menu .menu-item{padding-right: 15px; font-size: 25px; }
+#main-header #et-top-navigation #top-menu .menu-item:hover a{opacity: 1;}
+#main-header #et-top-navigation #top-menu .menu-item a{padding: 44px 30px;color: #fff;}
+#main-header #et-top-navigation #top-menu .menu-item a:hover{background-color: #fff; border-radius: 0px 0px 10px 10px; color: #000;}
+.res-nav-main{display: none;}
 /* footer */
-body #main-footer .container #nav_menu-2 ul li a{ color: black; font-size: 18px;font-weight: 700;}
-body #main-footer .container #nav_menu-2{    width: 100%; text-align: center;}
-body #main-footer .container #nav_menu-2 ul{    display: flex; align-items: center; justify-content: center; margin: auto;}
+body #main-footer .container #nav_menu-2 ul li a{ color: black; }
+body #main-footer .container #nav_menu-2 ul{display: inline-flex;}
 body #main-footer .container #footer-widgets .footer-widget li:before {display: none;}
-body #main-footer .container #footer-widgets .footer-widget{ display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 0.38rem;}
-body #main-footer .container #footer-widgets .footer-widget .widget_block{margin-bottom: 1.055rem !important;}
-body #footer-bottom .container #footer-info {width: 100%;text-align: center;font-size: 18px;}
-body #footer-bottom{padding-top: 0;}
-body #main-footer .container #nav_menu-2 ul li:after { content: ''; top: 0; bottom: 0; margin: auto; position: absolute; display: block; width: 4px; height: 4px; background: black; border-radius: 100%; right: 0; }
-body #main-footer .container #nav_menu-2 ul li:last-child:after { display: none; }
-body #main-footer .container #nav_menu-2 ul li{padding: 0 28px}
+body #main-footer .container #footer-widgets .footer-widget{ display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+/* Responsive Media */
+@media only screen and (max-width: 1440px) {
+    /* header */
+    #main-header #et-top-navigation #top-menu .menu-item { font-size: 20px; }
+    #main-header #et-top-navigation #top-menu .menu-item a { padding: 34px 20px;}
+}
+@media only screen and (max-width: 1167px) {
+    /* Header */
+    #main-header #et-top-navigation #top-menu .menu-item { font-size: 16px; }
+    #main-header #et-top-navigation #top-menu .menu-item a { padding: 25px 18px; }
+}
+@media only screen and (max-width: 980px) {
+    /* header */
+    .et_header_style_left #et-top-navigation .mobile_menu_bar{padding: 30px 0px;}
+    .mobile_menu_bar:before{opacity: 0;}
+    .res-nav-main{display: block;}
+}
+
+
+
+/* Responsive Nav Bar */
+
+.res-nav-main { width: 50px; z-index: -1; position: absolute; top: 30px; right: 0px; }
+.hamburger .line:first-child{ width: 13px; margin: 6px 0px 6px 24px; }
+.hamburger .line{ width: 24px; height: 2px; background-color: #ecf0f1; display: block; margin: 6px auto; -webkit-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
+.hamburger:hover{ cursor: pointer; }
+#hamburger-ka.is-active{ -webkit-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; -webkit-transition-delay: 0.6s; -o-transition-delay: 0.6s; transition-delay: 0.6s; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
+#hamburger-ka.is-active .line:nth-child(2){ width: 0px; }  
+#hamburger-ka.is-active .line:nth-child(1),
+#hamburger-ka.is-active .line:nth-child(3){ -webkit-transition-delay: 0.3s; -o-transition-delay: 0.3s; transition-delay: 0.3s; }
+#hamburger-ka.is-active .line:nth-child(1){ -webkit-transform: translateY(13px); -ms-transform: translateY(13px); -o-transform: translateY(13px); transform: translateY(13px); margin: 6px auto; width: 24px; }
+#hamburger-ka.is-active .line:nth-child(3){ -webkit-transform: translateY(-3px) rotate(90deg); -ms-transform: translateY(-3px) rotate(90deg); -o-transform: translateY(-3px) rotate(90deg); transform: translateY(-3px) rotate(90deg); }
