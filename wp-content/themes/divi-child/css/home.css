@@ -8,7 +8,7 @@ body .home-banner .container .banner-image {
 
 body .home-banner{min-height: 1010px;overflow: hidden;}
 body .home-banner .container .banner-image img{height: 970px;
-    width: 830px;}
+    }
 body .home-banner .container .et_pb_column,body .home-banner .container{position: unset;}
 body .home-banner .container .et_pb_column{display: flex; align-items: center; justify-content: center;}
 body .home-banner{ position: relative;}
