@@ -8,10 +8,17 @@
 #main-header #et-top-navigation #top-menu .menu-item a:hover{background-color: #fff; border-radius: 0px 0px 10px 10px; color: #000;}
 .res-nav-main{display: none;}
 /* footer */
-body #main-footer .container #nav_menu-2 ul li a{ color: black; }
-body #main-footer .container #nav_menu-2 ul{display: inline-flex;}
+body #main-footer .container #nav_menu-2 ul li a{ color: black; font-size: 18px;font-weight: 700;}
+body #main-footer .container #nav_menu-2{    width: 100%; text-align: center;}
+body #main-footer .container #nav_menu-2 ul{    display: flex; align-items: center; justify-content: center; margin: auto;}
 body #main-footer .container #footer-widgets .footer-widget li:before {display: none;}
-body #main-footer .container #footer-widgets .footer-widget{ display: flex; flex-direction: column; align-items: center; justify-content: center; }
+body #main-footer .container #footer-widgets .footer-widget{ display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 0.38rem;}
+body #main-footer .container #footer-widgets .footer-widget .widget_block{margin-bottom: 1.055rem !important;}
+body #footer-bottom .container #footer-info {width: 100%;text-align: center;font-size: 18px;}
+body #footer-bottom{padding-top: 0;}
+body #main-footer .container #nav_menu-2 ul li:after { content: ''; top: 0; bottom: 0; margin: auto; position: absolute; display: block; width: 4px; height: 4px; background: black; border-radius: 100%; right: 0; }
+body #main-footer .container #nav_menu-2 ul li:last-child:after { display: none; }
+body #main-footer .container #nav_menu-2 ul li{padding: 0 28px} 
 
 /* Responsive Media */
 @media only screen and (max-width: 1440px) {
