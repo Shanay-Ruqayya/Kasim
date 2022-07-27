@@ -1,3 +1,18 @@
+/* Banner */
+body .home-banner .container .banner-image {
+    transform: rotate(-2.1deg);
+    position: absolute; bottom: -15px;
+    margin: 0;right: calc(50% - (830px/2));
+}
+body .home-banner{min-height: 970px;}
+body .home-banner .container .banner-image img{height: 970px;
+    width: 830px;}
+body .home-banner .container .et_pb_column,body .home-banner .container{position: unset;}
+body .home-banner{ position: relative;}
+body .home-banner .container .banner-title h2{font-size: 19.4rem;
+    line-height: 75.4%;color: #FFFFFF;word-spacing: 220px;text-align: center;padding-top: 220px;}
+    body .home-banner .container .banner-title h3{font-size: 2.1rem;line-height: 1.1em;color: #FFFFFF;letter-spacing: 0.125em;text-align: center;padding-top: 15px;}
+
 /* As seen on (Logo Section) */
 .banner-sub-section{padding: 75px 0px;}
 .banner-sub-section .banner-sub-content{padding: 0px;padding-top: 0px!important;}

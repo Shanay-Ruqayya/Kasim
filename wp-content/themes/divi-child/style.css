@@ -10,7 +10,7 @@ Theme Name:     Divi Child
 
 
 /* Global Style */
-*{font-family: 'bignoodletitling';font-weight: 400;}
+h1,h2,h3,h4,#main-header #et-top-navigation #top-menu .menu-item a{font-family: 'bignoodletitling' !important;font-weight: 400;}
 
 html{ font-size: 18px; }
 
