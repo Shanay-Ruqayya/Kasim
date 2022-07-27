@@ -25,9 +25,9 @@ function my_theme_enqueue_styles()
 
     
     // Slick Slider Css / Js
-    // wp_enqueue_style('slick', get_stylesheet_directory_uri() . '/slick/slick.css');
-    // wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/slick/slick-theme.css');
-    // wp_enqueue_script('slick-min', get_stylesheet_directory_uri() . '/slick/slick.min.js' , array( 'jquery' ));
+    wp_enqueue_style('slick', get_stylesheet_directory_uri() . '/js/slick/slick/slick.css');
+    wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/js/slick/slick/slick-theme.css');
+    wp_enqueue_script('slick-min', get_stylesheet_directory_uri() . '/js/slick/slick/slick.min.js' , array( 'jquery' ));
     
     
 }

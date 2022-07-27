@@ -1,0 +1,66 @@
+/* Desktop Screen L*/
+@media only screen and (max-width: 1667px) {
+
+}
+@media only screen and (max-width: 1440px) {
+
+}
+
+/* Desktop Screen M */
+@media only screen and (max-width: 1338px) {
+
+}
+
+@media only screen and (max-width: 1280px) {
+
+}
+
+/* Desktop Screen S */
+@media only screen and (max-width: 1167px) {
+
+}
+
+@media only screen and (max-width: 1024px) {
+/* -Home Page- */
+/* As Seen On (Logo Section) */
+.banner-sub-section .banner-sub-content .contain .title { margin-bottom: 40px; }
+}
+
+/* Tablet Screen */
+@media only screen and (max-width: 980px) {
+
+}
+
+@media only screen and (max-width: 867px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+/* Mobile L */
+@media only screen and (max-width: 667px) {
+/* -Home Page- */
+/* As Seen On (Logo Section) */
+.banner-sub-section { padding: 45px 0px; }
+.banner-sub-section .banner-sub-content .contain .title { margin-bottom: 30px; }
+.banner-sub-section .banner-sub-content .contain .mq-co-logo-section a { height: 67px; padding: 0px 30px; }
+
+}
+
+/* Mobile M*/
+@media only screen and (max-width: 480px) {
+
+}
+
+@media only screen and (max-width: 400px) {
+/* -Home Page- */
+/* As Seen On (Logo Section) */
+.banner-sub-section .banner-sub-content .contain .mq-co-logo-section a { padding: 0px 10px; }
+}
+
+/* Mobile S */
+@media only screen and (max-width: 360px) {
+
+}
