@@ -1,17 +1,39 @@
 /* Desktop Screen L*/
+
 @media only screen and (max-width: 1667px) {
+    /* home banner */
+    body .home-banner .container .banner-title h2{ font-size: 310px;padding-top: 250px;}
+    body .home-banner .container .banner-image img { width: 730px; height: 870px; }
+    body .home-banner { min-height: 930px; }
+    /* body .home-banner .container .banner-image{right: calc(50% - (730px/2));} */
+
 
 }
 @media only screen and (max-width: 1440px) {
+    /* home banner */
+    body .home-banner .container .banner-title h2 { font-size: 270px;padding-top: 210px;}
+    body .home-banner .container .banner-image img { width: 680px; height: 820px; }
+    body .home-banner { min-height: 860px; }
+    /* body .home-banner .container .banner-image{right: calc(50% - (680px/2));} */
+
 
 }
 
 /* Desktop Screen M */
 @media only screen and (max-width: 1338px) {
-
+    /* home banner */
+    body .home-banner .container .banner-title h2 { font-size: 240px;padding-top: 250px;}
+    body .home-banner .container .banner-image img { width: 650px; height: 790px; }
+    body .home-banner { min-height: 830px; }
+    /* body .home-banner .container .banner-image{right: calc(50% - (650px/2));} */
 }
 
 @media only screen and (max-width: 1280px) {
+    /* home banner */
+    body .home-banner .container .banner-title h2 { font-size: 220px;}
+    body .home-banner { min-height: 790px; }
+    body .home-banner .container .banner-image img { width: 630px; height: 760px; }
+    /* body .home-banner .container .banner-image{right: calc(50% - (630px/2));} */
 
 }
 
@@ -28,11 +50,31 @@
 
 /* Tablet Screen */
 @media only screen and (max-width: 980px) {
+    /* home banner */
+    body .home-banner .container .banner-image img { width: 600px; height: 710px; }
+    body .home-banner { min-height: 760px; }
+    body .home-banner .container .banner-title h2 { font-size: 185px; }
+    /* body .home-banner .container .banner-image{right: calc(50% - (600px/2));} */
 
 }
 
 @media only screen and (max-width: 867px) {
-
+    body .home-banner .container .banner-image img {
+        max-width: 586.49px;
+    max-height: 686.58px;
+    }
+    body .home-banner .container .banner-title h2 {
+        font-size: 140.49px;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 270px;
+    }
+    body .home-banner {
+        min-height: unset;
+        max-height: 750px;
+    }
+    body .home-banner .container .banner-title h3 {
+        font-size: 17.83px;}
 }
 
 @media only screen and (max-width: 768px) {
