@@ -16,7 +16,6 @@ body .home-banner .container .banner-title h2{font-size: 19.4rem;
 /* As seen on (Logo Section) */
 .banner-sub-section{padding: 75px 0px;}
 .banner-sub-section .banner-sub-content{padding: 0px;padding-top: 0px!important;}
-<<<<<<< HEAD
 .banner-sub-section .banner-sub-content .contain .title{margin-bottom: 60px;}
 .banner-sub-section .banner-sub-content .contain .title h4{ padding-bottom: 0px;font-size: 1.75rem; text-transform: uppercase; font-family: 'bignoodletitling'; color: #000; letter-spacing: 12.5px; text-align: center;}
 .banner-sub-section .banner-sub-content .contain .mq-co-logo-section{ display: flex; justify-content: space-between; align-items: center;}
@@ -44,7 +43,5 @@ body .home-banner .container .banner-title h2{font-size: 19.4rem;
 .h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content .mq-speaker-post-section .mq-speaker-post-content .speaker-content video{object-fit: cover; height: 100%;}
 .h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content .mq-speaker-post-section .mq-speaker-post-content .speaker-content .overlay-image{ width: 100%; height: 100%; top: 0px; left: 0px;opacity: 1; position: absolute;transition: .3s ease-in-out;}
 .h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content .mq-speaker-post-section .mq-speaker-post-content .speaker-content .overlay-image::before{content: "";background: url(../images/ka-play-btn.svg)no-repeat center / cover; width: 55px;height: 55px;position: absolute;    top: 50%; left: 50%; transform: translate(-50%, -50%);}
-=======
 .banner-sub-section .banner-sub-content .contain .title h4{font-size: 1.75rem;}
 .banner-sub-section .banner-sub-content .contain{}
->>>>>>> 934ecb3c4c0a8afc8a2b4e31497faaf869eec640
