@@ -13,4 +13,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /kasim/index.php [L]
 </IfModule>
 
+<IfModule mod_substitute.c>
+SubstituteMaxLineLength 10M
+</IfModule>
+
 # END WordPress
