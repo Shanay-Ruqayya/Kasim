@@ -1,31 +1,75 @@
 /* Desktop Screen L*/
+@media only screen and (max-width: 1700px) {
+    html { font-size: 15px!important; }
+}
 
 @media only screen and (max-width: 1667px) {
     /* home banner */
     body .home-banner .container .banner-title h2{ font-size: 310px;padding-top: 250px;}
     body .home-banner .container .banner-image img { height: 870px; }
     body .home-banner { min-height: 930px; }
-    /* body .home-banner .container .banner-image{right: calc(50% - (730px/2));} */
+    /* Speaker Section */
+    .h-speaker-section .h-speaker-content .content:first-child h2 { font-size: 23rem;}
+    .h-speaker-section .h-speaker-content .content:nth-child(3) { padding: 60px 20px 110px 55px;}
+    .h-speaker-section .h-speaker-content .content:nth-child(3) .btn { margin-bottom: 70px; }
+    .h-speaker-section .h-speaker-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { padding-bottom: 35px; }
+    .h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content .mq-speaker-post-section .mq-speaker-post-content { width: 290px; height: 200px; }
+    .h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content { width: calc(100% + 400px); margin-left: -400px; }
+    /*Critical Principles Section  */
+    .critical-principles-section .critical-principles-content .content:first-child { padding: 193px 0px 114px; }
+    .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description { line-height: 2em; }
 
+}
+@media only screen and (max-width: 1580px) {
+    /* Speaker Section */
+    .h-speaker-section .h-speaker-content .content:nth-child(3) { padding: 60px 20px 70px 25px; }
+    /*Critical Principles Section*/
+    .critical-principles-section .critical-principles-content .content:last-child { right: -90px; width: 80%; }
 
 }
 @media only screen and (max-width: 1440px) {
+    html { font-size: 14px!important; }
     /* home banner */
     body .home-banner .container .banner-title h2 { font-size: 270px;padding-top: 210px;}
     body .home-banner .container .banner-image img { height: 820px; }
     body .home-banner { min-height: 860px; }
-    /* body .home-banner .container .banner-image{right: calc(50% - (680px/2));} */
+    /* Speaker Section */
+    .h-speaker-section .h-speaker-content .content:first-child { top: 140px;}
+    /* Critical Principles Section */
+    .critical-principles-section .critical-principles-content .content:first-child { padding: 113px 0px 114px; }
 
 
 }
 
 /* Desktop Screen M */
+@media only screen and (max-width: 1380px) {
+    /* Speaker Section */
+    .h-speaker-section .h-speaker-content .content:nth-child(2) { width: calc(65% - 90px); left: -90px; }
+    .h-speaker-section .h-speaker-content .content:first-child h2 { font-size: 20rem; }
+    .h-speaker-section .h-speaker-content .content:nth-child(3) { padding: 60px 20px 70px 0px; }
+    .h-speaker-section .h-speaker-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { padding-bottom: 25px; }
+    .h-speaker-section .h-speaker-content .content:nth-child(3) .btn { margin-bottom: 50px; }
+    .h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content .mq-speaker-post-section .mq-speaker-post-content { width: 260px; height: 170px; }
+    .h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content { width: calc(100% + 300px); margin-left: -300px; }
+    /* Critical Principles Section */
+    .critical-principles-section .critical-principles-content .content:first-child { padding: 215px 0px 114px; }
+    .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description { padding-right: 120px;}
+    .critical-principles-section .critical-principles-content .content:first-child .btn { padding-top: 0px;}
+    .critical-principles-section .critical-principles-content .content:last-child { right: -130px; width: 85%; }
+}
 @media only screen and (max-width: 1338px) {
+    /* BTN */
+    body .btn a { padding: 15px 67px 15px 30px;}
     /* home banner */
     body .home-banner .container .banner-title h2 { font-size: 240px;padding-top: 250px;}
     body .home-banner .container .banner-image img { height: 790px; }
     body .home-banner { min-height: 830px; }
-    /* body .home-banner .container .banner-image{right: calc(50% - (650px/2));} */
+    /* Speaker Section */
+    .h-speaker-section .h-speaker-content .content:first-child h2 { font-size: 17rem; }
+    .h-speaker-section .h-speaker-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { font-size: 5rem;}
+    /* Critical Principles Section */
+    .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header { font-size: 5rem;}
+    
 }
 
 @media only screen and (max-width: 1280px) {
@@ -34,18 +78,38 @@
     body .home-banner { min-height: 790px; }
     body .home-banner .container .banner-image img {  height: 760px; }
     /* body .home-banner .container .banner-image{right: calc(50% - (630px/2));} */
-
+    /* Speaker Section*/
+    .h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content .mq-speaker-post-section .mq-speaker-post-content { width: 240px; height: 150px; }
+    /* Critical Principles Section */
+    .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header { padding-right: 90px;}
+    .critical-principles-section .critical-principles-content .content:last-child { width: 95%; }
 }
 
 /* Desktop Screen S */
 @media only screen and (max-width: 1167px) {
-
+    /* Speaker Section */
+    .h-speaker-section .h-speaker-content .content:nth-child(2) { width: calc(65% - 90px); left: -50px; }
+    .h-speaker-section .h-speaker-content .content:nth-child(3) { padding: 60px 20px 50px 0px; }
+    .h-speaker-section .h-speaker-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p { line-height: 1.8em; }
+    /* Critical Principles Section */
+    .critical-principles-section .critical-principles-content .content:first-child { padding: 125px 0px 114px; }
+    .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header { padding-right: 30px; }
+    .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description { padding-right: 100px; }
 }
 
 @media only screen and (max-width: 1024px) {
 /* -Home Page- */
 /* As Seen On (Logo Section) */
 .banner-sub-section .banner-sub-content .contain .title { margin-bottom: 40px; }
+/* Speaker Section */
+.h-speaker-section .h-speaker-content .content:nth-child(2){width: 80%; left: inherit; right: 0px; height: 840px; border-radius: 0px;}
+.h-speaker-section .h-speaker-content .content:nth-child(3){ width: 90%; margin-right: auto!important; margin: auto; padding: 0px 0px 60px; margin-top: 840px; box-shadow: 110px -104px 49px #fff; }
+.h-speaker-section .h-speaker-content .content:nth-child(3) .text-conten{margin-bottom: 30px;}
+.h-speaker-section .h-speaker-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header{text-align: center;}
+.h-speaker-section .h-speaker-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description{text-align: center;}
+.h-speaker-section .h-speaker-content .content:nth-child(3) .btn p{text-align: center;}
+
+
 }
 
 /* Tablet Screen */
