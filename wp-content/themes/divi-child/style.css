@@ -12,7 +12,7 @@ Theme Name:     Divi Child
 /* Global Style */
 h1,h2,h3,h4,#main-header #et-top-navigation #top-menu .menu-item a{font-family: 'bignoodletitling' !important;font-weight: 400;}
 
-html{ font-size: 18px; }
+html{ font-size: 16px; }
 
 .container{width: 85%;}
 
@@ -27,3 +27,4 @@ body #page-container{padding-top: 0px!important;}
 .underline-b{position: relative;}
 
 .underline-b::before{    content: ""; background: url(./images/blue-strip.svg)no-repeat center / 100% 100%; width: 100%; position: absolute; height: 10px; bottom: 10px;}
+.underline-b::before{    content: ""; background: url(./images/blue-strip.svg)no-repeat center / contain; width: 100%; position: absolute; height: 10px; bottom: 0;}
