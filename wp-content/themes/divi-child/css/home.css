@@ -7,7 +7,7 @@ body .home-banner .container .et_pb_column,body .home-banner .container{position
 body .home-banner .container .et_pb_column{display: flex; align-items: center; justify-content: center;}
 body .home-banner{ position: relative;}
 body .home-banner .container .banner-title h2{font-size: 350px; line-height: 75.4%;color: #FFFFFF;text-align: center;padding-top: 270px;display: flex;justify-content: space-between;}
-body .home-banner .container .banner-title h3{font-size: 2.1rem;line-height: 1.1em;color: #FFFFFF;letter-spacing: 0.125em;text-align: center;padding-top: 15px;}
+body .home-banner .container .banner-title h3{font-size: 2.375rem;line-height: 1.1em;color: #FFFFFF;letter-spacing: 0.125em;text-align: center;padding-top: 15px;}
 body .home-banner .container .banner-title{width: 100%;}
 
 /* As seen on (Logo Section) */

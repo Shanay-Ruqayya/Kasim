@@ -31,16 +31,12 @@
     html { font-size: 14px!important; }
     /* home banner */
     body .home-banner .container .banner-title h2 { font-size: 270px;padding-top: 210px;}
-<<<<<<< HEAD
     
-=======
-    body .home-banner .container .banner-image img { height: 820px; }
-    body .home-banner { min-height: 860px; }
+    
     /* Speaker Section */
     .h-speaker-section .h-speaker-content .content:first-child { top: 140px;}
     /* Critical Principles Section */
     .critical-principles-section .critical-principles-content .content:first-child { padding: 113px 0px 114px; }
->>>>>>> b40383c5dd21e50dee285f15f4300b4f75382d2d
 
 
 }
@@ -68,25 +64,20 @@
     body .home-banner .container .banner-title h2 { font-size: 240px;padding-top: 250px;}
     body .home-banner .container .banner-image img { height: calc(970px - 15%); width: calc(calc(831px - 15%)); }
     body .home-banner { min-height: 830px; }
-<<<<<<< HEAD
-=======
     /* Speaker Section */
     .h-speaker-section .h-speaker-content .content:first-child h2 { font-size: 17rem; }
     .h-speaker-section .h-speaker-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { font-size: 5rem;}
     /* Critical Principles Section */
     .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header { font-size: 5rem;}
     
->>>>>>> b40383c5dd21e50dee285f15f4300b4f75382d2d
 }
 
 @media only screen and (max-width: 1280px) {
     /* home banner */
     body .home-banner .container .banner-title h2 { font-size: 220px;}
     body .home-banner { min-height: 790px; }
-<<<<<<< HEAD
     body .home-banner .container .banner-image img { height: calc(970px - 20%); width: calc(calc(831px - 20%)); }
 
-=======
     body .home-banner .container .banner-image img {  height: 760px; }
     /* body .home-banner .container .banner-image{right: calc(50% - (630px/2));} */
     /* Speaker Section*/
@@ -94,7 +85,6 @@
     /* Critical Principles Section */
     .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header { padding-right: 90px;}
     .critical-principles-section .critical-principles-content .content:last-child { width: 95%; }
->>>>>>> b40383c5dd21e50dee285f15f4300b4f75382d2d
 }
 
 /* Desktop Screen S */
