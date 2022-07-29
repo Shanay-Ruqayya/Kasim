@@ -47,5 +47,27 @@ $(document).ready(function($){
     $('.speaker-content video').trigger('play');
 });
   
+$('.events-section').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  arrows: false,
+  dots:false,
+  responsive: [
+    {
+      breakpoint: 1167,
+        settings: {
+          slidesToShow: 2
+        }
+    },
+    {
+      breakpoint: 481,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        }
+    }
+  ]
+
+})
 
 });

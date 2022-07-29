@@ -18,6 +18,8 @@
     /*Critical Principles Section  */
     .critical-principles-section .critical-principles-content .content:first-child { padding: 193px 0px 114px; }
     .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description { line-height: 2em; }
+    /*Informative Events Section */
+    body .informative-events-section .events-section .events-content { margin-left: 25px; }
 
 }
 @media only screen and (max-width: 1580px) {
@@ -56,6 +58,8 @@
     .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description { padding-right: 120px;}
     .critical-principles-section .critical-principles-content .content:first-child .btn { padding-top: 0px;}
     .critical-principles-section .critical-principles-content .content:last-child { right: -130px; width: 85%; }
+    /* Informative Events Section */
+    body .informative-events-section .events-section .events-content { margin-left: 20px; }
 }
 @media only screen and (max-width: 1338px) {
     /* BTN */
@@ -85,6 +89,9 @@
     /* Critical Principles Section */
     .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header { padding-right: 90px;}
     .critical-principles-section .critical-principles-content .content:last-child { width: 95%; }
+    /* Informative Events Section */
+    body .informative-events-section .et_pb_column:first-child { width: 19%; }
+    body .informative-events-section .events-column { width: 75%; }
 }
 
 /* Desktop Screen S */
@@ -121,6 +128,13 @@
     body .home-banner { min-height: 760px; }
     body .home-banner .container .banner-title h2 { font-size: 185px; }
 
+    /* Informative Events Section */
+    body .informative-events-section .et_pb_row{width: 100%;}
+    body .informative-events-section .events-column  .events-text{width: 90%;margin: auto;margin-bottom: 55px;}
+    body .informative-events-section .events-column { width: 100%; }
+    body .informative-events-section .events-column .btn { justify-content: center; }
+
+
 }
 
 @media only screen and (max-width: 867px) {
@@ -131,16 +145,24 @@
 }
 
 @media only screen and (max-width: 768px) {
+    /* Informative Events Section */
+    body .informative-events-section .events-section .events-content { margin-left: 10px; margin-right: 10px;}
+    
+
 
 }
 
 /* Mobile L */
 @media only screen and (max-width: 667px) {
-/* -Home Page- */
-/* As Seen On (Logo Section) */
-.banner-sub-section { padding: 45px 0px; }
-.banner-sub-section .banner-sub-content .contain .title { margin-bottom: 30px; }
-.banner-sub-section .banner-sub-content .contain .mq-co-logo-section a { height: 67px; padding: 0px 30px; }
+    body .btn a { padding: 8px 57px 8px 23px;font-size: 15.25px; }
+    /* -Home Page- */
+    /* As Seen On (Logo Section) */
+    .banner-sub-section { padding: 45px 0px; }
+    .banner-sub-section .banner-sub-content .contain .title { margin-bottom: 30px; }
+    .banner-sub-section .banner-sub-content .contain .mq-co-logo-section a { height: 67px; padding: 0px 30px; }
+    body .informative-events-section .events-column h2 .underline-b::before{bottom: -5px;}
+    body .informative-events-section .events-column h2 .underline-b{display: inline-block;}
+
 
 }
 

@@ -45,16 +45,20 @@ body .home-banner .container .banner-title{width: 100%;}
 .banner-sub-section .banner-sub-content .contain{}
 
 /* informative events section */
-body .informative-events-section .events-section { display: flex; justify-content: space-evenly; align-items: center; }
-body .informative-events-section .events-section .events-content {box-shadow: 0px 84px 84px rgba(0, 0, 0, 0.07); background: white; padding: 18px; padding-bottom: 25px; border-radius: 15px; color: black; text-align: center; max-width: 306px;margin-right: 45px;}
-body .informative-events-section .et_pb_column_empty{width: 29%;}
+body .informative-events-section .events-section { display: flex; justify-content: flex-end; align-items: center; }
+body .informative-events-section .events-section .events-content {box-shadow: 0px 84px 84px rgba(0, 0, 0, 0.07); background: white; padding: 18px; padding-bottom: 25px; border-radius: 15px; color: black; text-align: center; max-width: 306px;margin-left: 40px;}
+body .informative-events-section .et_pb_column:first-child{width: 29%;}
 body .informative-events-section .events-column{width: 65%;}
-body .informative-events-section .events-section .events-content h4 { color: black; font-size: 1.67rem; line-height: 1.1em;}
-body .informative-events-section .events-section .events-content p{font-size: 0.72rem;line-height: 217.5%;}
-body .informative-events-section .events-section .events-content:last-child { margin-right: 0; }
+body .informative-events-section .events-section .events-content h4 {padding-top: 25px; color: black; font-size: 1.875rem; line-height: 1.1em;}
+body .informative-events-section .events-section .events-content p{font-size: 0.8125rem;line-height: 217.5%;}
+body .informative-events-section .events-section .slick-track{padding-bottom: 140px;display: flex; justify-content: center;}
 body .informative-events-section .events-column .btn{display: flex;justify-content: flex-end;}
-body .informative-events-section .events-column h2{text-align: center; font-size: 6.25rem;line-height: 0.919em;}
+body .informative-events-section .events-column h2{text-align: center; font-size: 6.25rem;line-height: 0.919em;padding-bottom: 38px;    }
 body .informative-events-section .events-column p{color: black; text-align: center; font-size: 1.125rem; line-height: 2.175em;}
+body .informative-events-section .events-column .events_sc { margin-bottom: -81px; }
+body .informative-events-section .events-column .btn a{display: inline-block;}
+body .informative-events-section .events-column  .events-text{margin-bottom: 65px;}
+
 
 /* Critical Principles Section */
 .critical-principles-section{padding: 0px;overflow: hidden;}
