@@ -102,12 +102,23 @@
 /* As Seen On (Logo Section) */
 .banner-sub-section .banner-sub-content .contain .title { margin-bottom: 40px; }
 /* Speaker Section */
+.h-speaker-section .h-speaker-content .content:first-child .et_pb_module { width: 100%;}
 .h-speaker-section .h-speaker-content .content:nth-child(2){width: 80%; left: inherit; right: 0px; height: 840px; border-radius: 0px;}
-.h-speaker-section .h-speaker-content .content:nth-child(3){ width: 90%; margin-right: auto!important; margin: auto; padding: 0px 0px 60px; margin-top: 840px; box-shadow: 110px -104px 49px #fff; }
-.h-speaker-section .h-speaker-content .content:nth-child(3) .text-conten{margin-bottom: 30px;}
+.h-speaker-section .h-speaker-content .content:nth-child(3){ width: 90%; margin-right: auto!important; margin: auto; padding: 0px 0px 60px; margin-top: 840px; box-shadow: 110px -104px 49px #fff; background-color: #fff;}
+.h-speaker-section .h-speaker-content .content:nth-child(3) .text-content{margin-bottom: 30px;}
 .h-speaker-section .h-speaker-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header{text-align: center;}
 .h-speaker-section .h-speaker-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description{text-align: center;}
 .h-speaker-section .h-speaker-content .content:nth-child(3) .btn p{text-align: center;}
+.h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content { width: 100%; margin-left: 0px; }
+.h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content .mq-speaker-post-section{justify-content: center;}
+.h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content .mq-speaker-post-section .slick-list{width: 100%;}
+.h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content .mq-speaker-post-section .mq-speaker-post-content{margin-left: 0px;height: 220px;}
+.h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content .mq-speaker-post-section .mq-speaker-post-content:nth-child(2){margin: 0px 12.5px;}
+/* Critical Principles Section */
+.critical-principles-section .critical-principles-content .content:first-child { padding: 60px 0px 114px; }
+.critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content { width: 60%; max-width: 60%;}
+.critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header { padding-right: 25px; }
+.critical-principles-section .critical-principles-content .content:last-child { width: 95%; }
 
 
 }
@@ -119,26 +130,31 @@
     body .home-banner { min-height: 760px; }
     body .home-banner .container .banner-title h2 { font-size: 185px; }
     /* body .home-banner .container .banner-image{right: calc(50% - (600px/2));} */
+    /* Speaker Section */
+    .h-speaker-section .h-speaker-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header .underline-b::before{bottom: 2px;}
+    /* Critical Principles Section */
+    .critical-principles-section .critical-principles-content .content:first-child{ box-shadow: 0px -27px 25px #171717; background-color: #171717!important; padding: 10px 0px 35px; margin-top: 610px; }
+    .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content { width: 100%; max-width: 100%; }
+    .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header { padding-right: 0px; text-align: center; }
+    .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description { padding-right: 0px; text-align: center; }
+    .critical-principles-section .critical-principles-content .content:first-child .btn p{text-align: center;}
+    .critical-principles-section .critical-principles-content .content:last-child { width: 110%; right: 0px; top: -100px; }
 
 }
 
 @media only screen and (max-width: 867px) {
-    body .home-banner .container .banner-image img {
-        max-width: 586.49px;
-    max-height: 686.58px;
-    }
-    body .home-banner .container .banner-title h2 {
-        font-size: 140.49px;
-        flex-direction: column;
-        justify-content: center;
-        padding-top: 270px;
-    }
-    body .home-banner {
-        min-height: unset;
-        max-height: 750px;
-    }
-    body .home-banner .container .banner-title h3 {
-        font-size: 17.83px;}
+    /* Home Banner */
+    body .home-banner .container .banner-image img { max-width: 586.49px; max-height: 686.58px; }
+    body .home-banner .container .banner-title h2 { font-size: 140.49px; flex-direction: column; justify-content: center; padding-top: 270px; }
+    body .home-banner { min-height: unset; max-height: 750px; }
+    body .home-banner .container .banner-title h3 { font-size: 17.83px;}
+    /* Speaker Section */
+    .h-speaker-section .h-speaker-content .content:nth-child(2) { width: 90%;}
+    .h-speaker-section .h-speaker-content .content:nth-child(3){ width: 100%; }
+    .h-speaker-section .h-speaker-content .content:nth-child(3) .text-content{width: 90%; margin: 0px auto 30px;}
+    .h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content .mq-speaker-post-section .mq-speaker-post-content{height: auto;margin: 0px 12.5px;}
+    /* Critical Principles Section */
+    .critical-principles-section .critical-principles-content .content:first-child { margin-top: 480px; }
 }
 
 @media only screen and (max-width: 768px) {
@@ -147,23 +163,44 @@
 
 /* Mobile L */
 @media only screen and (max-width: 667px) {
+html { font-size: 12px!important; }
 /* -Home Page- */
 /* As Seen On (Logo Section) */
 .banner-sub-section { padding: 45px 0px; }
 .banner-sub-section .banner-sub-content .contain .title { margin-bottom: 30px; }
 .banner-sub-section .banner-sub-content .contain .mq-co-logo-section a { height: 67px; padding: 0px 30px; }
+/* Speaker Section */
+.h-speaker-section .h-speaker-content .content:first-child { top: 70px; }
+.h-speaker-section .h-speaker-content .content:nth-child(2) { width: 100%; }
+.h-speaker-section .h-speaker-content .content:nth-child(3) { margin-top: 700px;}
+/* Critical Principles Section */
+.critical-principles-section .critical-principles-content .content:first-child { margin-top: 380px; }
+.critical-principles-section .critical-principles-content .content:last-child { top: -30px; width: 115%!important; }
 
 }
 
 /* Mobile M*/
 @media only screen and (max-width: 480px) {
+    /* Speaker Section */
+    .h-speaker-section .h-speaker-content .content:first-child h2 { font-size: 15rem; }
+    .h-speaker-section .h-speaker-content .content:nth-child(3) { margin-top: 600px; box-shadow: 160px -154px 59px #fff; }
+    /* Critical Principles Section */
+    .critical-principles-section .critical-principles-content .content:first-child { margin-top: 330px; }
 
 }
 
+@media only screen and (max-width: 440px) {
+    /* -Home Page- */
+    /* As Seen On (Logo Section) */
+    .banner-sub-section .banner-sub-content .contain .mq-co-logo-section a { padding: 0px 10px; }
+    /* Speaker Section */
+.h-speaker-section .h-speaker-content .content:nth-child(3) { margin-top: 550px; box-shadow: 150px -134px 39px #fff; }
+}
 @media only screen and (max-width: 400px) {
-/* -Home Page- */
-/* As Seen On (Logo Section) */
-.banner-sub-section .banner-sub-content .contain .mq-co-logo-section a { padding: 0px 10px; }
+    /* Speaker Section */
+    .h-speaker-section .h-speaker-content .content:first-child { top: 40px; }
+    .h-speaker-section .h-speaker-content .content:first-child h2 { font-size: 12rem; }
+    .h-speaker-section .h-speaker-content .content:nth-child(3) { margin-top: 480px;    box-shadow: 130px -134px 39px #fff;}
 }
 
 /* Mobile S */

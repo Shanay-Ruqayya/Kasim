@@ -40,12 +40,32 @@ $(document).ready(function($){
     ]
   });
 
+  //  Speaker Section
+  $('.mq-speaker-post-section').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 867,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        }
+      },
+    ]
+  });
+  
   // Speaker Video Function
   $('.overlay-image').click(function(event){
     $(this).css("opacity" , "0");
     $(this).css("z-index" , "-1");
     $('.speaker-content video').trigger('play');
-});
+  });
   
+  
+  if (window.matchMedia('(max-width: 867px)').matches) {
+  
+    
+}
 
 });
