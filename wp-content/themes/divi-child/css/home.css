@@ -72,3 +72,19 @@ body .informative-events-section .events-column  .events-text{margin-bottom: 65p
 .critical-principles-section .critical-principles-content .content:first-child .btn{padding-top: 20px; margin-top: 40px;}
 .critical-principles-section .critical-principles-content .content:first-child .btn .et_pb_text_inner{width: 90%; margin: auto;}
 .critical-principles-section .critical-principles-content .content:last-child{    position: absolute; right: 0px; top: 0px; width: 77%; z-index: 1;}
+
+/* Giving Section */
+.h-giving-section{padding: 0px;}
+.h-giving-section .h-giving-content{padding: 0px;width: 100%;display: flex; justify-content: flex-end; align-items: flex-start;}
+.h-giving-section .h-giving-content .content:first-child{position: absolute; z-index: 9; left: 0px; top: 220px;width: 100%;z-index: 5;}
+.h-giving-section .h-giving-content .content:first-child .et_pb_module{width: 90%;margin: auto;}
+.h-giving-section .h-giving-content .content:first-child h2{ font-size: 25rem; writing-mode: vertical-lr; font-family: 'bignoodletitling'; color: #014EFF;line-height: .8em;}
+.h-giving-section .h-giving-content .content:nth-child(2){width: calc(60% - 90px);z-index: 4;  margin: 0px;position: absolute;left: 0px;top: 0px;border-radius: 0px 0px 420px 0px; overflow: hidden;}
+.h-giving-section .h-giving-content .content:nth-child(3){width: 40%; margin: 0px; margin-right: 5%!important;padding: 60px 20px 140px 85px;position: relative;z-index: 9;}
+.h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content{width: 100%; max-width: 100%;}
+.h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header{line-height: 91.9% !important;font-size: 6.25rem; color: #000; line-height: .85em;padding-bottom: 45px;}
+.h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description{font-size: 1.125rem;}
+.h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description a{color: black;}
+.h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p{font-family: 'Poppins';color: #000;line-height: 2.2em;}
+.h-giving-section .h-giving-content .content:nth-child(3) .btn{margin-bottom: 110px;}
+.h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header .underline-b::before{background-size: cover;}
