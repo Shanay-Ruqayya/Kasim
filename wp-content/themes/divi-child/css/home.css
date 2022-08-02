@@ -84,7 +84,7 @@ body .informative-events-section .events-column  .events-text{margin-bottom: 65p
 .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content{width: 100%; max-width: 100%;}
 .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header{line-height: 91.9% !important;font-size: 6.25rem; color: #000; line-height: .85em;padding-bottom: 45px;}
 .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description{font-size: 1.125rem;}
-.h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description a{color: black;}
+.h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description a{color: black;text-decoration: underline;}
 .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p{font-family: 'Poppins';color: #000;line-height: 2.2em;}
 .h-giving-section .h-giving-content .content:nth-child(3) .btn{margin-bottom: 110px;}
 .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header .underline-b::before{background-size: cover;}
