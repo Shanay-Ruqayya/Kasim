@@ -25,7 +25,7 @@ body .home-banner .container .banner-title{width: 100%;}
 .h-speaker-section{padding: 0px;}
 .h-speaker-section .h-speaker-content{padding: 0px;width: 100%;display: flex; justify-content: flex-end; align-items: flex-start;}
 .h-speaker-section .h-speaker-content .content:first-child{position: absolute; z-index: 9; left: 0px; top: 220px;width: 100%;z-index: 5;}
-.h-speaker-section .h-speaker-content .content:first-child .et_pb_module{width: 90%;margin: auto;}
+.h-speaker-section .h-speaker-content .content:first-child .et_pb_module{width: 85%;margin: auto;}
 .h-speaker-section .h-speaker-content .content:first-child h2{ font-size: 25rem; writing-mode: vertical-lr; font-family: 'bignoodletitling'; color: #014EFF;line-height: .8em;}
 .h-speaker-section .h-speaker-content .content:nth-child(2){width: calc(60% - 90px);z-index: 4;  margin: 0px;position: absolute;left: 0px;top: 0px;border-radius: 0px 0px 420px 0px; overflow: hidden;}
 .h-speaker-section .h-speaker-content .content:nth-child(3){width: 40%; margin: 0px; margin-right: 5%!important;padding: 60px 20px 140px 85px;position: relative;z-index: 9;}
@@ -44,6 +44,24 @@ body .home-banner .container .banner-title{width: 100%;}
 .h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content .mq-speaker-post-section .mq-speaker-post-content .speaker-content .overlay-image::before{content: "";background: url(../images/ka-play-btn.svg)no-repeat center / cover; width: 55px;height: 55px;position: absolute;    top: 50%; left: 50%; transform: translate(-50%, -50%);}
 .banner-sub-section .banner-sub-content .contain .title h4{font-size: 1.75rem;}
 .banner-sub-section .banner-sub-content .contain{}
+
+/* PodCast section */
+.podcast-section{position: relative;padding: 0px;}
+.podcast-section::before{content: "";background: url(../images/podcast-blue-bg.jpg)no-repeat center/cover;position: absolute;width: 100%;height: 100%;top: 0px;left: 0px; border-radius: 0px 0px 0px 784px;}
+.podcast-section::after{content: "";background: url(../images/podcast-mic.png)no-repeat center / cover;position: absolute; width: 908px; height: 1019px; top: calc(50% - 50px); transform: translate(0px, -50%); right: 0; z-index: 9; filter: drop-shadow(0px 84px 84px rgba(0,0,0,0.25));}
+.podcast-section .podcast-content{padding: 0px!important; display: flex; justify-content: center; align-items: center; }
+.podcast-section .podcast-content .content:first-child{width: 100%; padding: 150px 0px;}
+.podcast-section .podcast-content .content:first-child .podcast-code{height: 465px;}
+.podcast-section .podcast-content .content:first-child .et_pb_blurb{ width: 43%; margin-bottom: 65px;}
+.podcast-section .podcast-content .content:first-child .et_pb_blurb .et_pb_blurb_content{max-width: 100%;}
+.podcast-section .podcast-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header{font-size: 5.55rem; color: #fff; padding-bottom: 32px; line-height: 1em;}
+.podcast-section .podcast-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description{ font-size: 1rem; color: #fff; line-height: 2.5em;}
+.podcast-section .podcast-content .content:first-child .btn a{background-color: #000;}
+.podcast-section .podcast-content .content:first-child .btn a::before{filter: invert(1);}
+.podcast-section .podcast-content .content:last-child{ position: absolute; top: 50%; right: 0; transform: translate(0%, -50%);}
+.podcast-section .podcast-content .content:last-child h2{ font-size: 25rem; color: #fff; writing-mode: vertical-lr; line-height: .75em; margin-left: auto;}
+
+
 
 /* informative events section */
 body .informative-events-section .events-section { display: flex; justify-content: flex-end; align-items: center; }
@@ -65,12 +83,12 @@ body .informative-events-section .events-column  .events-text{margin-bottom: 65p
 .critical-principles-section{padding: 0px;overflow: hidden;}
 .critical-principles-section .critical-principles-content{padding: 0px;width: 100%;}
 .critical-principles-section .critical-principles-content .content:first-child{padding: 243px 0px 114px; width: 100%;}
-.critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb{width: 90%; margin: auto;}
+.critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb{width: 85%; margin: auto;}
 .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content{width: 50%; max-width: 50%; margin: 0;}
 .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header{ font-size: 6.25rem; color: #fff; padding-right: 100px; line-height: .9em; padding-bottom: 35px;}
 .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description{font-size: 1.125rem; color: #fff; padding-right: 200px; line-height: 2.5em;}
 .critical-principles-section .critical-principles-content .content:first-child .btn{padding-top: 20px; margin-top: 40px;}
-.critical-principles-section .critical-principles-content .content:first-child .btn .et_pb_text_inner{width: 90%; margin: auto;}
+.critical-principles-section .critical-principles-content .content:first-child .btn .et_pb_text_inner{width: 85%; margin: auto;}
 .critical-principles-section .critical-principles-content .content:last-child{    position: absolute; right: 0px; top: 0px; width: 65%; z-index: 1;}
 .critical-principles-section .critical-principles-content .content:last-child{    position: absolute; right: 0px; top: 0px; width: 77%; z-index: 1;}
 

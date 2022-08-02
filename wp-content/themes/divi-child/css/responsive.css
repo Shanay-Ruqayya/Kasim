@@ -109,6 +109,9 @@
     /* body .home-banner .container .banner-image{right: calc(50% - (630px/2));} */
     /* Speaker Section*/
     .h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content .mq-speaker-post-section .mq-speaker-post-content { width: 240px; height: 150px; }
+    .h-speaker-section .h-speaker-content .content:first-child .et_pb_module{width: 90%;}
+    .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb{width: 90%;}
+    .critical-principles-section .critical-principles-content .content:first-child .btn .et_pb_text_inner{width: 90%;}
     /* Critical Principles Section */
     .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header { padding-right: 90px;}
     .critical-principles-section .critical-principles-content .content:last-child { width: 95%; }
