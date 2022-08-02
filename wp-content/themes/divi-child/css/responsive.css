@@ -1,6 +1,7 @@
 /* Desktop Screen L*/
 @media only screen and (max-width: 1700px) {
     html { font-size: 15px!important; }
+    .critical-principles-section .critical-principles-content .content:last-child { right: -130px; top: -70px; width: 85%; }
 }
 
 @media only screen and (max-width: 1667px) {
@@ -270,6 +271,8 @@
     .h-speaker-section .h-speaker-content .content:first-child h2 { font-size: 15rem; }
     .h-speaker-section .h-speaker-content .content:nth-child(3) { margin-top: 600px; box-shadow: 160px -154px 59px #fff; }
     /* Critical Principles Section */
+    .critical-principles-section .critical-principles-content .content:first-child { margin-top: 330px;box-shadow: 0px -27px 35px #171717;}
+    .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content{margin-top: -30px;}
     .critical-principles-section .critical-principles-content .content:first-child { margin-top: 330px; }
     /* Giving Section */
     .h-giving-section .h-giving-content .content:first-child h2 { font-size: 15rem; }
