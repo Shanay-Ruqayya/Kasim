@@ -1,0 +1,66 @@
+{   
+    "pie-forms-for-wp-mailchimp/pie-forms-for-wp-mailchimp.php" : {
+        "icon"  : "mailchimp.png",
+        "name"  : "Mailchimp",
+        "desc"  : "Connect your MailChimp account with and add users to your MailChimp list directly on form submissions",
+        "plugin_src" : "https://pieforms.com/mail-chimp/?utm_source=admindashboard&utm_medium=Addonspage&utm_campaign=freeuser",
+        "price" : "Free"
+    },
+    "pie-forms-for-wp-multipart-forms/pie-forms-for-wp-multipart-forms.php" : {
+        "icon"  : "multipart-add-on.png",
+        "name"  : "Multipage Forms",
+        "desc"  : "Break your form into multiple pages to create clutter-free forms with the Multipage Add-on",
+        "plugin_src" : "https://pieforms.com/addons/multipage-forms-addon/?utm_source=admindashboard&utm_medium=Addonspage&utm_campaign=freeuser",
+        "price" : "$7.99"
+    },
+    "pie-forms-for-wp-protected/pie-forms-for-wp-protected.php" : {
+        "icon"  : "password-protection.png",
+        "name"  : "Password Protected forms",
+        "desc"  : "Create Password Protected Forms",
+        "plugin_src" : "https://pieforms.com/addons/password-protected/?utm_source=admindashboard&utm_medium=Addonspage&utm_campaign=freeuser",
+        "price" : "$7.99"
+    },
+    "pie-forms-for-wp-drip/pie-forms-for-wp-drip.php" : {
+        "icon"  : "drip.png",
+        "name"  : "Drip",
+        "desc"  : "Design and schedule email campaigns to send automated response to your users with Drip Add-on",
+        "plugin_src" : "https://pieforms.com/addons/drip-campaign/?utm_source=admindashboard&utm_medium=Addonspage&utm_campaign=freeuser",
+        "price" : "$14.99"
+    },
+    "pie-forms-for-wp-broadcast/pie-forms-for-wp-broadcast.php" : {
+        "icon"  : "broadcast.png",
+        "name"  : "Broadcast",
+        "desc"  : "Send emails to an entire list of registered users simultaneously, using Broadcast Add-on",
+        "plugin_src" : "https://pieforms.com/addons/broadcast-email/?utm_source=admindashboard&utm_medium=Addonspage&utm_campaign=freeuser",
+        "price" : "$14.99"
+    },
+    "pie-forms-for-wp-paypal-donation/pie-forms-for-wp-paypal-donation.php" : {
+        "icon"  : "paypal-donation.png",
+        "name"  : "Paypal Donation",
+        "desc"  : "Collect payments for supporting causes with Paypal Donation Add-on",
+        "plugin_src" : "https://pieforms.com/addons/paypal-donation/?utm_source=admindashboard&utm_medium=Addonspage&utm_campaign=freeuser",
+        "price" : "Free"
+    },
+    "pie-forms-for-wp-paypal-payment/pie-forms-for-wp-paypal-payment.php" : {
+        "icon"  : "paypal-payment.jpg",
+        "name"  : "Paypal Payment",
+        "desc"  : "Collect payments and donations easily for your website with Pie Forms Paypal Payment Add-on.",
+        "plugin_src" : "https://pieforms.com/addons/paypal-payment-addon/?utm_source=admindashboard&utm_medium=Addonspage&utm_campaign=premium",
+        "price" : "$24.99"
+    },
+    "pie-forms-for-wp-smart-translation/pie-forms-for-wp-smart-translation.php" : {
+        "icon"  : "smart-translation.png",
+        "name"  : "Smart Translation",
+        "desc"  : "Translate user response with Google Translate or Deepl using Smart Translation Add-on",
+        "plugin_src" : "https://pieforms.com/addons/smart-translator/?utm_source=admindashboard&utm_medium=Addonspage&utm_campaign=freeuser",
+        "price" : "Free"
+    },
+    "pie-forms-for-wp-zapier/pie-forms-for-wp-zapier.php" : {
+        "icon"  : "zapier-automation.jpg",
+        "name"  : "Zapier Integration",
+        "desc"  : "Automate your work in minutes with Pie Form's Zapier Addon",
+        "plugin_src" : "https://pieforms.com/addons/zapier-integration-addon/?utm_source=admindashboard&utm_medium=Addonspage&utm_campaign=premium",
+        "price" : "29.99"
+    }
+ 
+}

@@ -1,0 +1,123 @@
+/* Recommended Documents */
+.pie-form-related-docx {
+    background: #f6f6f6;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: 1px solid #dadee1;
+    margin: 30px 20px;
+    box-sizing: border-box;
+    float: left;
+    width: calc(100% - 40px);
+}
+.pie-form-related-docx .pie-form-docx-top h2{
+    font-size: 31px;
+    color: #133950;
+    font-weight: bold;
+    margin:0;
+    padding: 20px 0px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #dadee1;
+}
+.pie-form-related-docx .pie-form-docx-top p{
+    font-size: 17px;
+    color: #133950;
+    margin: 0;
+    letter-spacing: 0.75px;
+}
+.pie-form-related-docx .pie-form-docx-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 25px 0px;
+}
+.pie-form-docx{
+    display: flex;
+    width: calc(50% - 30px);
+    margin: 0px 15px;
+}
+.pie-form-related-docx .pie-form-docx .pie-form-docx-img {
+    margin: 17px 19px 10px;
+}
+/* .pie-form-docx-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.pie-form-related-docx .pie-form-docx-info h3 a{
+    font-size: 19px;
+    color: #133950;
+    font-weight: bold;
+    margin: 0;
+    padding: 20px 0px;
+    text-decoration: none;
+}
+
+
+/* Related Products and Addons */
+.pie-form-related-data {
+    background: #f6f6f6;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: 1px solid #dadee1;
+    margin: 30px 20px;
+    box-sizing: border-box;
+    float: left;
+    width: calc(100% - 40px);
+}
+.pie-form-related-data .pie-form-data-top h2{
+    font-size: 31px;
+    color: #133950;
+    font-weight: bold;
+    margin:0;
+    padding: 20px 0px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #dadee1;
+}
+.pie-form-related-data .pie-form-data-top p{
+    font-size: 17px;
+    color: #133950;
+    margin: 0;
+    letter-spacing: 0.75px;
+}
+.pie-form-related-data .pie-form-data-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 25px 0px;
+}
+.pie-form-data{
+    display: flex;
+    width: 30%;
+    margin: 0 auto;
+}
+.pie-form-related-data .pie-form-data .pie-form-data-img {
+    width: 60px;
+    height: 60px;
+    margin: 21px 14px 14px;
+    height: fit-content;
+    background: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #dadee1;
+    border-radius: 11px;
+}
+/* .pie-form-data-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.pie-form-related-data .pie-form-data .pie-form-data-img img{
+    width: 50px;
+    height: 50px;
+}
+.pie-form-related-data .pie-form-data-info h3 a{
+    font-size: 19px;
+    color: #133950;
+    font-weight: bold;
+    margin: 0;
+    padding: 20px 0px;
+    text-decoration: none;
+}
+
+/* Addon Menu */
+.toplevel_page_pie-forms ul.wp-submenu.wp-submenu-wrap li:last-child a{
+    color: #ff2028 !important;
+    font-weight: bold;
+}
