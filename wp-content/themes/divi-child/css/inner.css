@@ -1,0 +1,17 @@
+/* BOOKS */
+/* banner */
+body .books-banner .banner-title{width: 51%;}
+body .books-banner .banner-title h2{ font-size: 6.25rem; line-height: 91.9%; color: #FFFFFF; max-width: 710px;}
+body .books-banner .banner-image .et_pb_image_wrap { position: absolute; bottom: 0; width: 40%; }
+body .books-banner .banner-image{position: static;}
+body .books-banner .banner-image-col{ position: static; width: 40%; }
+body .books-banner .et_pb_row{ position: static; }
+
+/* book review sub section ~greg */
+body .book-review-sub-section h4 { font-size: 3.125rem; line-height: 91.9%; padding-bottom: 26px;}
+body .book-review-sub-section p{ text-align: center; color: black; font-size: 1.25rem; line-height: 217.5%; }
+body .book-review-sub-section .review-content{width: 60%; margin: auto;} 
+body .book-review-sub-section {padding-top: 130px; padding-bottom: 90px;}
+
+/*  bestseller section */
+body .bestseller-section h4{font-size: 6.25rem; line-height: 91.9%; color: #FFFFFF;}

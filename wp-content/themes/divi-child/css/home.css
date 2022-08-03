@@ -106,7 +106,7 @@ body .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et
 body .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description a{color: black;text-decoration: underline;}
 body .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p{font-family: 'Poppins';color: #000;line-height: 2.2em;}
 body .h-giving-section .h-giving-content .content:nth-child(3) .btn{margin-bottom: 110px;}
-body .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header .underline-b::before{background-size: cover;}
+/* body .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header .underline-b::before{background-size: cover;} */
 
 /* Social media section */
 
