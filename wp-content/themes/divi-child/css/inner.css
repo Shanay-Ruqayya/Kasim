@@ -26,7 +26,7 @@ body .bestseller-section .book-ranking ul li span.ranking span.sup { font-size: 
 body .bestseller-section .book-ranking ul li span.blue-text{color: #014EFF;}
 body .bestseller-section .book-ranking ul li span.ranking::before{ content: ''; width: 51px; height: 107px; background: url(../images/left.png); position: absolute; display:block; left: -48px;     background-size: cover; background-repeat: no-repeat; }
 body .bestseller-section .book-ranking ul li span.ranking::after{ content: ''; width: 51px; height: 107px; background: url(../images/right.png); position: absolute; display:block; right: -35px;     background-size: cover; background-repeat: no-repeat;}
-body .bestseller-section .et_pb_column:first-child .btn a img{ position: relative; top: 10px; }
+body .bestseller-section .et_pb_column:first-child .btn a img{ position: relative; top: 12px; }
 body .bestseller-section .et_pb_column:first-child .btn a::before{filter: brightness(0) invert(1);}
 body .bestseller-section .et_pb_column:first-child .btn a{display: inline-block;}
 body .bestseller-section .et_pb_column:nth-child(2){display: none;}

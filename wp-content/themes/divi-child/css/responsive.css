@@ -187,11 +187,11 @@
     
     /************************ BOOKS *********************/
     /* bestseller section */
-    body .bestseller-section .et_pb_column:nth-child(2){display: block}
-    body .bestseller-section .et_pb_row{display: flex;flex-direction: column-reverse;align-items: center;}
+    body .bestseller-section .et_pb_column:nth-child(2){display: block; position: absolute; top: 0; width: 100%;}
+    body .bestseller-section .et_pb_row{display: flex;flex-direction: column-reverse;align-items: center;position: static;}
     body div.et_pb_section.bestseller-section {background-image: none !important;}
     body .bestseller-section .book-ranking { width: 85%;margin: auto;}
-    body .bestseller-section .et_pb_column:first-child { width: 100%; }
+    body .bestseller-section .et_pb_column:first-child {margin-top: 720px; z-index: 9; width: 100%; margin-right: 0; box-shadow: 117px -27px 25px #171717; background-color: #171717!important; padding: 30px 0px 35px; }
 
 }
 
@@ -266,8 +266,9 @@ body .books-banner{padding-bottom: 0;}
 
     /************************ BOOKS *********************/
     /* bestseller section */
+    body .bestseller-section .et_pb_column:first-child { margin-top: 580px;}
     body .bestseller-section .book-ranking { width: 95%; }
-    body .bestseller-section .book-ranking ul li span.ranking::before, body .bestseller-section .book-ranking ul li span.ranking::after { width: calc(51px - 10%); height: calc(107px - 10%); }
+    body .bestseller-section .book-ranking ul li span.ranking::before, body .bestseller-section .book-ranking ul li span.ranking::after { width: calc(51px - 5%); height: calc(107px - 5%); }
     body .bestseller-section .book-ranking ul li span.ranking { font-size: 9rem; }
     body .bestseller-section .book-ranking ul li span.ranking span.sup ,body .bestseller-section .book-ranking ul li{ font-size: 2.75rem;}
     body .bestseller-section h4 { font-size: 5rem; }
@@ -303,8 +304,20 @@ body .books-banner{padding-bottom: 0;}
 @media only screen and (max-width: 768px) {
     /* Informative Events Section */
     body .informative-events-section .events-section .events-content { margin-left: 10px; margin-right: 10px;}
+    body .bestseller-section .book-ranking { width: 100%; }
     
-
+    /************************ BOOKS *********************/
+    /* bestseller section */
+    body .bestseller-section .et_pb_column:first-child { margin-top: 440px;}
+    body .bestseller-section h4 { font-size: 4rem; }
+    body .bestseller-section .book-ranking ul li span.ranking span.sup, body .bestseller-section .book-ranking ul li { font-size: 2rem; }
+    body .bestseller-section .book-ranking ul li span.ranking { font-size: 7rem; }
+    body .bestseller-section .book-ranking ul li span.ranking::before, body .bestseller-section .book-ranking ul li span.ranking::after { width: calc(51px - 10%); height: calc(107px - 18%); }
+    body .bestseller-section .book-ranking ul li span.ranking::before{left: -22px;}
+    body .bestseller-section .book-ranking ul li span.ranking::after{right: -12px;}
+    body .bestseller-section .book-ranking ul li { margin-bottom: 50px; }
+    body .bestseller-section .book-ranking ul li:last-child, body .bestseller-section h4 { margin-bottom: 40px; }
+    body .bestseller-section { padding-top: 60px; padding-bottom: 60px; }
 
 }
 
@@ -335,6 +348,10 @@ body .books-banner{padding-bottom: 0;}
     body .h-giving-section .h-giving-content .content:first-child { top: 70px; }
     body .h-giving-section .h-giving-content .content:nth-child(2) { width: 100%; }
     body .h-giving-section .h-giving-content .content:nth-child(3) { margin-top: 630px;}
+    
+    /************************ BOOKS *********************/
+    /* bestseller section */
+    body .bestseller-section .et_pb_column:first-child { margin-top: 360px;}
 
 }
 
@@ -354,6 +371,8 @@ body .books-banner{padding-bottom: 0;}
     body .books-banner .banner-title h2 { font-size: 4rem;}
     /* book review sub section */
     body .book-review-sub-section h4 { font-size: 2.6rem;}
+    /* bestseller section */
+    body .bestseller-section .et_pb_column:first-child { margin-top: 300px;}
 
 }
 
@@ -372,6 +391,14 @@ body .books-banner{padding-bottom: 0;}
     /************************ BOOKS *********************/
     /* banner */
     body .books-banner .banner-title h2 { font-size: 3.5rem;padding-bottom: 10px; }
+    /* bestseller section */
+    body .bestseller-section .et_pb_column:first-child { margin-top: 230px;}
+    body .bestseller-section .book-ranking {
+        width: 105%;
+    }
+    body .bestseller-section .book-ranking ul li span.ranking {
+        margin-right: 40px;
+    }
 
 }
 
@@ -394,6 +421,11 @@ body .books-banner{padding-bottom: 0;}
     /************************ BOOKS *********************/
     /* banner */
     body .books-banner .banner-title h2 { font-size: 3rem;}
+    /* bestseller section */
+    body .bestseller-section .et_pb_column:first-child { margin-top: 160px; }
+    body .bestseller-section .et_pb_column:first-child .btn a img { top: 9px; width: 30%; }
+    body .bestseller-section .et_pb_column:first-child .btn a { padding: 8px 20px 8px 23px; font-size: 13.25px; }
+    
 }
 
 /* Mobile S */
