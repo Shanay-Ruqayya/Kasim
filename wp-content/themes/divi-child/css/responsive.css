@@ -80,8 +80,17 @@
     /* book review sub section */
     body .book-review-sub-section { padding-top: 91px; padding-bottom: 63px; }
 
-
-
+    /************************ Contact Section ( Global ) *********************/
+    body .contact-section::before { border-radius: 0px 0px 500px 0px; }
+    body .contact-section::after { width: calc(457px - 10%); height: calc(1283px - 10%); background: url(../images/contact-us-phone-image.png)no-repeat center/contain;}
+    body .contact-section .contact-content { padding: 136px 0px 220px!important;}
+    body .contact-section .contact-content .content:first-child h2{font-size: 23rem;}
+    body .contact-section .contact-content .content:last-child .et_pb_blurb { margin-bottom: 35px; }
+    body .contact-section .contact-content .content:last-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header { padding-bottom: 20px; }
+    body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(1) { margin-bottom: 30px; }
+    body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(2) { margin-bottom: 30px; }
+    body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(3) { margin-bottom: 30px; }
+    body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(4) { margin-bottom: 30px; }
 }
 
 /* Desktop Screen M */
@@ -111,7 +120,7 @@
     /************************ BOOKS *********************/
     /* banner */
     body .books-banner .banner-title h2 { font-size: 5.38rem; max-width: 555px;}
-
+    
 }
 @media only screen and (max-width: 1338px) {
     /* BTN */
@@ -128,7 +137,7 @@
     /* Giving Section */
     body .h-giving-section .h-giving-content .content:first-child h2 { font-size: 17rem; }
     body .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { font-size: 5rem;}
-
+    
     /************************ BOOKS *********************/
     /*  bestseller section */
     body .bestseller-section .book-ranking ul li:last-child , body .bestseller-section h4{ margin-bottom: 60px; }
@@ -160,13 +169,26 @@
     body .informative-events-section .events-column { width: 75%; }
     /* giving section */
     body .h-giving-section .h-giving-content .content:nth-child(3) { padding: 60px 20px 70px 0px; }
-
+    
     /************************ BOOKS *********************/
     /* banner */
     body .books-banner .banner-title h2 { font-size: 4.3rem;max-width: 445px;}
     /* book review sub section */
     body .book-review-sub-section .review-content { width: 90%; }
-    
+  
+    /************************ Contact Section ( Global ) *********************/
+    body .contact-section::before { border-radius: 0px 0px 350px 0px; }
+    body .contact-section::after { width: calc(457px - 15%); height: calc(1283px - 15%);top: -240px; left: 14%;}
+    body .contact-section .contact-content { padding: 85px 0px 150px!important; }
+    body .contact-section .contact-content .content:first-child h2 { font-size: 17rem; }
+    body .contact-section .contact-content .content:last-child { width: 64%; }
+    body .contact-section .contact-content .content:last-child .et_pb_blurb { margin-bottom: 25px; }
+    body .contact-section .contact-content .content:last-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header { padding-bottom: 15px; }
+    body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(1) { margin-bottom: 20px; }
+    body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(2) { margin-bottom: 20px; }
+    body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(3) { margin-bottom: 20px; }
+    body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(4) { margin-bottom: 20px; }
+    body .contact-section input[type="checkbox"] + label { width: 73%;}
 }
 
 /* Desktop Screen S */
@@ -193,6 +215,10 @@
     body .bestseller-section .book-ranking { width: 85%;margin: auto;}
     body .bestseller-section .et_pb_column:first-child {margin-top: 720px; z-index: 9; width: 100%; margin-right: 0; box-shadow: 117px -27px 25px #171717; background-color: #171717!important; padding: 30px 0px 35px; }
 
+    
+    /************************ Contact Section ( Global ) *********************/
+    body .contact-section::after { top: -270px; left: 11%; }
+    
 }
 
 @media only screen and (max-width: 1024px) {
@@ -236,6 +262,10 @@ body .books-banner .banner-image { width: 60%; margin: auto; }
 body .books-banner .banner-image-col, body .books-banner .banner-title{width: 100%;}
 body .books-banner{padding-bottom: 0;}
 
+/************************ Contact Section ( Global ) *********************/
+body .contact-section::before { border-radius: 0px 0px 0px 350px; }
+body .contact-section::after { left: 40%; }
+body .contact-section .contact-content .content:last-child { width: 100%; padding-top: 670px; }
 
 }
 
@@ -263,7 +293,7 @@ body .books-banner{padding-bottom: 0;}
     body .informative-events-section .events-column .btn { justify-content: center; }
     /* Giving Section */
     body .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header .underline-b::before{bottom: -2px; height: 7px;}
-
+    
     /************************ BOOKS *********************/
     /* bestseller section */
     body .bestseller-section .et_pb_column:first-child { margin-top: 580px;}
@@ -272,7 +302,7 @@ body .books-banner{padding-bottom: 0;}
     body .bestseller-section .book-ranking ul li span.ranking { font-size: 9rem; }
     body .bestseller-section .book-ranking ul li span.ranking span.sup ,body .bestseller-section .book-ranking ul li{ font-size: 2.75rem;}
     body .bestseller-section h4 { font-size: 5rem; }
-
+    
 
 
 }
@@ -294,11 +324,11 @@ body .books-banner{padding-bottom: 0;}
     body .h-giving-section .h-giving-content .content:nth-child(2) { width: 90%;}
     body .h-giving-section .h-giving-content .content:nth-child(3){ width: 100%; }
     body .h-giving-section .h-giving-content .content:nth-child(3) .text-content{width: 90%; margin: 0px auto 30px;}
-
+    
     /************************ BOOKS *********************/
     /* book review sub section */
     body .book-review-sub-section { padding-top: 70px; padding-bottom: 50px; }
-
+    
 }   
 
 @media only screen and (max-width: 768px) {
@@ -319,6 +349,8 @@ body .books-banner{padding-bottom: 0;}
     body .bestseller-section .book-ranking ul li:last-child, body .bestseller-section h4 { margin-bottom: 40px; }
     body .bestseller-section { padding-top: 60px; padding-bottom: 60px; }
 
+
+    
 }
 
 /* Mobile L */
@@ -353,6 +385,15 @@ body .books-banner{padding-bottom: 0;}
     /* bestseller section */
     body .bestseller-section .et_pb_column:first-child { margin-top: 360px;}
 
+    /************************ Contact Section ( Global ) *********************/
+    body .contact-section::after { left: 50%; width: calc(457px - 35%); height: calc(1283px - 35%); top: -90px; transform: translate(-50%, 0%); }
+    body .contact-section .contact-content .content:first-child { top: 90px; }
+    body .contact-section .contact-content .content:last-child { padding-top: 550px; }
+    body .contact-section .et_pb_blurb.et_pb_text_align_left .et_pb_blurb_content .et_pb_blurb_container { text-align: center; }
+    body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(5) { position: static; margin-bottom: 0px}
+    body .contact-section input[type="checkbox"] + label { width: 100%; }
+    body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(1) { width: 100%; margin-right: 0px; }
+    body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(2) { width: 100%;}
 }
 
 
