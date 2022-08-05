@@ -33,6 +33,12 @@
     body .books-banner .banner-title h2{ max-width: 690px;font-size: 6.15rem;}
     /* book review sub section */
     body .book-review-sub-section .review-content { width: 70%; }
+    /* Synopsis Section */
+    /* body .synopsis-section .synopsis-content .content:first-child h2 { font-size: 23rem;}
+    body .synopsis-section .synopsis-content .content:nth-child(3) .btn { margin-bottom: 70px; }
+    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { padding-bottom: 35px; }
+    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { font-size: 5.25rem; }
+    body .synopsis-section .synopsis-content .content:nth-child(3) { padding: 60px 20px 240px 55px;} */
 
 }
 @media only screen and (max-width: 1580px) {
@@ -179,6 +185,14 @@
     body .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p { line-height: 1.8em; }
     body .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { font-size: 4.5rem; }
     
+    /************************ BOOKS *********************/
+    /* bestseller section */
+    body .bestseller-section .et_pb_column:nth-child(2){display: block}
+    body .bestseller-section .et_pb_row{display: flex;flex-direction: column-reverse;align-items: center;}
+    body div.et_pb_section.bestseller-section {background-image: none !important;}
+    body .bestseller-section .book-ranking { width: 85%;margin: auto;}
+    body .bestseller-section .et_pb_column:first-child { width: 100%; }
+
 }
 
 @media only screen and (max-width: 1024px) {
@@ -249,6 +263,14 @@ body .books-banner{padding-bottom: 0;}
     body .informative-events-section .events-column .btn { justify-content: center; }
     /* Giving Section */
     body .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header .underline-b::before{bottom: -2px; height: 7px;}
+
+    /************************ BOOKS *********************/
+    /* bestseller section */
+    body .bestseller-section .book-ranking { width: 95%; }
+    body .bestseller-section .book-ranking ul li span.ranking::before, body .bestseller-section .book-ranking ul li span.ranking::after { width: calc(51px - 10%); height: calc(107px - 10%); }
+    body .bestseller-section .book-ranking ul li span.ranking { font-size: 9rem; }
+    body .bestseller-section .book-ranking ul li span.ranking span.sup ,body .bestseller-section .book-ranking ul li{ font-size: 2.75rem;}
+    body .bestseller-section h4 { font-size: 5rem; }
 
 
 
