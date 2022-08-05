@@ -46,6 +46,10 @@
     /************************ BOOKS *********************/
     /* banner */
     body .books-banner .banner-title h2 { max-width: 625px; font-size: 5.65rem; }
+    /*  bestseller section */
+    body .bestseller-section .book-ranking ul li { margin-bottom: 90px; }
+    body .bestseller-section h4{margin-bottom: 70px; font-size: 6rem;}
+    body .bestseller-section .book-ranking ul li span.ranking{margin-right: 70px;}
 
 
 }
@@ -118,6 +122,14 @@
     /* Giving Section */
     body .h-giving-section .h-giving-content .content:first-child h2 { font-size: 17rem; }
     body .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { font-size: 5rem;}
+
+    /************************ BOOKS *********************/
+    /*  bestseller section */
+    body .bestseller-section .book-ranking ul li:last-child , body .bestseller-section h4{ margin-bottom: 60px; }
+    body .bestseller-section .book-ranking ul li { margin-bottom: 70px; }
+    body .bestseller-section .et_pb_column:first-child { width: 80%; }
+    body .bestseller-section .book-ranking { width: 82%; }
+    body .bestseller-section { padding-top: 80px; padding-bottom: 100px; }
     
 }
 
