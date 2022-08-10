@@ -42,8 +42,9 @@ body .synopsis-section .synopsis-content .content:nth-child(3){width: 40%; margi
 body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content{width: 100%; max-width: 100%;}
 body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description{font-size: 1.125rem;}
 body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description a{color: black;text-decoration: underline;}
-body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p{font-family: 'Poppins';color: #000;line-height: 2.2em;padding-bottom: 45px;}
+body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p{font-family: 'Poppins';color: #000;line-height: 2.2em; padding-bottom: 40px; }
 body .synopsis-section .synopsis-content .content:nth-child(3) .btn{margin-bottom: 110px;}
+body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p:last-child { padding-bottom: 0; }
 
 /* contact section */
 body.page-id-305 .contact-section .contact-content { padding: 336px 0px 400px!important;}

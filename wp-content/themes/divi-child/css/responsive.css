@@ -1,4 +1,15 @@
 /* Desktop Screen L*/
+@media only screen and (max-width: 1800px){
+    /************************ BOOKS *********************/
+
+    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p {
+        padding-bottom: 20px;
+    }
+    body .synopsis-section .synopsis-content .content:nth-child(3) {
+        padding: 0 0 75px 4%;
+    }
+}
+
 @media only screen and (max-width: 1700px) {
     html { font-size: 15px!important; }
     .critical-principles-section .critical-principles-content .content:last-child { right: -130px; top: -70px; width: 85%; }
@@ -23,23 +34,22 @@
     body .informative-events-section .events-section .events-content { margin-left: 25px; }
     /* Giving Section */
     body .h-giving-section .h-giving-content .content:first-child h2 { font-size: 23rem;}
-    body .h-giving-section .h-giving-content .content:nth-child(3) { padding: 60px 20px 240px 55px;}
     body .h-giving-section .h-giving-content .content:nth-child(3) .btn { margin-bottom: 70px; }
-    body .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { padding-bottom: 35px; }
     body .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { font-size: 5.25rem; }
-
+    body .h-giving-section .h-giving-content .content:nth-child(3) { padding: 60px 20px 240px 55px;}
+    body .h-giving-section .h-giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { padding-bottom: 35px; }
+    
     /************************ BOOKS *********************/
     /* banner */
     body .books-banner .banner-title h2{ max-width: 690px;font-size: 6.15rem;}
     /* book review sub section */
     body .book-review-sub-section .review-content { width: 70%; }
     /* Synopsis Section */
-    /* body .synopsis-section .synopsis-content .content:first-child h2 { font-size: 23rem;}
-    body .synopsis-section .synopsis-content .content:nth-child(3) .btn { margin-bottom: 70px; }
-    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { padding-bottom: 35px; }
-    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { font-size: 5.25rem; }
-    body .synopsis-section .synopsis-content .content:nth-child(3) { padding: 60px 20px 240px 55px;} */
-
+    body .synopsis-section .synopsis-content .content:first-child h2 { font-size: 23rem;}
+    body .synopsis-section .synopsis-content .content:nth-child(3) {
+        padding: 0 0 65px 3%;
+    }
+   
 }
 @media only screen and (max-width: 1580px) {
     /* Speaker Section */
@@ -56,9 +66,22 @@
     body .bestseller-section .book-ranking ul li { margin-bottom: 90px; }
     body .bestseller-section h4{margin-bottom: 70px; font-size: 6rem;}
     body .bestseller-section .book-ranking ul li span.ranking{margin-right: 70px;}
+    /* Synopsis Section */
+    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p {
+        line-height: 2em;
+    }
 
 
 }
+
+@media only screen and (max-width: 1500px){
+    /************************ BOOKS *********************/
+    /* Synopsis Section */
+    body .synopsis-section .synopsis-content .content:nth-child(2) {
+        width: calc(60% - 50px);
+    }
+}
+
 @media only screen and (max-width: 1440px) {
     html { font-size: 14px!important; }
     /* home banner */
@@ -79,6 +102,12 @@
     body .books-banner{padding-top: 140px !important;}
     /* book review sub section */
     body .book-review-sub-section { padding-top: 91px; padding-bottom: 63px; }
+    /* Synopsis Section */
+    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p { padding-bottom: 15px; }
+    body .synopsis-section .synopsis-content .content:nth-child(2) { width: calc(60% - 50px);}
+    body .synopsis-section .synopsis-content .content:nth-child(3) {
+        padding: 0 0 65px 4%;
+    }
 
     /************************ Contact Section ( Global ) *********************/
     body .contact-section::before { border-radius: 0px 0px 500px 0px; }
@@ -120,6 +149,10 @@
     /************************ BOOKS *********************/
     /* banner */
     body .books-banner .banner-title h2 { font-size: 5.38rem; max-width: 555px;}
+    /* Synopsis Section */
+    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description { font-size: 1rem; }
+    body .synopsis-section .synopsis-content .content:first-child h2 { font-size: 20rem;}
+
     
 }
 @media only screen and (max-width: 1338px) {
@@ -145,6 +178,8 @@
     body .bestseller-section .et_pb_column:first-child { width: 80%; }
     body .bestseller-section .book-ranking { width: 82%; }
     body .bestseller-section { padding-top: 80px; padding-bottom: 100px; }
+
+
     
 }
 
@@ -175,7 +210,17 @@
     body .books-banner .banner-title h2 { font-size: 4.3rem;max-width: 445px;}
     /* book review sub section */
     body .book-review-sub-section .review-content { width: 90%; }
-  
+    /* Synopsis Section */
+    body .synopsis-section .synopsis-content .content:first-child h2 { font-size: 17rem;}
+    body .synopsis-section .synopsis-content .content:first-child .et_pb_module { width: 100%;}
+    body .synopsis-section .synopsis-content .content:nth-child(2){width: 80%; left: inherit; right: 0px; height:950px; border-radius: 0px;}
+    body .synopsis-section .synopsis-content .content:nth-child(3){ width: 90%; margin-right: auto!important; margin: auto; padding: 0px 0px 60px; margin-top: 950px;box-shadow: 110px -104px 49px #fff; background-color: #fff;}
+    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content{margin-bottom: 30px;}
+    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description{text-align: center;}
+    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description { font-size: 1.125rem; }
+    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p {
+        padding-bottom: 20px;
+    }    
     /************************ Contact Section ( Global ) *********************/
     body .contact-section::before { border-radius: 0px 0px 350px 0px; }
     body .contact-section::after { width: calc(457px - 15%); height: calc(1283px - 15%);top: -240px; left: 14%;}
@@ -261,7 +306,10 @@ body .books-banner .banner-image .et_pb_image_wrap { position: relative; width: 
 body .books-banner .banner-image { width: 60%; margin: auto; }
 body .books-banner .banner-image-col, body .books-banner .banner-title{width: 100%;}
 body .books-banner{padding-bottom: 0;}
-
+/* Synopsis section */
+body .synopsis-section .synopsis-content .content:nth-child(2){height: 840px;}
+body .synopsis-section .synopsis-content .content:nth-child(3) { margin-top: 840px; }
+body .synopsis-section .synopsis-content .content:first-child h2 { font-size: 15rem; }
 /************************ Contact Section ( Global ) *********************/
 body .contact-section::before { border-radius: 0px 0px 0px 350px; }
 body .contact-section::after { left: 40%; }
@@ -384,6 +432,10 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     /************************ BOOKS *********************/
     /* bestseller section */
     body .bestseller-section .et_pb_column:first-child { margin-top: 360px;}
+    /* Synopsis Section */
+    body .synopsis-section .synopsis-content .content:first-child { top: 70px; }
+    body .synopsis-section .synopsis-content .content:nth-child(2) { width: 100%; }
+    body .synopsis-section .synopsis-content .content:nth-child(3) { margin-top: 700px;}
 
     /************************ Contact Section ( Global ) *********************/
     body .contact-section::after { left: 50%; width: calc(457px - 35%); height: calc(1283px - 35%); top: -90px; transform: translate(-50%, 0%); }
@@ -414,6 +466,12 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .book-review-sub-section h4 { font-size: 2.6rem;}
     /* bestseller section */
     body .bestseller-section .et_pb_column:first-child { margin-top: 300px;}
+    /* Synopsis Section */
+    body .synopsis-section .synopsis-content .content:nth-child(3) { width: 100%;  box-shadow: 50px -90px 60px #fff; margin-top: 640px;}
+    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content { width: 90%; margin: auto; }
+    body .synopsis-section .synopsis-content .content:nth-child(2) .et_pb_module{display: flex; justify-content: center;}
+    body .synopsis-section .synopsis-content .content:nth-child(2) .et_pb_module .et_pb_image_wrap{max-width: unset;}
+    body .synopsis-section .synopsis-content .content:nth-child(2) .et_pb_module .et_pb_image_wrap img{max-width: unset; width:110%; overflow: hidden;}
 
 }
 
@@ -434,12 +492,10 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .books-banner .banner-title h2 { font-size: 3.5rem;padding-bottom: 10px; }
     /* bestseller section */
     body .bestseller-section .et_pb_column:first-child { margin-top: 230px;}
-    body .bestseller-section .book-ranking {
-        width: 105%;
-    }
-    body .bestseller-section .book-ranking ul li span.ranking {
-        margin-right: 40px;
-    }
+    body .bestseller-section .book-ranking { width: 105%; }
+    body .bestseller-section .book-ranking ul li span.ranking { margin-right: 40px; }
+    /* Synopsis Section */
+
 
 }
 
@@ -466,6 +522,11 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .bestseller-section .et_pb_column:first-child { margin-top: 160px; }
     body .bestseller-section .et_pb_column:first-child .btn a img { top: 9px; width: 30%; }
     body .bestseller-section .et_pb_column:first-child .btn a { padding: 8px 20px 8px 23px; font-size: 13.25px; }
+    /* Synopsis Section */
+    body .synopsis-section .synopsis-content .content:first-child { top: 40px; }
+    body .synopsis-section .synopsis-content .content:first-child h2 { font-size: 12rem;line-height: 0.73; }
+    body .synopsis-section .synopsis-content .content:nth-child(3) { margin-top: 520px; }
+
     
 }
 
