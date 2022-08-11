@@ -46,10 +46,10 @@
     body .book-review-sub-section .review-content { width: 70%; }
     /* Synopsis Section */
     body .synopsis-section .synopsis-content .content:first-child h2 { font-size: 23rem;}
-    body .synopsis-section .synopsis-content .content:nth-child(3) {
-        padding: 0 0 65px 3%;
-    }
-   
+    body .synopsis-section .synopsis-content .content:nth-child(3) { padding: 0 0 65px 3%; }
+    /* review section */
+    body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content { min-height: 466px; padding: 38px 31px 24px; }
+    body .reviews-section .reviews-content .content:last-child h2::after { right: -200px; top: 20px; width: 1030px;}
 }
 @media only screen and (max-width: 1580px) {
     /* Speaker Section */
@@ -67,10 +67,14 @@
     body .bestseller-section h4{margin-bottom: 70px; font-size: 6rem;}
     body .bestseller-section .book-ranking ul li span.ranking{margin-right: 70px;}
     /* Synopsis Section */
-    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p {
-        line-height: 2em;
-    }
-
+    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p { line-height: 2em; }
+    /* reviews section */
+    body .reviews-section { padding-bottom: 180px; }
+    body .reviews-section .reviews-content .content:first-child { width: 79%; padding-top: 85px; }
+    body .reviews-section .reviews-content .content:last-child { width: 15%; z-index: 1; }
+    body .reviews-section .reviews-content .content:last-child h2 { font-size: 24rem; }
+    body .reviews-section .reviews-content .content:last-child h2::after { width: 850px;top: 20px;}
+    body .reviews-section .reviews-content .content:first-child h4{padding-bottom: 25px;}
 
 }
 
@@ -152,7 +156,12 @@
     /* Synopsis Section */
     body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description { font-size: 1rem; }
     body .synopsis-section .synopsis-content .content:first-child h2 { font-size: 20rem;}
-
+    /* reviews section */
+    body .reviews-section { padding-bottom: 100px; }
+    body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content { min-height: 415px; padding: 35px 25px 24px; }
+    body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content p { font-size: 0.8rem; line-height: 2em; }
+    body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content h5 { font-size: 1.7rem; }
+    body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content .five-stars::before { margin-bottom: 20px; }
     
 }
 @media only screen and (max-width: 1338px) {

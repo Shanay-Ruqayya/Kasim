@@ -120,28 +120,28 @@ function show_reviews_sc_hp_function($attr){
     // var_dump($featured);die;
 	$result = "";
 	if ($featured->have_posts()):
-        $result  .= "<div class='reviews-section'>";
+        $result  .= "<div class='reviews-section-posttype'>";
     while($featured->have_posts()): $featured->the_post();
 
 	// $thumb = get_field('thumb_for_video');
 
-    $result .= "<div class='reviews-content'>";
+    $result .= "<div class='review-content'>";
 
-    	$result .= '<div class="content">';
+    	$result .= '<div class="box">';
             
     	    $title = get_the_title();
 			
-			// $result .= '<div>';
-
-			// 	$result .= get_the_post_thumbnail();
-
-			// $result .= '</div>';	
+			
 
 			$result .= '<div>';
 
-                $result .= '<h4> '.$title .'</h4>';
+				$result .= "<div class='five-stars'> </div>";
 
-                $result .= '<p>' . get_the_date() . '</p>';
+                $result .= '<h5> '.$title .'</h5>';
+
+				$result .= '<p>' . get_the_content() . '</p>';
+
+                $result .= '<p><strong>-' . get_field('author') . '</strong></p>';
 
             $result .= '</div>';
             
