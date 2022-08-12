@@ -1,13 +1,9 @@
 /* Desktop Screen L*/
 @media only screen and (max-width: 1800px){
     /************************ BOOKS *********************/
-
-    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p {
-        padding-bottom: 20px;
-    }
-    body .synopsis-section .synopsis-content .content:nth-child(3) {
-        padding: 0 0 75px 4%;
-    }
+    /* Synopsis section */
+    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p { padding-bottom: 20px; }
+    body .synopsis-section .synopsis-content .content:nth-child(3) { padding: 0 0 75px 4%; }
 }
 
 @media only screen and (max-width: 1700px) {
@@ -50,6 +46,12 @@
     /* review section */
     body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content { min-height: 466px; padding: 38px 31px 24px; }
     body .reviews-section .reviews-content .content:last-child h2::after { right: -200px; top: 20px; width: 1030px;}
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:first-child h2 { font-size: 23rem;}
+    body .giving-section .giving-content .content:nth-child(3) .btn { margin-bottom: 70px; }
+    body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { font-size: 5.25rem; }
+    body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { padding-bottom: 35px; }
 }
 @media only screen and (max-width: 1580px) {
     /* Blog Banner */
@@ -78,6 +80,9 @@
     body .reviews-section .reviews-content .content:last-child h2::after { width: 850px;top: 20px;}
     body .reviews-section .reviews-content .content:first-child h4{padding-bottom: 25px;}
 
+    /***********************Giving Page*******************/
+    /* Giving Section */
+
 }
 
 @media only screen and (max-width: 1500px){
@@ -86,6 +91,9 @@
     body .synopsis-section .synopsis-content .content:nth-child(2) {
         width: calc(60% - 50px);
     }
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(3) { padding: 60px 10px 90px 50px; }
 }
 
 @media only screen and (max-width: 1440px) {
@@ -103,7 +111,7 @@
     .critical-principles-section .critical-principles-content .content:first-child { padding: 113px 0px 114px; }
     /* Giving Section */
     body .h-giving-section .h-giving-content .content:first-child { top: 140px;}
-    body .h-giving-section .h-giving-content .content:nth-child(3) { padding: 60px 20px 120px 25px; }
+    body .h-giving-section .h-giving-content .content:nth-child(3) { padding: 90px 20px 120px 25px; }
 
     /************************ BOOKS *********************/
     /* banner */
@@ -114,9 +122,12 @@
     /* Synopsis Section */
     body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p { padding-bottom: 15px; }
     body .synopsis-section .synopsis-content .content:nth-child(2) { width: calc(60% - 50px);}
-    body .synopsis-section .synopsis-content .content:nth-child(3) {
-        padding: 0 0 65px 4%;
-    }
+    body .synopsis-section .synopsis-content .content:nth-child(3) { padding: 0 0 65px 4%; }
+
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:first-child { top: 140px;}
+    body .giving-section .giving-content .content:nth-child(3) { padding: 90px 20px 120px 25px; }
 
     /************************ Contact Section ( Global ) *********************/
     body .contact-section::before { border-radius: 0px 0px 500px 0px; }
@@ -167,7 +178,13 @@
     body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content p { font-size: 0.8rem; line-height: 2em; }
     body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content h5 { font-size: 1.7rem; }
     body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content .five-stars::before { margin-bottom: 20px; }
-    
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(2) { width: calc(65% - 90px); left: -90px; }
+    body .giving-section .giving-content .content:first-child h2 { font-size: 20rem; }
+    body .giving-section .giving-content .content:nth-child(3) { padding: 60px 20px 140px 0px; }
+    body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { padding-bottom: 35px; }
+    body .giving-section .giving-content .content:nth-child(3) .btn { margin-bottom: 50px; }
 }
 @media only screen and (max-width: 1338px) {
     /* BTN */
@@ -192,7 +209,10 @@
     body .bestseller-section .et_pb_column:first-child { width: 80%; }
     body .bestseller-section .book-ranking { width: 82%; }
     body .bestseller-section { padding-top: 80px; padding-bottom: 100px; }
-
+    /***********************Giving Page*******************/
+     /* Giving Section */
+     body .giving-section .giving-content .content:first-child h2 { font-size: 17rem; }
+     body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { font-size: 5rem;}
 
     
 }
@@ -245,6 +265,9 @@
     body .reviews-section .reviews-content .slick-track{display: flex;}
     body .reviews-section .reviews-content .content:first-child h4 { margin: auto; text-align: center; }
 
+    /***********************Giving Page*******************/
+     /* giving section */
+     body .giving-section .giving-content .content:nth-child(3) { padding: 60px 20px 70px 0px; }
 
     /************************ Contact Section ( Global ) *********************/
     body .contact-section::before { border-radius: 0px 0px 350px 0px; }
@@ -286,7 +309,12 @@
     body .bestseller-section .book-ranking { width: 85%;margin: auto;}
     body .bestseller-section .et_pb_column:first-child {margin-top: 720px; z-index: 9; width: 100%; margin-right: 0; box-shadow: 117px -27px 25px #171717; background-color: #171717!important; padding: 30px 0px 35px; }
 
-    
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(2) { width: calc(65% - 90px); left: -50px; }
+    body .giving-section .giving-content .content:nth-child(3) { padding: 60px 20px 50px 0px; }
+    body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p { line-height: 1.8em; }
+    body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { font-size: 4.5rem; }
     /************************ Contact Section ( Global ) *********************/
     body .contact-section::after { top: -270px; left: 11%; }
     
@@ -399,7 +427,9 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .reviews-section .reviews-content .content:last-child h2::after { width: 560px; top: 0; right: -60px; }
     body .reviews-section .reviews-content .content:last-child h2 { font-size: 16rem; }
     body .reviews-section { padding-bottom: 60px; }
-    
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header .underline-b::before{bottom: -2px; height: 7px;}
 
 
 }
@@ -427,7 +457,11 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     /************************ BOOKS *********************/
     /* book review sub section */
     body .book-review-sub-section { padding-top: 70px; padding-bottom: 50px; }
-    
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(2) { width: 90%;}
+    body .giving-section .giving-content .content:nth-child(3){ width: 100%; }
+    body .giving-section .giving-content .content:nth-child(3) .text-content{width: 90%; margin: 0px auto 30px;}
 }   
 
 @media only screen and (max-width: 768px) {
@@ -493,6 +527,11 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .synopsis-section .synopsis-content .content:nth-child(2) { width: 100%; }
     body .synopsis-section .synopsis-content .content:nth-child(3) { margin-top: 700px;}
 
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:first-child { top: 70px; }
+    body .giving-section .giving-content .content:nth-child(2) { width: 100%; }
+    body .giving-section .giving-content .content:nth-child(3) { margin-top: 630px;}
     /************************ Contact Section ( Global ) *********************/
     body .contact-section::after { left: 50%; width: calc(457px - 35%); height: calc(1283px - 35%); top: -90px; transform: translate(-50%, 0%); }
     body .contact-section .contact-content .content:first-child { top: 90px; }
@@ -536,17 +575,15 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .synopsis-section .synopsis-content .content:nth-child(2) .et_pb_module .et_pb_image_wrap img{max-width: unset; width:110%; overflow: hidden;}
     /* reviews section */
     body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content{margin-right: 5 !important;margin-left:5px ;}
-    body .reviews-section .reviews-content .content:first-child h4 {
-        font-size: 5.5rem;
-    }
-    body .reviews-section .reviews-content .content:last-child h2::after {
-        width: 430px;
-        top: 20px;
-        right: -50px;
-    }
-    body .reviews-section .reviews-content .content:last-child h2 {
-        font-size: 15rem;
-    }
+    body .reviews-section .reviews-content .content:first-child h4 { font-size: 5.5rem; }
+    body .reviews-section .reviews-content .content:last-child h2::after { width: 430px; top: 20px; right: -50px; }
+    body .reviews-section .reviews-content .content:last-child h2 { font-size: 15rem; }
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(2) .et_pb_module{display: flex; justify-content: center;}
+    body .giving-section .giving-content .content:nth-child(2) .et_pb_module .et_pb_image_wrap{max-width: unset;}
+    body .giving-section .giving-content .content:nth-child(2) .et_pb_module .et_pb_image_wrap img{max-width: unset; width: 601px; height: 801px; overflow: hidden;}
+    body .giving-section .giving-content .content:nth-child(3) { margin-top: 590px; box-shadow: 27px -118px 82px #fff; }
 
 }
 
@@ -570,7 +607,9 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .bestseller-section .book-ranking { width: 105%; }
     body .bestseller-section .book-ranking ul li span.ranking { margin-right: 40px; }
     /* Synopsis Section */
-
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:first-child h2 { font-size: 15rem; }
 
 }
 
@@ -606,7 +645,10 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .synopsis-section .synopsis-content .content:first-child { top: 40px; }
     body .synopsis-section .synopsis-content .content:first-child h2 { font-size: 12rem;line-height: 0.73; }
     body .synopsis-section .synopsis-content .content:nth-child(3) { margin-top: 520px; }
-
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:first-child { top: 40px; }
+    body .giving-section .giving-content .content:first-child h2 { font-size: 12rem;line-height: 0.73; }
     
 }
 

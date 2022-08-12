@@ -9,9 +9,12 @@
 /* Blog Banners Section */
 .inner-banner-section.blog-banner-section .inner-banner-content .content:last-child{top: initial; bottom: 0px; transform: translate(0%, 0%);}
 .inner-banner-section.blog-banner-section .inner-banner-content .content:last-child .et_pb_image_wrap img{width: 798px; height: 610px;}
+/* giving banner */
+.inner-banner-section.giving-banner-section .inner-banner-content .content:last-child .et_pb_image_wrap img { max-width: 1062px; max-height: 464px; }
+.inner-banner-section.giving-banner-section .inner-banner-content .content:last-child{top: initial; bottom: 0px; transform: translate(0%, 0%);}
 
 
-/* BOOKS */
+/************* BOOKS **************/
 /* banner */
 body .books-banner .banner-title{width: 51%;}
 body .books-banner .banner-title h2{ font-size: 6.25rem; line-height: 91.9%; color: #FFFFFF; max-width: 710px;}
@@ -106,3 +109,19 @@ body.page-id-305 .contact-section::after{z-index: 3;}
 .blog-sub-section .blog-sub-content .et_pb_blurb_content .et_pb_module_header{font-size: 3.125rem;color: #000;text-align: center;padding-bottom: 33px;}
 .blog-sub-section .blog-sub-content .et_pb_blurb_content .et_pb_blurb_description{font-size: 1.125rem;line-height: 2em; color: #000;text-align: center;}
 .event-blog .container{padding-top: 0px!important;}
+
+/***************GIVING PAGE******************/
+/* Giving Section */
+body .giving-section{padding: 0px;}
+body .giving-section .giving-content{padding: 0px;width: 100%;display: flex; justify-content: flex-end; align-items: flex-start;}
+body .giving-section .giving-content .content:first-child{position: absolute; z-index: 9; left: 0px; top: 220px;width: 100%;z-index: 5;}
+body .giving-section .giving-content .content:first-child .et_pb_module{width: 90%;margin: auto;}
+body .giving-section .giving-content .content:first-child h2{ font-size: 28.125rem; writing-mode: vertical-lr; font-family: 'bignoodletitling'; color: #014EFF;line-height: .8em;}
+body .giving-section .giving-content .content:nth-child(2){width: calc(60% - 90px);z-index: 4;  margin: 0px;position: absolute;left: 0px;top: 0px;border-radius: 0px 0px 420px 0px; overflow: hidden;}
+body .giving-section .giving-content .content:nth-child(2) .et_pb_module{    max-width: 1112px; max-height: 1164px;}
+body .giving-section .giving-content .content:nth-child(3){width: 40%; margin: 0px; margin-right: 5%!important;padding: 90px 20px 130px 85px;position: relative;z-index: 9;}
+body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content{width: 100%; max-width: 100%;}
+body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header{line-height: 91.9% !important;font-size: 6.25rem; color: #000; line-height: .85em;padding-bottom: 45px;}
+body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description{font-size: 1.125rem;}
+body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description a{color: black;text-decoration: underline;}
+body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p{font-family: 'Poppins';color: #000;line-height: 2.2em;}
