@@ -1,3 +1,16 @@
+/* Inner Banners Section */
+.inner-banner-section{ height: 700px; padding: 0px; padding-top: 120px!important;overflow: hidden;}
+.inner-banner-section .inner-banner-content{ height: 100%; display: flex; align-items: center; position: relative;}
+.inner-banner-section .inner-banner-content .content:first-child{width: 45%;margin: 0px;}
+.inner-banner-section .inner-banner-content .content:first-child .b-title{font-size: 6.25rem; color: #fff;}
+.inner-banner-section .inner-banner-content .content:last-child{width: 60%; position: absolute; right: -5%; top: 50%; transform: translate(0%, -50%);}
+.inner-banner-section .inner-banner-content .content:last-child .et_pb_image_wrap {width: 100%;}
+.inner-banner-section .inner-banner-content .content:last-child .et_pb_image_wrap  img{width: 100%;filter: drop-shadow(0px 84px 84px rgba(0,0,0,0.25));}
+/* Blog Banners Section */
+.inner-banner-section.blog-banner-section .inner-banner-content .content:last-child{top: initial; bottom: 0px; transform: translate(0%, 0%);}
+.inner-banner-section.blog-banner-section .inner-banner-content .content:last-child .et_pb_image_wrap img{width: 798px; height: 610px;}
+
+
 /* BOOKS */
 /* banner */
 body .books-banner .banner-title{width: 51%;}
@@ -66,3 +79,30 @@ body .reviews-section .reviews-content .content:first-child .reviews-section-pos
 body.page-id-305 .contact-section .contact-content { padding: 336px 0px 400px!important;}
 body.page-id-305 .contact-section .contact-content .content:first-child { top: 336px; }
 body.page-id-305 .contact-section::after{z-index: 3;}
+
+
+/* ................. */
+/* Book A Call Page */
+/* --------------- */
+
+.call-me-section{padding: 0px;}
+.call-me-section .call-me-content{padding: 0px!important; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; position: relative;}
+.call-me-section .call-me-content .content:nth-child(1){ position: absolute; left: 0px; z-index: 999;}
+.call-me-section .call-me-content .content:nth-child(2){ position: absolute; left: 0px; top: 0px; width: 50%;}
+.call-me-section .call-me-content .content:nth-child(3){ width: 100%;}
+.call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb{display: flex;justify-content: flex-end;}
+.call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content{width: 45%; max-width: 45%;margin: 0px;}
+.call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content .et_pb_module_header{font-size: 6.25rem;color: #000;}
+.call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description{color: #000;}
+
+
+/* .................. */
+/* Blog Listing Page */
+/* ---------------- */
+
+.blog-sub-section{padding: 0px;}
+.blog-sub-section .blog-sub-content{padding: 87px 0px 63px;}
+.blog-sub-section .blog-sub-content .et_pb_blurb_content{max-width: 100%;}
+.blog-sub-section .blog-sub-content .et_pb_blurb_content .et_pb_module_header{font-size: 3.125rem;color: #000;text-align: center;padding-bottom: 33px;}
+.blog-sub-section .blog-sub-content .et_pb_blurb_content .et_pb_blurb_description{font-size: 1.125rem;line-height: 2em; color: #000;text-align: center;}
+.event-blog .container{padding-top: 0px!important;}
