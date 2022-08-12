@@ -67,6 +67,24 @@ $(document).ready(function($){
   
     
 }
+// reviews section slider
+if (window.matchMedia('(max-width: 1282px)').matches) {
+  $('.reviews-section-posttype').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    arrows: false,
+    dots:false,
+    responsive: [
+      {
+        breakpoint: 581 ,
+          settings: {
+            slidesToShow: 1
+          }
+      }
+    ]
+  })
+    
+}
 $('.events-section').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
