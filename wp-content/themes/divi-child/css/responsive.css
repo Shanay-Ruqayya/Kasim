@@ -235,9 +235,17 @@
     body .synopsis-section .synopsis-content .content:nth-child(3) .text-content{margin-bottom: 30px;}
     body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description{text-align: center;}
     body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description { font-size: 1.125rem; }
-    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p {
-        padding-bottom: 20px;
-    }    
+    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p { padding-bottom: 20px; }    
+    /* reviews section */
+    body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content {max-width: unset; margin-right: 20px !important; min-height: unset;height: inherit; }
+    body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content:nth-child(2), body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content:nth-child(3) { top: 0; }
+    body .reviews-section .reviews-content .content:last-child h2::after { width: 750px; top: 13px; right: -170px; }
+    body .reviews-section .reviews-content .content:last-child h2 { font-size: 22rem; }
+    body .reviews-section .reviews-content .content:first-child { padding-top: 65px; }
+    body .reviews-section .reviews-content .slick-track{display: flex;}
+    body .reviews-section .reviews-content .content:first-child h4 { margin: auto; text-align: center; }
+
+
     /************************ Contact Section ( Global ) *********************/
     body .contact-section::before { border-radius: 0px 0px 350px 0px; }
     body .contact-section::after { width: calc(457px - 15%); height: calc(1283px - 15%);top: -240px; left: 14%;}
@@ -254,6 +262,7 @@
 }
 
 /* Desktop Screen S */
+
 @media only screen and (max-width: 1167px) {
     /* Speaker Section */
     .h-speaker-section .h-speaker-content .content:nth-child(2) { width: calc(65% - 90px); left: -50px; }
@@ -281,6 +290,14 @@
     /************************ Contact Section ( Global ) *********************/
     body .contact-section::after { top: -270px; left: 11%; }
     
+}
+
+@media only screen and (max-width:1100px) {
+    /************************ BOOKS *********************/
+    /* reviews section */
+    body .reviews-section .reviews-content .content:last-child h2 { font-size: 19rem; }
+    body .reviews-section { padding-bottom: 200px; }
+    body .reviews-section .reviews-content .content:last-child h2::after { width: 640px; top: 30px; right: -150px; }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -329,10 +346,19 @@ body .books-banner{padding-bottom: 0;}
 body .synopsis-section .synopsis-content .content:nth-child(2){height: 840px;}
 body .synopsis-section .synopsis-content .content:nth-child(3) { margin-top: 840px; }
 body .synopsis-section .synopsis-content .content:first-child h2 { font-size: 15rem; }
+/* reviews section */
+body .reviews-section .et_pb_row{ display: flex; flex-wrap: wrap; flex-direction: column-reverse; }
+body .reviews-section .reviews-content .content:last-child{width: 100%;text-align: right; display: flex; justify-content: flex-end;}
+body .reviews-section .reviews-content .content:first-child{width: 100% ;}
+body .reviews-section .reviews-content .content:last-child h2::after { width: 650px; top: 10px; right: -80px; }
+body .reviews-section .reviews-content .content:first-child { padding-top: 0; }
+body .reviews-section { background-position: center bottom 0px !important; padding-bottom: 100px; }
+
 /************************ Contact Section ( Global ) *********************/
 body .contact-section::before { border-radius: 0px 0px 0px 350px; }
 body .contact-section::after { left: 40%; }
 body .contact-section .contact-content .content:last-child { width: 100%; padding-top: 670px; }
+
 
 }
 
@@ -369,6 +395,10 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .bestseller-section .book-ranking ul li span.ranking { font-size: 9rem; }
     body .bestseller-section .book-ranking ul li span.ranking span.sup ,body .bestseller-section .book-ranking ul li{ font-size: 2.75rem;}
     body .bestseller-section h4 { font-size: 5rem; }
+    /* reviews section */
+    body .reviews-section .reviews-content .content:last-child h2::after { width: 560px; top: 0; right: -60px; }
+    body .reviews-section .reviews-content .content:last-child h2 { font-size: 16rem; }
+    body .reviews-section { padding-bottom: 60px; }
     
 
 
@@ -504,6 +534,19 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .synopsis-section .synopsis-content .content:nth-child(2) .et_pb_module{display: flex; justify-content: center;}
     body .synopsis-section .synopsis-content .content:nth-child(2) .et_pb_module .et_pb_image_wrap{max-width: unset;}
     body .synopsis-section .synopsis-content .content:nth-child(2) .et_pb_module .et_pb_image_wrap img{max-width: unset; width:110%; overflow: hidden;}
+    /* reviews section */
+    body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content{margin-right: 5 !important;margin-left:5px ;}
+    body .reviews-section .reviews-content .content:first-child h4 {
+        font-size: 5.5rem;
+    }
+    body .reviews-section .reviews-content .content:last-child h2::after {
+        width: 430px;
+        top: 20px;
+        right: -50px;
+    }
+    body .reviews-section .reviews-content .content:last-child h2 {
+        font-size: 15rem;
+    }
 
 }
 
@@ -538,6 +581,11 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     /* Speaker Section */
     .h-speaker-section .h-speaker-content .content:nth-child(3) { margin-top: 550px; box-shadow: 150px -134px 39px #fff; }
     /* Giving Section */
+    /************************ BOOKS *********************/
+    /* reviews section */
+    body .reviews-section .reviews-content .content:first-child h4 {
+        font-size: 4rem;
+    }
 }
 @media only screen and (max-width: 400px) {
     /* Speaker Section */
