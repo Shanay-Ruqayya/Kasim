@@ -103,7 +103,7 @@ function show_events_sc_hp_function($attr){
 
 		'post_type' => 'events',
 
-		'posts_per_page' => 3,
+		'posts_per_page' => $attr['number'],
 
 		'posts_status' => "publish",
 

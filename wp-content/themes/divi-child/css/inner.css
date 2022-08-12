@@ -39,7 +39,7 @@ body .bestseller-section .book-ranking ul li span.ranking span.sup { font-size: 
 body .bestseller-section .book-ranking ul li span.blue-text{color: #014EFF;}
 body .bestseller-section .book-ranking ul li span.ranking::before{ content: ''; width: 51px; height: 107px; background: url(../images/left.png); position: absolute; display:block; left: -48px;     background-size: cover; background-repeat: no-repeat; }
 body .bestseller-section .book-ranking ul li span.ranking::after{ content: ''; width: 51px; height: 107px; background: url(../images/right.png); position: absolute; display:block; right: -35px;     background-size: cover; background-repeat: no-repeat;}
-body .bestseller-section .et_pb_column:first-child .btn a img{ position: relative; top: 10px; }
+body .bestseller-section .et_pb_column:first-child .btn a img{ position: relative; top: 12px; }
 body .bestseller-section .et_pb_column:first-child .btn a::before{filter: brightness(0) invert(1);}
 body .bestseller-section .et_pb_column:first-child .btn a{display: inline-block;}
 body .bestseller-section .et_pb_column:nth-child(2){display: none;}
@@ -55,8 +55,25 @@ body .synopsis-section .synopsis-content .content:nth-child(3){width: 40%; margi
 body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content{width: 100%; max-width: 100%;}
 body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description{font-size: 1.125rem;}
 body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description a{color: black;text-decoration: underline;}
-body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p{font-family: 'Poppins';color: #000;line-height: 2.2em;padding-bottom: 45px;}
+body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p{font-family: 'Poppins';color: #000;line-height: 2.2em; padding-bottom: 40px; }
 body .synopsis-section .synopsis-content .content:nth-child(3) .btn{margin-bottom: 110px;}
+body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p:last-child { padding-bottom: 0; }
+
+/* reviews section */
+body .reviews-section{padding: 0px;overflow: hidden;}
+body .reviews-section .reviews-content .content:last-child{width: 20%;z-index: 1;}
+body .reviews-section .reviews-content .content:last-child h2{ color:#FFFFFF !important ; font-size: 28.125rem; writing-mode: vertical-lr; font-family: 'bignoodletitling'; color: #014EFF;line-height: .8em;}
+body .reviews-section .reviews-content .content:last-child h2::after{content: ''; width: 1130px ; height: 100%; background: url(../images/emojis-background.png); position: absolute; display:block; right: -170px;background-size: cover; background-repeat: no-repeat;}
+body .reviews-section .reviews-content .content:first-child{width: 74%; padding-top: 85px;}
+body .reviews-section .reviews-content .content:first-child h4{max-width:688px; line-height: 91.9% !important;font-size: 6.25rem; color: white; line-height: .85em;padding-bottom: 45px;}
+body .reviews-section .reviews-content .content:first-child .reviews-section-posttype{display: flex; justify-content: flex-start;flex-wrap: wrap;}
+body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content {color:black;  max-width: 332px; width: 31%;margin-right: 3.5%; text-align: center; min-height: 486px; box-shadow: 0px 84px 84px rgb(0 0 0 / 7%); border-radius: 15px; padding: 43px 38px 24px; background-color: white; }
+body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content p{font-size: 0.8125rem;line-height: 2.15em;}
+body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content h5{font-size: 1.875rem; line-height: 1.1em    ; padding-bottom: 15px;}
+body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content .five-stars::before{content: '';background: url(../images/five-stars.png); position: relative; display:block;top: 0; margin: auto; right:0; background-size: contain; background-repeat: no-repeat;width: 111px; height: 21px;margin-bottom: 29px;}
+body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content .five-stars{position: relative;}
+body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content:nth-child(2){top: 65px; position: relative;}
+body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content:nth-child(3){top: 150px;position: relative;margin-right: 0;}
 
 /* contact section */
 body.page-id-305 .contact-section .contact-content { padding: 336px 0px 400px!important;}
