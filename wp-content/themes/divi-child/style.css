@@ -27,12 +27,11 @@ body #page-container{padding-top: 0px!important;}
 .underline-b,.underline-black,.underline-b-long{position: relative;display: inline-block;}
 
 /* .underline-b::before{    content: ""; background: url(./images/blue-strip.svg)no-repeat center / 100% 100%; width: 100%; position: absolute; height: 10px; bottom: 10px;} */
-.underline-b::before{    content: ""; background: url(./images/blue-strip.svg)no-repeat center / contain; width: 100%; position: absolute; height: 10px; bottom: -5px;}
+.underline-b::before{ content: ""; background: url(./images/blue-strip.svg)no-repeat center / contain; width: 100%; position: absolute; height: 10px; bottom: -5px;}
 
 .underline-b-long::before{    content: ""; background: url(./images/blue-stroke.svg)no-repeat center / contain; width: 100%; position: absolute; height: 12px; bottom: -5px;}
 
-
-.underline-black::before{content: ""; background: url(./images/black-strip.svg)no-repeat center / 100% 100%; width: 100%; position: absolute; height: 12px; bottom: -5px;}
+.underline-black::before{content: ""; background: url(./images/black-strip.svg)no-repeat center / 100%; width: 100%; position: absolute; height: 12px; bottom: -5px;}
 
 
 /*Checkboxes styles*/
@@ -70,3 +69,4 @@ input[type="checkbox"]:checked + label:before { width: 10px; top: -5px; left: 5p
 .contact-section .contact-content .content:last-child .contact-form .pie-forms .pie-submit-container {justify-content: flex-end;}
 .contact-section .contact-content .content:last-child .contact-form .pie-forms .pie-submit-container button{font-size: 1.11rem; text-transform: uppercase; font-weight: 700; background-color: #000; color: #fff; border: none; border-radius: 5px; padding: 13px 76px 13px 28px;position: relative;}
 .contact-section .contact-content .content:last-child .contact-form .pie-forms .pie-submit-container button::before{content: "";background: url(./images/ka-btn-arrow.svg)no-repeat center / contain;width: 48px; height: 12px; position: absolute; z-index: 999; right: -22px; top: 50%; filter: invert(1); transform: translate(0%, -50%);}
+
