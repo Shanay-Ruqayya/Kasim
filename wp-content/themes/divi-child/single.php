@@ -7,6 +7,22 @@ $show_default_title = get_post_meta( get_the_ID(), '_et_pb_show_title', true );
 $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 ?>
+<div class="inner-blog-banner">
+	<div class="blog-content">
+		<div class="content">
+			<h1>
+				<?php 
+					echo get_the_title();
+				?>
+			</h1>
+			<p>
+				<?php
+					echo get_the_date();
+				?>
+			</p>
+		</div>
+	</div>
+</div>
 
 <div id="main-content">
 	<?php
@@ -170,5 +186,5 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 </div>
 
 <?php
-
+echo do_shortcode('[et_pb_section global_module="338"][/et_pb_section]');
 get_footer();

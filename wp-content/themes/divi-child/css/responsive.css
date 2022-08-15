@@ -20,6 +20,11 @@
     body .home-banner .container .banner-title h2{ font-size: 310px;padding-top: 250px;}
     body .home-banner .container .banner-image img { height: calc(970px - 10%); width: calc(calc(831px - 10%));}
     body .home-banner { min-height: 930px; }
+    /* PodCast Banner */
+    .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child { width: calc(868px - 5%); height: calc(563px - 5%);}
+    .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child .et_pb_image{height: 100%;}
+    .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child .et_pb_image .et_pb_image_wrap {height: 100%;}
+    .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child .et_pb_image .et_pb_image_wrap img{ object-fit: cover; object-position: left;height: 100%;}
     /* Speaker Section */
     .h-speaker-section .h-speaker-content .content:first-child h2 { font-size: 23rem;}
     .h-speaker-section .h-speaker-content .content:nth-child(3) { padding: 60px 20px 110px 55px;}
@@ -50,17 +55,29 @@
     /* review section */
     body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content { min-height: 466px; padding: 38px 31px 24px; }
     body .reviews-section .reviews-content .content:last-child h2::after { right: -200px; top: 20px; width: 1030px;}
+    /* Event Blog Page */
+    .event-blog .container #left-area .et_pb_post .entry-featured-image-url { height: 340px;}
+    .event-blog .container #left-area .et_pb_post .entry-featured-image-url img { height: 100%; object-fit: cover;}
+    .event-blog .container #left-area .et_pb_post { width: calc(33.33% - 50px);}
+    .event-blog .container #left-area .et_pb_post:nth-child(3n + 2) { margin: 0px 75px;    margin-bottom: 75px; }
+    
+    /************************ BOOKS A CALL *********************/
+    .call-me-section .call-me-content .content:nth-child(2) { width: 55%;}
+    .call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content { width: 40%; max-width: 40%;}
+    
 }
 @media only screen and (max-width: 1580px) {
     /* Blog Banner */
     .inner-banner-section.blog-banner-section .inner-banner-content .content:last-child .et_pb_image_wrap img{width: calc(798px - 10%); height: calc(610px - 10%);}
+    /* PodCast Banner */
+    .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child { width: calc(868px - 10%); height: calc(563px - 10%);}
     /* Speaker Section */
     .h-speaker-section .h-speaker-content .content:nth-child(3) { padding: 60px 20px 70px 25px; }
     /*Critical Principles Section*/
     .critical-principles-section .critical-principles-content .content:last-child { right: -90px; width: 80%; }
     /* Giving Section */
     body .h-giving-section .h-giving-content .content:nth-child(3) { padding: 60px 20px 190px 25px; }
-
+    
     /************************ BOOKS *********************/
     /* banner */
     body .books-banner .banner-title h2 { max-width: 625px; font-size: 5.65rem; }
@@ -77,7 +94,7 @@
     body .reviews-section .reviews-content .content:last-child h2 { font-size: 24rem; }
     body .reviews-section .reviews-content .content:last-child h2::after { width: 850px;top: 20px;}
     body .reviews-section .reviews-content .content:first-child h4{padding-bottom: 25px;}
-
+    
 }
 
 @media only screen and (max-width: 1500px){
@@ -96,7 +113,8 @@
     .inner-banner-section { height: 550px;}
     /* Blog Banner */
     .inner-banner-section.blog-banner-section .inner-banner-content .content:last-child .et_pb_image_wrap img { width: calc(798px - 25%); height: calc(610px - 25%); }
-    
+    /* PodCast Banner */
+    .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child { width: calc(868px - 20%); height: calc(563px - 20%); }
     /* Speaker Section */
     .h-speaker-section .h-speaker-content .content:first-child { top: 140px;}
     /* Critical Principles Section */
@@ -104,7 +122,7 @@
     /* Giving Section */
     body .h-giving-section .h-giving-content .content:first-child { top: 140px;}
     body .h-giving-section .h-giving-content .content:nth-child(3) { padding: 60px 20px 120px 25px; }
-
+    
     /************************ BOOKS *********************/
     /* banner */
     body .books-banner .banner-title h2 { max-width: 585px; }
@@ -114,10 +132,8 @@
     /* Synopsis Section */
     body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p { padding-bottom: 15px; }
     body .synopsis-section .synopsis-content .content:nth-child(2) { width: calc(60% - 50px);}
-    body .synopsis-section .synopsis-content .content:nth-child(3) {
-        padding: 0 0 65px 4%;
-    }
-
+    body .synopsis-section .synopsis-content .content:nth-child(3) { padding: 0 0 65px 4%; }
+    
     /************************ Contact Section ( Global ) *********************/
     body .contact-section::before { border-radius: 0px 0px 500px 0px; }
     body .contact-section::after { width: calc(457px - 10%); height: calc(1283px - 10%); background: url(../images/contact-us-phone-image.png)no-repeat center/contain;}
@@ -129,6 +145,15 @@
     body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(2) { margin-bottom: 30px; }
     body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(3) { margin-bottom: 30px; }
     body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(4) { margin-bottom: 30px; }
+
+    /* Event Blog Page */
+    .event-blog .container #left-area .et_pb_post .entry-featured-image-url { height: 300px; }
+    .event-blog .container #left-area .et_pb_post { width: calc(33.33% - 35px); margin-bottom: 35px; }
+    .event-blog .container #left-area .et_pb_post:nth-child(3n + 2) { margin: 0px 52px; margin-bottom: 35px; }
+    
+    /************************ BOOKS A CALL *********************/
+    .call-me-section .call-me-content .content:nth-child(1) h2 { font-size: 25rem;}
+    
 }
 
 /* Desktop Screen M */
@@ -168,6 +193,10 @@
     body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content h5 { font-size: 1.7rem; }
     body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content .five-stars::before { margin-bottom: 20px; }
     
+    /************************ BOOKS A CALL *********************/
+    .call-me-section .call-me-content .content:nth-child(2) { width: 50%; }
+    .call-me-section .call-me-content .content:nth-child(3) { width: 100%; padding: 125px 0px 125px; }
+    .call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content { width: 45%; max-width: 45%; }
 }
 @media only screen and (max-width: 1338px) {
     /* BTN */
@@ -192,8 +221,8 @@
     body .bestseller-section .et_pb_column:first-child { width: 80%; }
     body .bestseller-section .book-ranking { width: 82%; }
     body .bestseller-section { padding-top: 80px; padding-bottom: 100px; }
-
-
+    
+    
     
 }
 
@@ -205,9 +234,13 @@
     /* Inner Banner Section */
     .inner-banner-section .inner-banner-content .content:first-child .b-title { font-size: 5rem; }
     .inner-banner-section .inner-banner-content{padding-top: 0px!important;}
-
+    
     body .home-banner .container .banner-image img {  height: 760px; }
     /* body .home-banner .container .banner-image{right: calc(50% - (630px/2));} */
+
+    /* PodCast Banner */
+    .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child { width: calc(868px - 27%); height: calc(563px - 20%); }
+
     /* Speaker Section*/
     .h-speaker-section .h-speaker-content .content:nth-child(3) .speaker-post-content .mq-speaker-post-section .mq-speaker-post-content { width: 240px; height: 150px; }
     .h-speaker-section .h-speaker-content .content:first-child .et_pb_module{width: 90%;}
@@ -259,6 +292,12 @@
     body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(3) { margin-bottom: 20px; }
     body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(4) { margin-bottom: 20px; }
     body .contact-section input[type="checkbox"] + label { width: 73%;}
+    /* Event Blog Page  */
+    .event-blog .container #left-area .et_pb_post { width: calc(33.33% - 15px);}
+    .event-blog .container #left-area .et_pb_post:nth-child(3n + 2) { margin: 0px 22px; margin-bottom: 35px; }
+    
+    /************************ BOOKS A CALL *********************/
+    .call-me-section .call-me-content .content:nth-child(1) h2 { font-size: 22rem; }
 }
 
 /* Desktop Screen S */
@@ -290,6 +329,10 @@
     /************************ Contact Section ( Global ) *********************/
     body .contact-section::after { top: -270px; left: 11%; }
     
+    /************************ BOOKS A CALL *********************/
+    .call-me-section .call-me-content .content:nth-child(3) { padding: 100px 0px 100px; }
+    .call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content .et_pb_module_header { font-size: 5rem;padding-bottom: 20px;}
+    .call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description p { padding-bottom: 20px; }
 }
 
 @media only screen and (max-width:1100px) {
@@ -301,10 +344,12 @@
 }
 
 @media only screen and (max-width: 1024px) {
-/* Inner Banner Section */
-.inner-banner-section { height: 450px; }
-/* -Home Page- */
-/* As Seen On (Logo Section) */
+    /* Inner Banner Section */
+    .inner-banner-section { height: 450px; }
+    /* PodCast Banner */
+    .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child { width: calc(868px - 45%); height: calc(563px - 45%); }
+    /* -Home Page- */
+    /* As Seen On (Logo Section) */
 .banner-sub-section .banner-sub-content .contain .title { margin-bottom: 40px; }
 /* Speaker Section */
 .h-speaker-section .h-speaker-content .content:first-child .et_pb_module { width: 100%;}
@@ -359,6 +404,12 @@ body .contact-section::before { border-radius: 0px 0px 0px 350px; }
 body .contact-section::after { left: 40%; }
 body .contact-section .contact-content .content:last-child { width: 100%; padding-top: 670px; }
 
+/* Events Blog Section */
+.event-blog .container #left-area .et_pb_post { width: calc(50% - 15px); }
+.event-blog .container #left-area .et_pb_post:nth-child(3n + 2) { margin: 0;margin-bottom: 35px;}
+.event-blog .container #left-area .et_pb_post:nth-child(2n) { margin: 0px 0px 35px 30px;}
+
+
 
 }
 
@@ -368,6 +419,8 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .home-banner .container .banner-image img { height: calc(970px - 25%); width: calc(calc(831px - 25%)); }
     body .home-banner { min-height: 760px; }
     body .home-banner .container .banner-title h2 { font-size: 185px; }
+    /* PodCast Banner */
+    .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child { width: calc(868px - 55%); height: calc(563px - 55%); }
     /* body .home-banner .container .banner-image{right: calc(50% - (600px/2));} */
     /* Speaker Section */
     .h-speaker-section .h-speaker-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header .underline-b::before{bottom: 2px;}
@@ -378,7 +431,7 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description { padding-right: 0px; text-align: center; }
     .critical-principles-section .critical-principles-content .content:first-child .btn p{text-align: center;}
     .critical-principles-section .critical-principles-content .content:last-child { width: 110%; right: 0px; top: -100px; }
-
+    
     /* Informative Events Section */
     body .informative-events-section .et_pb_row{width: 100%;}
     body .informative-events-section .events-column  .events-text{width: 90%;margin: auto;margin-bottom: 55px;}
@@ -400,8 +453,22 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .reviews-section .reviews-content .content:last-child h2 { font-size: 16rem; }
     body .reviews-section { padding-bottom: 60px; }
     
+    /************************ BOOKS A CALL *********************/
+    .call-me-section::before{content: ""; width: 100%; height: 30px; background: #fff; position: absolute; z-index: 99; top: 690px; box-shadow: 20px -16px 12px #fff;}
+    .call-me-section .call-me-content.container{width: 100%;}
+    .call-me-section .call-me-content .content:nth-child(1) h2 { font-size: 18rem; text-align: left; padding-top: 60px; }
+    .call-me-section .call-me-content .content:nth-child(2){width: 100%; height: 710px;}
+    .call-me-section .call-me-content .content:nth-child(2) .et_pb_image{border-radius: 0px 0px 0px 0px;}
+    .call-me-section .call-me-content .content:nth-child(2) .et_pb_image .et_pb_image_wrap{width: 100%;}
+    .call-me-section .call-me-content .content:nth-child(2) .et_pb_image .et_pb_image_wrap img { object-position: top;width: 100%; }
+    .call-me-section .call-me-content .content:nth-child(3) { padding: 750px 5% 10px; }
+    .call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content{width: 100%;max-width: 100%;}
+    .call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content .et_pb_module_header{text-align: center;}
+    .call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description{text-align: center;}
 
-
+    .book-invest-section .book-invest-content { padding: 80px 0px; }
+    .book-invest-section .book-invest-content .content .btn.crt{ margin: 20px 0px 20px 0px!important;width: 100%;}
+    .book-invest-section .book-invest-content .content .btn.crt p{text-align: center;}
 }
 
 @media only screen and (max-width: 867px) {
@@ -437,6 +504,9 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     /* Blog Banner */
     .inner-banner-section.blog-banner-section { height: 350px; }
 
+    /* PodCast Banner */
+    .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child { width: calc(868px - 75%); height: calc(563px - 55%); }
+
     body .bestseller-section .book-ranking { width: 100%; }
     
     /************************ BOOKS *********************/
@@ -452,7 +522,8 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .bestseller-section .book-ranking ul li:last-child, body .bestseller-section h4 { margin-bottom: 40px; }
     body .bestseller-section { padding-top: 60px; padding-bottom: 60px; }
 
-
+    /* Event Blog Page */
+    .event-blog .container #left-area .et_pb_post .entry-featured-image-url { height: 250px; }
 
     
 }
@@ -460,6 +531,8 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
 /* Mobile L */
 @media only screen and (max-width: 667px) {
     html { font-size: 12px!important; }
+    /* PodCast Banner */
+    .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child { width: calc(868px - 90%); height: calc(563px - 55%); }
     /* -Home Page- */
     /* As Seen On (Logo Section) */
     .banner-sub-section { padding: 45px 0px; }
@@ -502,6 +575,10 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .contact-section input[type="checkbox"] + label { width: 100%; }
     body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(1) { width: 100%; margin-right: 0px; }
     body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(2) { width: 100%;}
+
+    /* Event Blog Page */
+    .event-blog .container #left-area .et_pb_post .entry-featured-image-url { height: 200px; }
+
 }
 
 
@@ -571,6 +648,10 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .bestseller-section .book-ranking ul li span.ranking { margin-right: 40px; }
     /* Synopsis Section */
 
+    /* Event Blog Page */
+    .event-blog .container #left-area .et_pb_post { width: calc(50% - 5px); }
+    .event-blog .container #left-area .et_pb_post:nth-child(2n) { margin: 0px 0px 35px 10px; }
+    .event-blog .container #left-area .et_pb_post .entry-featured-image-url { height: 145px; }
 
 }
 

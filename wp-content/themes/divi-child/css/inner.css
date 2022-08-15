@@ -9,8 +9,10 @@
 /* Blog Banners Section */
 .inner-banner-section.blog-banner-section .inner-banner-content .content:last-child{top: initial; bottom: 0px; transform: translate(0%, 0%);}
 .inner-banner-section.blog-banner-section .inner-banner-content .content:last-child .et_pb_image_wrap img{width: 798px; height: 610px;}
-
-
+/* PodCast Banners Section */
+.inner-banner-section.podcast-banner-section .inner-banner-content{position: static;}
+.inner-banner-section.podcast-banner-section .inner-banner-content .content:first-child { width: 49.5%; }
+.inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child{width: 868px; height: 563px;    position: absolute; right: 0; top: inherit; bottom: 0px; transform: translate(0%, 0%);}
 /* BOOKS */
 /* banner */
 body .books-banner .banner-title{width: 51%;}
@@ -87,22 +89,65 @@ body.page-id-305 .contact-section::after{z-index: 3;}
 
 .call-me-section{padding: 0px;}
 .call-me-section .call-me-content{padding: 0px!important; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; position: relative;}
-.call-me-section .call-me-content .content:nth-child(1){ position: absolute; left: 0px; z-index: 999;}
-.call-me-section .call-me-content .content:nth-child(2){ position: absolute; left: 0px; top: 0px; width: 50%;}
-.call-me-section .call-me-content .content:nth-child(3){ width: 100%;}
+.call-me-section .call-me-content .content:nth-child(1){ position: absolute; left: 0px; z-index: 999;    top: 50%; transform: translate(0px , -50%); height: 100%;}
+.call-me-section .call-me-content .content:nth-child(1) .et_pb_text{height: 100%;}
+.call-me-section .call-me-content .content:nth-child(1) .et_pb_text .et_pb_text_inner{height: 100%;}
+.call-me-section .call-me-content .content:nth-child(1) h2{font-size: 28.125rem; writing-mode: vertical-rl; color: #1877f1;height: 100%;text-align: center;}
+.call-me-section .call-me-content .content:nth-child(2){ position: absolute; left: 0px; top: 0px; width: 60%;height: 100%;}
+.call-me-section .call-me-content .content:nth-child(2) .et_pb_image{overflow: hidden; border-radius: 0px 0px 433px 0px;height: 100%;}
+.call-me-section .call-me-content .content:nth-child(2) .et_pb_image .et_pb_image_wrap {height: 100%;}
+.call-me-section .call-me-content .content:nth-child(2) .et_pb_image .et_pb_image_wrap img{height: 100%; object-fit: cover;}
+.call-me-section .call-me-content .content:nth-child(3){ width: 100%; padding: 125px 0px 200px;}
 .call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb{display: flex;justify-content: flex-end;}
-.call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content{width: 45%; max-width: 45%;margin: 0px;}
-.call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content .et_pb_module_header{font-size: 6.25rem;color: #000;}
-.call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description{color: #000;}
+.call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content{width: 33%; max-width: 33%;margin: 0px;}
+.call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content .et_pb_module_header{font-size: 6.25rem;color: #000;padding-bottom: 30px;}
+.call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description{color: #000; line-height: 2em;    font-weight: 500;}
+.call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description p{padding-bottom: 40px;}
+
+.book-invest-section{padding: 0px;}
+.book-invest-section .book-invest-content{padding: 100px 0px;}
+.book-invest-section .book-invest-content .content{display: flex; justify-content: center; align-items: center; flex-wrap: wrap;}
+.book-invest-section .book-invest-content .content .text-content{margin-bottom: 40px;width: 100%;}
+.book-invest-section .book-invest-content .content .text-content .et_pb_blurb_content{max-width: 100%;}
+.book-invest-section .book-invest-content .content .text-content .et_pb_blurb_content .et_pb_module_header{font-size: 3.125rem; text-align: center; padding-bottom: 30px;}
+.book-invest-section .book-invest-content .content .text-content .et_pb_blurb_content .et_pb_blurb_description{font-size: 20px;color: #000;text-align: center;line-height: 2em;}
+.book-invest-section .book-invest-content .content .btn.crt{    margin: 20px 75px 20px 0px!important;}
+.book-invest-section .book-invest-content .content .btn{margin: 20px 0px!important;}
+
+
+/* ............. */
+/* PodCast Page */
+/* ----------- */
+
+.podcast-content-section{padding: 0px;}
+.podcast-content-section .cfm-episodes-grid .cfm-episode-title{display: none;}
+
 
 
 /* .................. */
-/* Blog Listing Page */
+/* Event Blog Listing Page */
 /* ---------------- */
-
+.et_right_sidebar #main-content .container:before{display: none;}
 .blog-sub-section{padding: 0px;}
 .blog-sub-section .blog-sub-content{padding: 87px 0px 63px;}
 .blog-sub-section .blog-sub-content .et_pb_blurb_content{max-width: 100%;}
 .blog-sub-section .blog-sub-content .et_pb_blurb_content .et_pb_module_header{font-size: 3.125rem;color: #000;text-align: center;padding-bottom: 33px;}
 .blog-sub-section .blog-sub-content .et_pb_blurb_content .et_pb_blurb_description{font-size: 1.125rem;line-height: 2em; color: #000;text-align: center;}
+.blog-sub-section .blog-sub-content .et_pb_blurb_content .et_pb_blurb_description a{color: #000;font-weight: 700;}
 .event-blog .container{padding-top: 0px!important;}
+.event-blog .container #left-area{width: 100%;float: inherit;padding: 0;display: flex; flex-wrap: wrap;}
+.event-blog .container #left-area .et_pb_post{width: calc(33.33% - 67.33px);font-size: 13px;text-align: center; margin-bottom: 75px;background-color: #fff; padding: 19px 17px 42px; box-shadow: 0px 74px 164px rgb(0 0 0 / 15%); border-radius: 15px;}
+.event-blog .container #left-area .et_pb_post:nth-child(3n + 2){margin: 0px 101px;margin-bottom: 75px;}
+.event-blog .container #left-area .et_pb_post .entry-featured-image-url{height: 393px; overflow: hidden; border-radius: 10px;}
+.event-blog .container #left-area .et_pb_post .entry-featured-image-url img{height: 100%;object-fit: cover;}
+.event-blog .container #left-area .et_pb_post .entry-title{font-size: 1.875rem;text-align: center;}
+
+/* ...................... */
+/* Event Blog inner Page */
+/* -------------------- */
+
+.inner-blog-banner{ height: 688px; background-color: blue;background: url(../images/blog-inner-banner.jpg)no-repeat center / cover; display: flex; align-items: center;justify-content: center;}
+.inner-blog-banner .blog-content{width: 85%;}
+.inner-blog-banner .blog-content .content{width: 50%;}
+.inner-blog-banner .blog-content .content h1{font-size: 6.125rem;color: #fff;}
+.inner-blog-banner .blog-content .content p{color: #fff; font-weight: 400;}
