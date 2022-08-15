@@ -1,18 +1,18 @@
 /* Desktop Screen L*/
 @media only screen and (max-width: 1800px){
     /************************ BOOKS *********************/
-
-    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p {
-        padding-bottom: 20px;
-    }
-    body .synopsis-section .synopsis-content .content:nth-child(3) {
-        padding: 0 0 75px 4%;
-    }
+    /* Synopsis section */
+    body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p { padding-bottom: 20px; }
+    body .synopsis-section .synopsis-content .content:nth-child(3) { padding: 0 0 75px 4%; }
 }
 
 @media only screen and (max-width: 1700px) {
     html { font-size: 15px!important; }
     .critical-principles-section .critical-principles-content .content:last-child { right: -130px; top: -70px; width: 85%; }
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(3) { padding: 90px 20px 11% 85px; }
+    body .giving-sub-subsection p{padding-bottom: 30px;}
 }
 
 @media only screen and (max-width: 1667px) {
@@ -55,6 +55,7 @@
     /* review section */
     body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content { min-height: 466px; padding: 38px 31px 24px; }
     body .reviews-section .reviews-content .content:last-child h2::after { right: -200px; top: 20px; width: 1030px;}
+
     /* Event Blog Page */
     .event-blog .container #left-area .et_pb_post .entry-featured-image-url { height: 340px;}
     .event-blog .container #left-area .et_pb_post .entry-featured-image-url img { height: 100%; object-fit: cover;}
@@ -65,6 +66,14 @@
     .call-me-section .call-me-content .content:nth-child(2) { width: 55%;}
     .call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content { width: 40%; max-width: 40%;}
     
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:first-child h2 { font-size: 23rem;}
+    body .giving-section .giving-content .content:nth-child(3) .btn { margin-bottom: 60px; }
+    body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { font-size: 5.25rem; }
+    body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { padding-bottom: 35px; }
+    body .giving-section .giving-content .content:nth-child(3) { padding: 90px 20px 8% 85px; }
+
 }
 @media only screen and (max-width: 1580px) {
     /* Blog Banner */
@@ -94,15 +103,27 @@
     body .reviews-section .reviews-content .content:last-child h2 { font-size: 24rem; }
     body .reviews-section .reviews-content .content:last-child h2::after { width: 850px;top: 20px;}
     body .reviews-section .reviews-content .content:first-child h4{padding-bottom: 25px;}
-    
 }
 
+
+    /***********************Giving Page*******************/
+    /* Giving Section */
+@media only screen and (max-width: 1530px){
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(3) { padding: 90px 20px 4% 85px; }
+}
 @media only screen and (max-width: 1500px){
     /************************ BOOKS *********************/
     /* Synopsis Section */
     body .synopsis-section .synopsis-content .content:nth-child(2) {
         width: calc(60% - 50px);
     }
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(3) { padding: 60px 10px 90px 50px; }
+    /* solutions 8 gives section */
+    body .solutions-8-gives-section{background-size: cover !important; background-position: center !important;}
 }
 
 @media only screen and (max-width: 1440px) {
@@ -121,8 +142,11 @@
     .critical-principles-section .critical-principles-content .content:first-child { padding: 113px 0px 114px; }
     /* Giving Section */
     body .h-giving-section .h-giving-content .content:first-child { top: 140px;}
+
     body .h-giving-section .h-giving-content .content:nth-child(3) { padding: 60px 20px 120px 25px; }
     
+    body .h-giving-section .h-giving-content .content:nth-child(3) { padding: 90px 20px 120px 25px; }
+
     /************************ BOOKS *********************/
     /* banner */
     body .books-banner .banner-title h2 { max-width: 585px; }
@@ -133,7 +157,13 @@
     body .synopsis-section .synopsis-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p { padding-bottom: 15px; }
     body .synopsis-section .synopsis-content .content:nth-child(2) { width: calc(60% - 50px);}
     body .synopsis-section .synopsis-content .content:nth-child(3) { padding: 0 0 65px 4%; }
-    
+
+
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:first-child { top: 140px;}
+    body .giving-section .giving-content .content:nth-child(3) { padding: 90px 20px 5% 25px; }
+
     /************************ Contact Section ( Global ) *********************/
     body .contact-section::before { border-radius: 0px 0px 500px 0px; }
     body .contact-section::after { width: calc(457px - 10%); height: calc(1283px - 10%); background: url(../images/contact-us-phone-image.png)no-repeat center/contain;}
@@ -192,11 +222,19 @@
     body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content p { font-size: 0.8rem; line-height: 2em; }
     body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content h5 { font-size: 1.7rem; }
     body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content .five-stars::before { margin-bottom: 20px; }
+
     
     /************************ BOOKS A CALL *********************/
     .call-me-section .call-me-content .content:nth-child(2) { width: 50%; }
     .call-me-section .call-me-content .content:nth-child(3) { width: 100%; padding: 125px 0px 125px; }
     .call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content { width: 45%; max-width: 45%; }
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(2) { width: calc(65% - 90px); left: -90px; }
+    body .giving-section .giving-content .content:first-child h2 { font-size: 20rem; }
+    body .giving-section .giving-content .content:nth-child(3) { padding: 60px 20px 140px 0px; }
+    body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { padding-bottom: 20px; }
+    body .giving-section .giving-content .content:nth-child(3) .btn { margin-bottom: 50px; }
 }
 @media only screen and (max-width: 1338px) {
     /* BTN */
@@ -221,8 +259,18 @@
     body .bestseller-section .et_pb_column:first-child { width: 80%; }
     body .bestseller-section .book-ranking { width: 82%; }
     body .bestseller-section { padding-top: 80px; padding-bottom: 100px; }
-    
-    
+
+    /***********************Giving Page*******************/
+     /* Giving Section */
+     body .giving-section .giving-content .content:first-child h2 { font-size: 17rem; }
+     body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { font-size: 5rem;}
+     body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p{font-size: 1rem;}
+     body .giving-section .giving-content .content:nth-child(3) { padding: 60px 20px 19% 0px; }
+     /* giving sub section */
+     body .giving-sub-subsection p{font-size: 1rem; padding-bottom: 20px;}
+     /* board service section */
+     body .board-service-section .board-service-column p{font-size: 1rem;}
+
     
 }
 
@@ -278,11 +326,14 @@
     body .reviews-section .reviews-content .slick-track{display: flex;}
     body .reviews-section .reviews-content .content:first-child h4 { margin: auto; text-align: center; }
 
+    /***********************Giving Page*******************/
+     /* giving section */
+     body .giving-section .giving-content .content:nth-child(3) { padding: 60px 20px 10% 0px; }
 
     /************************ Contact Section ( Global ) *********************/
     body .contact-section::before { border-radius: 0px 0px 350px 0px; }
     body .contact-section::after { width: calc(457px - 15%); height: calc(1283px - 15%);top: -240px; left: 14%;}
-    body .contact-section .contact-content { padding: 85px 0px 150px!important; }
+    body .contact-section .contact-content,body.page-id-305 .contact-section .contact-content  { padding: 85px 0px 150px!important; }
     body .contact-section .contact-content .content:first-child h2 { font-size: 17rem; }
     body .contact-section .contact-content .content:last-child { width: 64%; }
     body .contact-section .contact-content .content:last-child .et_pb_blurb { margin-bottom: 25px; }
@@ -292,12 +343,16 @@
     body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(3) { margin-bottom: 20px; }
     body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(4) { margin-bottom: 20px; }
     body .contact-section input[type="checkbox"] + label { width: 73%;}
+
     /* Event Blog Page  */
     .event-blog .container #left-area .et_pb_post { width: calc(33.33% - 15px);}
     .event-blog .container #left-area .et_pb_post:nth-child(3n + 2) { margin: 0px 22px; margin-bottom: 35px; }
     
     /************************ BOOKS A CALL *********************/
     .call-me-section .call-me-content .content:nth-child(1) h2 { font-size: 22rem; }
+
+    body.page-id-305 .contact-section .contact-content .content:first-child { top: 130px; }
+
 }
 
 /* Desktop Screen S */
@@ -325,7 +380,11 @@
     body .bestseller-section .book-ranking { width: 85%;margin: auto;}
     body .bestseller-section .et_pb_column:first-child {margin-top: 720px; z-index: 9; width: 100%; margin-right: 0; box-shadow: 117px -27px 25px #171717; background-color: #171717!important; padding: 30px 0px 35px; }
 
-    
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(2) { width: calc(65% - 90px); left: -50px; }
+    body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p { line-height: 1.8em; }
+    body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { font-size: 4.5rem; }
     /************************ Contact Section ( Global ) *********************/
     body .contact-section::after { top: -270px; left: 11%; }
     
@@ -341,6 +400,11 @@
     body .reviews-section .reviews-content .content:last-child h2 { font-size: 19rem; }
     body .reviews-section { padding-bottom: 200px; }
     body .reviews-section .reviews-content .content:last-child h2::after { width: 640px; top: 30px; right: -150px; }
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(3) { padding: 50px 0px 10% 0px; }
+    body .giving-section .giving-content .content:nth-child(3) .btn { margin-bottom: 0; }
+    
 }
 
 @media only screen and (max-width: 1024px) {
@@ -399,6 +463,30 @@ body .reviews-section .reviews-content .content:last-child h2::after { width: 65
 body .reviews-section .reviews-content .content:first-child { padding-top: 0; }
 body .reviews-section { background-position: center bottom 0px !important; padding-bottom: 100px; }
 
+/***********************Giving Page*******************/
+/* Giving Section */
+body .giving-section .giving-content .content:first-child .et_pb_module { width: 100%;}
+body .giving-section .giving-content .content:nth-child(2){width: 80%; left: inherit; right: 0px; height: 840px; border-radius: 0px;}
+body .giving-section .giving-content .content:nth-child(3){ width: 90%; margin-right: auto!important; margin: auto; padding: 0px 0px 50px; margin-top: 840px; box-shadow: 110px -104px 49px #fff; background-color: #fff;}
+body .giving-section .giving-content .content:nth-child(3) .text-content{margin-bottom: 30px;}
+body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header{text-align: center;font-size: 5rem;}
+body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header span{display: inline-block !important;}
+body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description{text-align: center;}
+body .giving-section .giving-content .content:nth-child(3) .btn p{text-align: center;}
+
+/* giving sub section */
+body .giving-sub-subsection .et_pb_row{width: 90%;padding-top: 30px;}
+/* board service section */
+body div.et_pb_section.board-service-section{background: none !important;}
+body .board-service-section .et_pb_row{width: 100%;padding-bottom: 0;}
+body .board-service-section .board-service-column .board-service-image{display: block; }
+body .board-service-section .board-service-column .board-service-text{margin: auto;width: 90%;}
+body .board-service-section .board-service-column:nth-child(1){position: absolute; width: 100%;left: 0;top: -170px; z-index: 0;}
+body .board-service-section .board-service-column:nth-child(2){width: 100%;margin: auto;background-color: white;margin-top: 460px;box-shadow: -45px -104px 49px #fff;box-shadow: -45px -104px 49px #fff;}
+body .board-service-section .board-service-column h4{font-size: 5rem;}
+
+
+
 /************************ Contact Section ( Global ) *********************/
 body .contact-section::before { border-radius: 0px 0px 0px 350px; }
 body .contact-section::after { left: 40%; }
@@ -452,6 +540,7 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .reviews-section .reviews-content .content:last-child h2::after { width: 560px; top: 0; right: -60px; }
     body .reviews-section .reviews-content .content:last-child h2 { font-size: 16rem; }
     body .reviews-section { padding-bottom: 60px; }
+
     
     /************************ BOOKS A CALL *********************/
     .call-me-section::before{content: ""; width: 100%; height: 30px; background: #fff; position: absolute; z-index: 99; top: 690px; box-shadow: 20px -16px 12px #fff;}
@@ -465,6 +554,13 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     .call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content{width: 100%;max-width: 100%;}
     .call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content .et_pb_module_header{text-align: center;}
     .call-me-section .call-me-content .content:nth-child(3) .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description{text-align: center;}
+
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header .underline-b::before{bottom: -2px; height: 7px;}
+     /* giving sub section */
+     body .giving-sub-subsection p{font-size: 1rem; padding-bottom: 20px;line-height: 1.8em;}
+
 
     .book-invest-section .book-invest-content { padding: 80px 0px; }
     .book-invest-section .book-invest-content .content .btn.crt{ margin: 20px 0px 20px 0px!important;width: 100%;}
@@ -494,7 +590,13 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     /************************ BOOKS *********************/
     /* book review sub section */
     body .book-review-sub-section { padding-top: 70px; padding-bottom: 50px; }
-    
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(2) { width: 90%;}
+    body .giving-section .giving-content .content:nth-child(3){ width: 100%; }
+    body .giving-section .giving-content .content:nth-child(3) .text-content{width: 90%; margin: 0px auto 30px;}
+    /* solution 8 gives section */
+    body .solutions-8-gives-section .solutions-8-gives-column .text-content ul li{width: 90%;}
 }   
 
 @media only screen and (max-width: 768px) {
@@ -522,8 +624,14 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .bestseller-section .book-ranking ul li:last-child, body .bestseller-section h4 { margin-bottom: 40px; }
     body .bestseller-section { padding-top: 60px; padding-bottom: 60px; }
 
+
     /* Event Blog Page */
     .event-blog .container #left-area .et_pb_post .entry-featured-image-url { height: 250px; }
+
+    /***********************Giving Page*******************/
+    /* board service section */
+    body .board-service-section .board-service-column:nth-child(2) { margin-top: 350px; }
+
 
     
 }
@@ -566,6 +674,11 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .synopsis-section .synopsis-content .content:nth-child(2) { width: 100%; }
     body .synopsis-section .synopsis-content .content:nth-child(3) { margin-top: 700px;}
 
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:first-child { top: 70px; }
+    body .giving-section .giving-content .content:nth-child(2) { width: 100%; }
+    body .giving-section .giving-content .content:nth-child(3) { margin-top: 630px;}
     /************************ Contact Section ( Global ) *********************/
     body .contact-section::after { left: 50%; width: calc(457px - 35%); height: calc(1283px - 35%); top: -90px; transform: translate(-50%, 0%); }
     body .contact-section .contact-content .content:first-child { top: 90px; }
@@ -613,17 +726,22 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .synopsis-section .synopsis-content .content:nth-child(2) .et_pb_module .et_pb_image_wrap img{max-width: unset; width:110%; overflow: hidden;}
     /* reviews section */
     body .reviews-section .reviews-content .content:first-child .reviews-section-posttype .review-content{margin-right: 5 !important;margin-left:5px ;}
-    body .reviews-section .reviews-content .content:first-child h4 {
-        font-size: 5.5rem;
-    }
-    body .reviews-section .reviews-content .content:last-child h2::after {
-        width: 430px;
-        top: 20px;
-        right: -50px;
-    }
-    body .reviews-section .reviews-content .content:last-child h2 {
-        font-size: 15rem;
-    }
+    body .reviews-section .reviews-content .content:first-child h4 { font-size: 5.5rem; }
+    body .reviews-section .reviews-content .content:last-child h2::after { width: 430px; top: 20px; right: -50px; }
+    body .reviews-section .reviews-content .content:last-child h2 { font-size: 15rem; }
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(2) .et_pb_module{display: flex; justify-content: center;}
+    body .giving-section .giving-content .content:nth-child(2) .et_pb_module .et_pb_image_wrap{max-width: unset;}
+    body .giving-section .giving-content .content:nth-child(2) .et_pb_module .et_pb_image_wrap img{max-width: unset; width: 601px; height: 801px; overflow: hidden;}
+    body .giving-section .giving-content .content:nth-child(3) { margin-top: 590px; box-shadow: 27px -118px 82px #fff; }
+    /* giving sub section */
+    body .giving-sub-subsection .et_pb_row { padding-top: 0; }
+    body .giving-sub-subsection h5{padding-bottom: 20px;}
+    /* board service section */
+    body .board-service-section .board-service-column:nth-child(2) { margin-top: 200px; }
+    /* solutions 8 gives */
+    body .solutions-8-gives-section .solutions-8-gives-column .text-content h4 { font-size: 5rem;}
 
 }
 
@@ -648,10 +766,16 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .bestseller-section .book-ranking ul li span.ranking { margin-right: 40px; }
     /* Synopsis Section */
 
+
     /* Event Blog Page */
     .event-blog .container #left-area .et_pb_post { width: calc(50% - 5px); }
     .event-blog .container #left-area .et_pb_post:nth-child(2n) { margin: 0px 0px 35px 10px; }
     .event-blog .container #left-area .et_pb_post .entry-featured-image-url { height: 145px; }
+
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:first-child h2 { font-size: 15rem; }
+
 
 }
 
@@ -667,6 +791,11 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .reviews-section .reviews-content .content:first-child h4 {
         font-size: 4rem;
     }
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header span:first-child { display: block !important; }
+    /* board service section */
+    body .board-service-section .board-service-column:nth-child(2) { margin-top: 160px; }
 }
 @media only screen and (max-width: 400px) {
     /* Speaker Section */
@@ -687,7 +816,10 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .synopsis-section .synopsis-content .content:first-child { top: 40px; }
     body .synopsis-section .synopsis-content .content:first-child h2 { font-size: 12rem;line-height: 0.73; }
     body .synopsis-section .synopsis-content .content:nth-child(3) { margin-top: 520px; }
-
+    /***********************Giving Page*******************/
+    /* Giving Section */
+    body .giving-section .giving-content .content:first-child { top: 40px; }
+    body .giving-section .giving-content .content:first-child h2 { font-size: 12rem;line-height: 0.73; }
     
 }
 
@@ -695,3 +827,4 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
 @media only screen and (max-width: 360px) {
 
 }
+

@@ -14,6 +14,13 @@
 .inner-banner-section.podcast-banner-section .inner-banner-content .content:first-child { width: 49.5%; }
 .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child{width: 868px; height: 563px;    position: absolute; right: 0; top: inherit; bottom: 0px; transform: translate(0%, 0%);}
 /* BOOKS */
+/* giving banner */
+.inner-banner-section.giving-banner-section .inner-banner-content .content:last-child .et_pb_image_wrap img { max-width: 1062px; max-height: 464px; }
+.inner-banner-section.giving-banner-section .inner-banner-content .content:last-child{top: initial; bottom: 0px; transform: translate(0%, 0%);}
+
+
+/************* BOOKS **************/
+
 /* banner */
 body .books-banner .banner-title{width: 51%;}
 body .books-banner .banner-title h2{ font-size: 6.25rem; line-height: 91.9%; color: #FFFFFF; max-width: 710px;}
@@ -151,3 +158,41 @@ body.page-id-305 .contact-section::after{z-index: 3;}
 .inner-blog-banner .blog-content .content{width: 50%;}
 .inner-blog-banner .blog-content .content h1{font-size: 6.125rem;color: #fff;}
 .inner-blog-banner .blog-content .content p{color: #fff; font-weight: 400;}
+.event-blog .container{padding-top: 0px!important;}
+
+/***************GIVING PAGE******************/
+/* Giving Section */
+body .giving-section{padding: 0px;}
+body .giving-section .giving-content{padding: 0px;width: 100%;display: flex; justify-content: flex-end; align-items: flex-start;}
+body .giving-section .giving-content .content:first-child{position: absolute; z-index: 9; left: 0px; top: 220px;width: 100%;z-index: 5;}
+body .giving-section .giving-content .content:first-child .et_pb_module{width: 90%;margin: auto;}
+body .giving-section .giving-content .content:first-child h2{ font-size: 28.125rem; writing-mode: vertical-lr; font-family: 'bignoodletitling'; color: #014EFF;line-height: .8em;}
+body .giving-section .giving-content .content:nth-child(2){width: calc(60% - 90px);z-index: 4;  margin: 0px;position: absolute;left: 0px;top: 0px;border-radius: 0px 0px 420px 0px; overflow: hidden;}
+body .giving-section .giving-content .content:nth-child(2) .et_pb_module{    max-width: 1112px; max-height: 1164px;}
+body .giving-section .giving-content .content:nth-child(3){width: 40%; margin: 0px; margin-right: 5%!important;padding: 90px 20px 6.5% 85px;position: relative;z-index: 9;}
+body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content{width: 100%; max-width: 100%;}
+body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header{line-height: 91.9% !important;font-size: 6.25rem; color: #000; line-height: .85em;padding-bottom: 45px;}
+body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description{font-size: 1.125rem;}
+body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description a{color: black;text-decoration: underline;}
+body .giving-section .giving-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_blurb_description p{font-family: 'Poppins';color: #000;line-height: 2.2em;font-size: 1.125rem;}
+/* giving sub section */
+body .giving-sub-subsection{padding: 0;}
+body .giving-sub-subsection .et_pb_row {padding-top: 50px;}
+body .giving-sub-subsection h5{ font-size: 3.125rem; line-height: 0.92em; padding-bottom: 30px; }
+body .giving-sub-subsection p{ color: #000; font-size: 1.125rem; line-height: 2.16em; padding-bottom: 40px; }
+/* informative events section */
+body .board-service-section .board-service-column .btn{display: flex;justify-content: flex-end;}
+body .board-service-section .board-service-column h4{text-align: center; font-size: 6.25rem;line-height: 0.919em;padding-bottom: 38px;    }
+body .board-service-section .board-service-column p{color: black; text-align: center; font-size: 1.125rem; line-height: 2.176em;}
+body .board-service-section .board-service-column .btn a{display: inline-block;}
+body .board-service-section .board-service-column  .board-service-text{margin-bottom: 65px;max-width: 862px; margin-right: 0; margin-left: auto;}
+body .board-service-section .board-service-column .board-service-image{display: none    ;}
+/* Solutions 8 Gives */
+body .solutions-8-gives-section .solutions-8-gives-column .text-content ul {display: flex; flex-wrap: wrap; flex-direction: row;}
+body .solutions-8-gives-section .solutions-8-gives-column .text-content ul li{width: 45%; font-size: 1.25rem; line-height: 3.15em;color: #014EFF;}
+body .solutions-8-gives-section .solutions-8-gives-column .text-content ul li:nth-child(odd){margin-right: 10%;}
+body .solutions-8-gives-section .solutions-8-gives-column .text-content ul li strong{color: white;}
+body .solutions-8-gives-section .solutions-8-gives-column .text-content{color: #fff;}
+body .solutions-8-gives-section .solutions-8-gives-column .text-content p{font-size: 1.125rem; line-height: 2.16em;padding-bottom: 44px;}
+body .solutions-8-gives-section .solutions-8-gives-column .text-content h4{font-size: 6.25rem; color: white; line-height: 0.91;padding-bottom: 30px;}
+body .solutions-8-gives-section .solutions-8-gives-column{max-width: 806px;}
