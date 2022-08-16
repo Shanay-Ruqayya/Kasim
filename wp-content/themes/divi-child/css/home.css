@@ -97,6 +97,7 @@ body .informative-events-section .events-column  .events-text{margin-bottom: 65p
 .critical-principles-section .critical-principles-content .content:first-child .btn .et_pb_text_inner{width: 85%; margin: auto;}
 .critical-principles-section .critical-principles-content .content:last-child{    position: absolute; right: 0px; top: 0px; width: 65%; z-index: 1;}
 .critical-principles-section .critical-principles-content .content:last-child{    position: absolute; right: 0px; top: 0px; width: 77%; z-index: 1;}
+.critical-principles-section .critical-principles-content .content:first-child .btn .et_pb_text_inner a::before { filter: invert(1); }
 
 /* Giving Section */
 body .h-giving-section{padding: 0px;}
