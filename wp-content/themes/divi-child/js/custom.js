@@ -64,9 +64,14 @@ $(document).ready(function($){
   
   
   if (window.matchMedia('(max-width: 867px)').matches) {
-  
-    
-}
+    $('.cfm-episodes-grid').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      centerMode: true,
+      arrows: false,
+      dots:false
+    })
+  }
 // reviews section slider
 if (window.matchMedia('(max-width: 1282px)').matches) {
   $('.reviews-section-posttype').slick({
