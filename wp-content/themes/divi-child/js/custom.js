@@ -5,7 +5,11 @@ $(document).ready(function($){
       $(".hamburger").toggleClass("is-active");
   });
 
-
+  $(".scroll-to-contact").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".contact-section").offset().top},
+        1300);
+  });
   // As Seen On Slider
   $('.mq-co-logo-section').slick({
     slidesToShow: 7,
