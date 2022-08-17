@@ -196,3 +196,11 @@ body .solutions-8-gives-section .solutions-8-gives-column .text-content{color: #
 body .solutions-8-gives-section .solutions-8-gives-column .text-content p{font-size: 1.125rem; line-height: 2.16em;padding-bottom: 44px;}
 body .solutions-8-gives-section .solutions-8-gives-column .text-content h4{font-size: 6.25rem; color: white; line-height: 0.91;padding-bottom: 30px;}
 body .solutions-8-gives-section .solutions-8-gives-column{max-width: 806px;}
+
+/********************** Event Detail  **********************/
+body.single-post div#left-area { width: 100%; padding-right: 0 !important; padding-bottom: 0;}
+body.single-post div#left-area article{padding-bottom: 0;margin-bottom: 0;}
+body.single-post #main-content > .container{padding-top: 0 !important;}
+body.single-post h4{font-size: 3.125rem; padding-bottom: 30px; line-height: 91.9%; color: black;} 
+body.single-post p{font-size: 1.125rem; line-height: 2.175em; color: black;}
+body.single-post .et_pb_row{padding-top: 20px;padding-bottom: 20px;}

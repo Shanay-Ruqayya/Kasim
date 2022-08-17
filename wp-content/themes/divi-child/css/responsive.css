@@ -497,6 +497,17 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
 .event-blog .container #left-area .et_pb_post { width: calc(50% - 15px); }
 .event-blog .container #left-area .et_pb_post:nth-child(3n + 2) { margin: 0;margin-bottom: 35px;}
 .event-blog .container #left-area .et_pb_post:nth-child(2n) { margin: 0px 0px 35px 30px;}
+/********************** Event Detail  **********************/
+body.single-post .et_pb_row .et_pb_column_2_5,body.single-post .et_pb_row .et_pb_column_3_5 {width: 100%;}
+body.single-post .et_pb_column{margin-bottom: 30px;}
+body.single-post .et_pb_image {
+    text-align: center;
+}
+body.single-post .inner-blog-banner .blog-content .content {
+    width: 100%;
+}
+body.single-post .et_pb_module{text-align: center;}
+body.single-post h4{padding-bottom: 20px;}
 
 
 
@@ -788,7 +799,8 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     /***********************Giving Page*******************/
     /* Giving Section */
     body .giving-section .giving-content .content:first-child h2 { font-size: 15rem; }
-
+    /********************** Event Detail  **********************/
+    .inner-blog-banner .blog-content .content h1 { font-size: 5.125rem;}
 
 }
 
