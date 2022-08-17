@@ -1,4 +1,22 @@
 /* Desktop Screen L*/
+@media only screen and (max-width: 2560px){
+    /****** Home ******/
+    .h-speaker-section .h-speaker-content .content:first-child { left: -20%;}
+    .h-speaker-section .h-speaker-content .content:nth-child(2) { left: -20%;}
+    /***** Book *****/
+    body .synopsis-section .synopsis-content .content:nth-child(2) { left: -20%;}
+    body .synopsis-section .synopsis-content .content:first-child { left: -20%;}
+    /***** Book A Call ****/
+    body .call-me-section{padding: 0px;}
+}
+@media only screen and (max-width: 1920px){
+    /****** Home ******/
+    .h-speaker-section .h-speaker-content .content:first-child { left: 0px;}
+    .h-speaker-section .h-speaker-content .content:nth-child(2) { left: 0px;}
+    /***** Book *****/
+    body .synopsis-section .synopsis-content .content:nth-child(2) { left: 0px;}
+    body .synopsis-section .synopsis-content .content:first-child { left: 0px;}
+}
 @media only screen and (max-width: 1800px){
     /************************ BOOKS *********************/
     /* Synopsis section */
@@ -30,7 +48,6 @@
     .podcast-section .podcast-code .cfm-episode-wrap{width: calc(33.33% - 10px);margin-right: 10px;}
 
     /* Speaker Section */
-    .h-speaker-section .h-speaker-content .content:first-child h2 { font-size: 23rem;}
     .h-speaker-section .h-speaker-content .content:nth-child(3) { padding: 60px 20px 110px 55px;}
     .h-speaker-section .h-speaker-content .content:nth-child(3) .btn { margin-bottom: 70px; }
     .h-speaker-section .h-speaker-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { padding-bottom: 35px; }
@@ -87,7 +104,7 @@
     /* Speaker Section */
     .h-speaker-section .h-speaker-content .content:nth-child(3) { padding: 60px 20px 70px 25px; }
     /*Critical Principles Section*/
-    .critical-principles-section .critical-principles-content .content:last-child { right: -90px; width: 80%; }
+    .critical-principles-section .critical-principles-content .content:last-child { right: -90px; width: 80%;top: -40px; }
     /* Giving Section */
     body .h-giving-section .h-giving-content .content:nth-child(3) { padding: 60px 20px 190px 25px; }
     
@@ -196,7 +213,6 @@
 @media only screen and (max-width: 1380px) {
     /* Speaker Section */
     .h-speaker-section .h-speaker-content .content:nth-child(2) { width: calc(65% - 90px); left: -90px; }
-    .h-speaker-section .h-speaker-content .content:first-child h2 { font-size: 20rem; }
     .h-speaker-section .h-speaker-content .content:nth-child(3) { padding: 60px 20px 70px 0px; }
     .h-speaker-section .h-speaker-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { padding-bottom: 25px; }
     .h-speaker-section .h-speaker-content .content:nth-child(3) .btn { margin-bottom: 50px; }
@@ -250,7 +266,6 @@
     body .home-banner .container .banner-image img { height: calc(970px - 15%); width: calc(calc(831px - 15%)); }
     body .home-banner { min-height: 830px; }
     /* Speaker Section */
-    .h-speaker-section .h-speaker-content .content:first-child h2 { font-size: 17rem; }
     .h-speaker-section .h-speaker-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header { font-size: 5rem;}
     /* Critical Principles Section */
     .critical-principles-section .critical-principles-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header { font-size: 5rem;}
@@ -294,10 +309,9 @@
 
     /* PodCast Banner */
     .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child { width: calc(868px - 27%); height: calc(563px - 20%); }
-    .podcast-section::after { width: calc(908px - 30%); height: calc(1019px - 30%); }
+    .podcast-section::after { width: calc(908px - 30%); height: calc(1019px - 30%);top: calc(50% - 140px); }
     .podcast-section .podcast-code .et_pb_code_inner { width: 75%; }
     .podcast-section .podcast-content .content:first-child { width: 100%; padding: 90px 0px; }
-    .podcast-section .podcast-content .content:last-child h2 { font-size: 20rem;}
     .podcast-section::before { border-radius: 0px 0px 0px 444px; }
 
     /* Speaker Section*/
@@ -424,7 +438,7 @@
     /* PodCast Banner */
     .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child { width: calc(868px - 45%); height: calc(563px - 45%); }
     .podcast-section .podcast-content .content:first-child{padding: 830px 0px 90px;margin-right: 0px;}
-    .podcast-section .podcast-content .content:last-child{ top: 0px; transform: translate(0%, 0%); }
+    .podcast-section .podcast-content .content:last-child{ top: 50px; transform: translate(0%, 0%); }
     .podcast-section::after { top: 0px; transform: translate(0px, 0%);width: calc(908px - 25%); height: calc(1019px - 17%); }
     .podcast-section .podcast-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header{display: flex;padding-bottom: 20px;}
     .podcast-section .podcast-content .content:first-child .et_pb_blurb .et_pb_blurb_content .et_pb_module_header span{text-align: center;}
@@ -544,8 +558,8 @@ body.single-post h4{padding-bottom: 20px;}
     #et_mobile_nav_menu .mobile_nav #mobile_menu { background-color: white;border-radius: 0 0 15px 15px; }
     #et_mobile_nav_menu .mobile_nav #mobile_menu li a{color: black;}
     /* home banner */
+    body .home-banner { min-height: 760px; padding-top: 160px!important; }
     body .home-banner .container .banner-image img { height: calc(970px - 25%); width: calc(calc(831px - 25%)); }
-    body .home-banner { min-height: 760px; }
     body .home-banner .container .banner-title h2 { font-size: 185px; }
     /* PodCast Banner */
     .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child { width: calc(868px - 55%); height: calc(563px - 55%); }
@@ -718,7 +732,7 @@ body.single-post h4{padding-bottom: 20px;}
     body .h-giving-section .h-giving-content .content:nth-child(2) { width: 100%; }
     body .h-giving-section .h-giving-content .content:nth-child(3) { margin-top: 630px;}
     /* Podcast Section */
-    .podcast-section::after { width: calc(908px - 60%); height: calc(1019px - 30%);top: 50px;}
+    .podcast-section::after { width: 511px; height: 527px;top: 50px;}
     .podcast-section .podcast-content .content:first-child { padding: 750px 0px 90px; }
     
     /************************ BOOKS *********************/
@@ -767,8 +781,8 @@ body.single-post h4{padding-bottom: 20px;}
 
     /************************ HOME *********************/
     /* Podcast Section */
-    .podcast-section::after { width: calc(908px - 80%); height: calc(1019px - 35%);}
-    .podcast-section .podcast-content .content:last-child h2 { font-size: 17rem;}
+    .podcast-section::after { width: calc(511px - 10%); height: calc(527px - 4%);}
+
 
 
 
@@ -815,7 +829,6 @@ body.single-post h4{padding-bottom: 20px;}
 
 @media only screen and (max-width: 480px) {
     /* Speaker Section */
-    .h-speaker-section .h-speaker-content .content:first-child h2 { font-size: 15rem; }
     .h-speaker-section .h-speaker-content .content:nth-child(3) { margin-top: 600px; box-shadow: 160px -154px 59px #fff; }
     /* Critical Principles Section */
     .critical-principles-section .critical-principles-content .content:first-child { margin-top: 330px;box-shadow: 0px -27px 35px #171717;}
@@ -825,6 +838,7 @@ body.single-post h4{padding-bottom: 20px;}
     body .h-giving-section .h-giving-content .content:first-child h2 { font-size: 15rem; }
     /* Podcast Section*/
     .podcast-section::after { width: calc(407px - 0%); height: calc(434px - 0%); }
+    .podcast-section .podcast-content .content:first-child { padding: 620px 0px 90px; }
 
     /************************ BOOKS *********************/
     /* banner */
@@ -857,6 +871,7 @@ body.single-post h4{padding-bottom: 20px;}
     .h-speaker-section .h-speaker-content .content:nth-child(3) { margin-top: 550px; box-shadow: 150px -134px 39px #fff; }
     /* Podcast Section */
     .podcast-section::after { width: calc(407px - 24%); height: calc(434px - 7%); }
+    .podcast-section .podcast-content .content:first-child { padding: 520px 0px 90px; }
     /* Giving Section */
     /************************ BOOKS *********************/
     /* reviews section */
@@ -872,11 +887,11 @@ body.single-post h4{padding-bottom: 20px;}
 @media only screen and (max-width: 400px) {
     /* Speaker Section */
     .h-speaker-section .h-speaker-content .content:first-child { top: 40px; }
-    .h-speaker-section .h-speaker-content .content:first-child h2 { font-size: 12rem; }
     .h-speaker-section .h-speaker-content .content:nth-child(3) { margin-top: 480px;    box-shadow: 130px -134px 39px #fff;}
     /* Giving Section */
     body .h-giving-section .h-giving-content .content:first-child { top: 40px; }
     body .h-giving-section .h-giving-content .content:first-child h2 { font-size: 12rem;line-height: 0.73; }
+    body .h-giving-section .h-giving-content .content:nth-child(3) { margin-top: 460px;}
     /************************ BOOKS *********************/
     /* banner */
     body .books-banner .banner-title h2 { font-size: 3rem;}

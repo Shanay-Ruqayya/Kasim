@@ -8,6 +8,7 @@
 #main-header #et-top-navigation #top-menu .menu-item a:hover{background-color: #fff; border-radius: 0px 0px 10px 10px; color: #000;}
 .res-nav-main{display: none;}
 /* footer */
+body #main-footer{padding-top: 65px;}
 body #main-footer .container #nav_menu-2 ul li a{ color: black; font-size: 18px;font-weight: 700;}
 body #main-footer .container #nav_menu-2{    width: 100%; text-align: center;}
 body #main-footer .container #nav_menu-2 ul{    display: flex; align-items: center; justify-content: center; margin: auto;}

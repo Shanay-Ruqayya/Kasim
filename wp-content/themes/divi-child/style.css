@@ -9,6 +9,40 @@ Theme Name:     Divi Child
 */
 
 
+/* variable Style */
+
+:root {
+    --vart-font-size:25rem;
+}
+
+@media only screen and (max-width: 1667px){
+    :root {
+        --vart-font-size:23rem;
+    }
+}
+@media only screen and (max-width: 1380px){
+    :root {
+        --vart-font-size:20rem;
+    }
+}
+
+@media only screen and (max-width: 1338px){
+    :root {
+        --vart-font-size:17rem;
+    }
+}
+@media only screen and (max-width: 480px){
+    :root {
+        --vart-font-size:15rem;
+    }
+}
+@media only screen and (max-width: 400px){
+    :root {
+        --vart-font-size:12rem;
+    }
+}
+
+
 /* Global Style */
 h1,h2,h3,h4,h5,#main-header #et-top-navigation #top-menu .menu-item a{font-family: 'bignoodletitling' !important;font-weight: 400;}
 

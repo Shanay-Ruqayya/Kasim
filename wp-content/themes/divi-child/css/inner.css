@@ -1,5 +1,5 @@
 /* Inner Banners Section */
-.inner-banner-section{ height: 700px; padding: 0px; padding-top: 120px!important;overflow: hidden;}
+body .inner-banner-section{ height: 700px; padding: 0px; padding-top: 120px!important;overflow: hidden;padding-bottom: 0px;}
 .inner-banner-section .inner-banner-content{ height: 100%; display: flex; align-items: center; position: relative;}
 .inner-banner-section .inner-banner-content .content:first-child{width: 45%;margin: 0px;}
 .inner-banner-section .inner-banner-content .content:first-child .b-title{font-size: 6.25rem; color: #fff;}
@@ -24,12 +24,13 @@
 /* banner */
 body .books-banner .banner-title{width: 51%;}
 body .books-banner .banner-title h2{ font-size: 6.25rem; line-height: 91.9%; color: #FFFFFF; max-width: 710px;}
-body .books-banner .banner-image .et_pb_image_wrap { position: absolute; bottom: 0; width: 40%; }
+body .books-banner .banner-image .et_pb_image_wrap { position: absolute; bottom: -10px; width: 40%; }
 body .books-banner .banner-image{position: static;}
 body .books-banner .banner-image-col{ position: static; width: 40%; }
 body .books-banner .et_pb_row{ position: static; }
 
 /* book review sub section ~greg */
+body .book-review-sub-section .et_pb_row{display: flex;justify-content: center;}
 body .book-review-sub-section h4 { font-size: 3.125rem; line-height: 91.9%; padding-bottom: 26px;}
 body .book-review-sub-section p{ text-align: center; color: black; font-size: 1.25rem; line-height: 217.5%; }
 body .book-review-sub-section .review-content{width: 60%; margin: auto;} 
@@ -94,7 +95,7 @@ body.page-id-305 .contact-section::after{z-index: 3;}
 /* Book A Call Page */
 /* --------------- */
 
-.call-me-section{padding: 0px;}
+body .call-me-section{padding: 0px;}
 .call-me-section .call-me-content{padding: 0px!important; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; position: relative;}
 .call-me-section .call-me-content .content:nth-child(1){ position: absolute; left: 0px; z-index: 999;    top: 50%; transform: translate(0px , -50%); height: 100%;}
 .call-me-section .call-me-content .content:nth-child(1) .et_pb_text{height: 100%;}
