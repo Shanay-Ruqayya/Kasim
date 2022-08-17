@@ -1,9 +1,10 @@
 <?php get_header(); 
 	echo do_shortcode('[et_pb_section global_module="545"][/et_pb_section]');
 	echo do_shortcode('[et_pb_section global_module="645"][/et_pb_section]');
+	echo do_shortcode('[et_pb_section global_module="1229"][/et_pb_section]');
 ?>
 
-<div id="main-content" class="event-blog">
+<!-- <div id="main-content" class="event-blog">
 	<div class="container">
 		<div id="content-area" class="clearfix">
 			<div id="left-area">
@@ -66,7 +67,9 @@
 					</article>
 			<?php
 					endwhile;
-
+					?>
+					 
+					<?php
 					if ( function_exists( 'wp_pagenavi' ) )
 						wp_pagenavi();
 					else
@@ -80,7 +83,7 @@
 			<!-- <?php get_sidebar(); ?> -->
 		</div>
 	</div>
-</div>
+</div> -->
 
 <?php
 
