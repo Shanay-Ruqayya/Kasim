@@ -539,7 +539,10 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     /* PodCast Banner */
     .inner-banner-section.podcast-banner-section .inner-banner-content .content:last-child { width: calc(868px - 55%); height: calc(563px - 55%); }
     /* body .home-banner .container .banner-image{right: calc(50% - (600px/2));} */
+    /* PodCast Section */
+    .podcast-section{overflow: hidden;}
     /* Speaker Section */
+    .h-speaker-section{overflow: hidden;}
     .h-speaker-section .h-speaker-content .content:nth-child(3) .text-content .et_pb_blurb_content .et_pb_module_header .underline-b::before{bottom: -3px;}
     /* Critical Principles Section */
     .critical-principles-section .critical-principles-content .content:first-child{ box-shadow: 0px -27px 25px #171717; background-color: #171717!important; padding: 10px 0px 35px; margin-top: 610px; }
@@ -615,6 +618,11 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .h-giving-section .h-giving-content .content:nth-child(2) { width: 90%;}
     body .h-giving-section .h-giving-content .content:nth-child(3){ width: 100%; }
     body .h-giving-section .h-giving-content .content:nth-child(3) .text-content{width: 90%; margin: 0px auto 30px;}
+    /* PodCast Section*/
+    .podcast-section .podcast-content{width: 100%;}
+    .podcast-section::after { width: calc(908px - 40%); height: calc(1019px - 25%);background: url(../images/podcast-mic.png)no-repeat center / 100% 100%; }
+    .podcast-section .podcast-content .content:first-child .et_pb_blurb { width: 90%; margin: 0 auto 30px; }
+
     
     /************************ BOOKS *********************/
     /* book review sub section */
@@ -698,6 +706,9 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .h-giving-section .h-giving-content .content:first-child { top: 70px; }
     body .h-giving-section .h-giving-content .content:nth-child(2) { width: 100%; }
     body .h-giving-section .h-giving-content .content:nth-child(3) { margin-top: 630px;}
+    /* Podcast Section */
+    .podcast-section::after { width: calc(908px - 60%); height: calc(1019px - 30%);top: 50px;}
+    .podcast-section .podcast-content .content:first-child { padding: 750px 0px 90px; }
     
     /************************ BOOKS *********************/
     /* bestseller section */
@@ -742,6 +753,13 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     body .h-giving-section .h-giving-content .content:nth-child(2) .et_pb_module .et_pb_image_wrap{max-width: unset;}
     body .h-giving-section .h-giving-content .content:nth-child(2) .et_pb_module .et_pb_image_wrap img{max-width: unset; width: 601px; height: 801px; overflow: hidden;}
     body .h-giving-section .h-giving-content .content:nth-child(3) { margin-top: 590px; box-shadow: 27px -118px 82px #fff; }
+
+    /************************ HOME *********************/
+    /* Podcast Section */
+    .podcast-section::after { width: calc(908px - 80%); height: calc(1019px - 35%);}
+    .podcast-section .podcast-content .content:last-child h2 { font-size: 17rem;}
+
+
 
     /************************ BOOKS *********************/
     /* banner */
@@ -794,6 +812,8 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     .critical-principles-section .critical-principles-content .content:first-child { margin-top: 330px; }
     /* Giving Section */
     body .h-giving-section .h-giving-content .content:first-child h2 { font-size: 15rem; }
+    /* Podcast Section*/
+    .podcast-section::after { width: calc(407px - 0%); height: calc(434px - 0%); }
 
     /************************ BOOKS *********************/
     /* banner */
@@ -823,6 +843,8 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
     .banner-sub-section .banner-sub-content .contain .mq-co-logo-section a { padding: 0px 10px; }
     /* Speaker Section */
     .h-speaker-section .h-speaker-content .content:nth-child(3) { margin-top: 550px; box-shadow: 150px -134px 39px #fff; }
+    /* Podcast Section */
+    .podcast-section::after { width: calc(407px - 24%); height: calc(434px - 7%); }
     /* Giving Section */
     /************************ BOOKS *********************/
     /* reviews section */
@@ -863,6 +885,8 @@ body .contact-section .contact-content .content:last-child { width: 100%; paddin
 
 /* Mobile S */
 @media only screen and (max-width: 360px) {
+    /* podcast */
+    .podcast-section::after { width: calc(407px - 38%); height: calc(434px - 7%); }
 
 }
 

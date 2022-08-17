@@ -32,3 +32,76 @@ function my_theme_enqueue_styles()
     
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+
+
+// Events blog
+function show_blog_sc_hp_function($attr){
+
+    $args = array(
+
+       'post_type' => 'post',
+
+       'posts_per_page' => $attr['number'],
+
+       'posts_status' => "publish",
+
+       'order_by' => "id",
+
+       'order' => 'desc'
+
+   );
+
+   
+
+   $featured = new WP_Query($args);
+
+   // var_dump($featured);die;
+   $result = "";
+   if ($featured->have_posts()):
+        $result .= '<div class="events-section">';
+   while($featured->have_posts()): $featured->the_post();
+
+   // $thumb = get_field('thumb_for_video');
+
+    
+
+        $result .= '<a href="'.get_permalink().'" class="events-content">';
+        
+            $result .= '<div class="content">';
+                    
+                $result .= '<div>';
+                    
+                    $result .= '<img loading="lazy" width="271" height="302" src="'.get_the_post_thumbnail_url().'" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="'.get_the_title().'">';
+                    
+                $result .= '</div>';
+
+                $result .= '<div>';
+                    
+                    $result .= '<h4>'.get_the_title().'</h4>';
+
+                    $result .= '<p>'.get_the_date().'</p>';
+                    
+                $result .= '</div>';
+
+            $result .= '</div>';
+
+        $result .= '</a>';
+
+    
+   endwhile;
+
+   $result .= "</div>";
+
+   endif;	
+
+   
+
+   wp_reset_query();
+
+   return $result;
+
+}
+
+
+
+add_shortcode('show_blog_sc_hp', 'show_blog_sc_hp_function');
