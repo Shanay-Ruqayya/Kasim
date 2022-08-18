@@ -69,7 +69,7 @@ function codex_logo_init() {
 
 		'publicly_queryable' => true,
 
-		'menu_icon'          => 'dashicons-format-status',
+		'menu_icon'          => 'dashicons-groups',
 
 		'show_ui'            => true,
 

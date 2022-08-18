@@ -78,10 +78,8 @@
     body .reviews-section .reviews-content .content:last-child h2::after { right: -200px; top: 20px; width: 1030px;}
 
     /* Event Blog Page */
-    .event-blog .container #left-area .et_pb_post .entry-featured-image-url { height: 340px;}
-    .event-blog .container #left-area .et_pb_post .entry-featured-image-url img { height: 100%; object-fit: cover;}
-    .event-blog .container #left-area .et_pb_post { width: calc(33.33% - 50px);}
-    .event-blog .container #left-area .et_pb_post:nth-child(3n + 2) { margin: 0px 75px;    margin-bottom: 75px; }
+    .blog-listing-section-content .blog-listing-content .events-section-listing .events-content { width: calc(33.33% - 40px);}
+    .blog-listing-section-content .blog-listing-content .events-section-listing .events-content:nth-child(3n + 2) { margin: 0px 60px 74px; }
     
     /************************ BOOKS A CALL *********************/
     .call-me-section .call-me-content .content:nth-child(2) { width: 55%;}
@@ -200,9 +198,9 @@
     body .contact-section .contact-content .content:last-child .contact-form .pie-forms .pf-field-row .pf-field-wrapper:nth-child(4) { margin-bottom: 30px; }
 
     /* Event Blog Page */
-    .event-blog .container #left-area .et_pb_post .entry-featured-image-url { height: 300px; }
-    .event-blog .container #left-area .et_pb_post { width: calc(33.33% - 35px); margin-bottom: 35px; }
-    .event-blog .container #left-area .et_pb_post:nth-child(3n + 2) { margin: 0px 52px; margin-bottom: 35px; }
+    .blog-listing-section-content .blog-listing-content .events-section-listing .events-content .content div:first-child { height: 300px; }
+    .blog-listing-section-content .blog-listing-content .events-section-listing .events-content { width: calc(33.33% - 20px); }
+    .blog-listing-section-content .blog-listing-content .events-section-listing .events-content:nth-child(3n + 2) { margin: 0px 30px 74px; }
     
     /************************ BOOKS A CALL *********************/
     .call-me-section .call-me-content .content:nth-child(1) h2 { font-size: 25rem;}
@@ -622,6 +620,11 @@ body.single-post h4{padding-bottom: 20px;}
     .book-invest-section .book-invest-content { padding: 80px 0px; }
     .book-invest-section .book-invest-content .content .btn.crt{ margin: 20px 0px 20px 0px!important;width: 100%;}
     .book-invest-section .book-invest-content .content .btn.crt p{text-align: center;}
+
+    /* Event Listing Page */
+    .blog-listing-section-content .blog-listing-content .events-section-listing .events-content { width: calc(50% - 20px); }
+    .blog-listing-section-content .blog-listing-content .events-section-listing .events-content:nth-child(3n + 2){ margin: 0px 0px 74px;}
+    .blog-listing-section-content .blog-listing-content .events-section-listing .events-content:nth-child(2n){ margin: 0px 0px 74px 40px;}
 }
 
 @media only screen and (max-width: 867px) {
@@ -760,6 +763,12 @@ body.single-post h4{padding-bottom: 20px;}
 
     /* Event Blog Page */
     .event-blog .container #left-area .et_pb_post .entry-featured-image-url { height: 200px; }
+    /* Event Inner Page */
+    .blog-listing-section-content .blog-listing-content .events-section-listing .events-content .content div:first-child { height: 200px; }
+    .blog-listing-section-content .blog-listing-content .events-section-listing .events-content { width: calc(50% - 10px); }
+    .blog-listing-section-content .blog-listing-content .events-section-listing .events-content { margin-bottom: 50px; }
+    .blog-listing-section-content .blog-listing-content .events-section-listing .events-content:nth-child(2n) { margin: 0px 0px 50px 19px!important; }
+    .blog-listing-section-content .blog-listing-content .events-section-listing .events-content:nth-child(3n + 2) { margin: 0px 0px 50px; }
 
 }
 
@@ -854,6 +863,9 @@ body.single-post h4{padding-bottom: 20px;}
     .event-blog .container #left-area .et_pb_post { width: calc(50% - 5px); }
     .event-blog .container #left-area .et_pb_post:nth-child(2n) { margin: 0px 0px 35px 10px; }
     .event-blog .container #left-area .et_pb_post .entry-featured-image-url { height: 145px; }
+
+    .blog-listing-section-content .blog-listing-content .events-section-listing .events-content { width: 100%; }
+    .blog-listing-section-content .blog-listing-content .events-section-listing .events-content:nth-child(2n) { margin: 0px 0px 50px 0px!important; }
 
     /***********************Giving Page*******************/
     /* Giving Section */

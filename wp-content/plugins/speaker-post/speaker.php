@@ -69,7 +69,7 @@ function codex_speaker_init() {
 
 		'publicly_queryable' => true,
 
-		'menu_icon'          => 'dashicons-format-status',
+		'menu_icon'          => 'dashicons-megaphone',
 
 		'show_ui'            => true,
 

@@ -2,6 +2,7 @@
 	echo do_shortcode('[et_pb_section global_module="545"][/et_pb_section]');
 	echo do_shortcode('[et_pb_section global_module="645"][/et_pb_section]');
 	echo do_shortcode('[et_pb_section global_module="1229"][/et_pb_section]');
+	echo do_shortcode('[et_pb_section global_module="338"][/et_pb_section]');
 ?>
 
 <!-- <div id="main-content" class="event-blog">

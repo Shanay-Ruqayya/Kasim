@@ -69,7 +69,7 @@ function codex_events_init() {
 
 		'publicly_queryable' => true,
 
-		'menu_icon'          => 'dashicons-format-status',
+		'menu_icon'          => 'dashicons-schedule',
 
 		'show_ui'            => true,
 

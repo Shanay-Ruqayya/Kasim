@@ -150,6 +150,18 @@ body .call-me-section{padding: 0px;}
 .event-blog .container #left-area .et_pb_post .entry-featured-image-url img{height: 100%;object-fit: cover;}
 .event-blog .container #left-area .et_pb_post .entry-title{font-size: 1.875rem;text-align: center;}
 
+body .blog-listing-section-content{padding: 0px 0px 75px;}
+.blog-listing-section-content .blog-listing-content{padding: 0px;}
+.blog-listing-section-content .blog-listing-content .events-section-listing{display: flex; justify-content: center; align-items: flex-start; flex-wrap: wrap;}
+.blog-listing-section-content .blog-listing-content .events-section-listing .events-content{width: calc(33.33% - 90px); padding: 19px 17px; border-radius: 15px; box-shadow: 0px 84px 84px rgb(0 0 0 / 10%); background-color: #fff; margin-bottom: 74px;}
+.blog-listing-section-content .blog-listing-content .events-section-listing .events-content:nth-child(3n + 2){margin: 0px 135px 75px;}
+.blog-listing-section-content .blog-listing-content .events-section-listing .events-content .content div:first-child{height: 393px;}
+.blog-listing-section-content .blog-listing-content .events-section-listing .events-content .content div:first-child img{width: 100%; height: 100%; object-fit: cover;border-radius: 10px;}
+.blog-listing-section-content .blog-listing-content .events-section-listing .events-content .content div:last-child h4{font-size: 1.875rem; color: #000; text-align: center; padding-top: 45px;}
+.blog-listing-section-content .blog-listing-content .events-section-listing .events-content .content div:last-child p{font-size: 14px; color: #000; text-align: center; font-weight: 400; padding-bottom: 42px;}
+.blog-listing-section-content .blog-listing-content .btn.load-more{display: flex; justify-content: center;padding-top: 30px;}
+
+
 /* ...................... */
 /* Event Blog inner Page */
 /* -------------------- */
